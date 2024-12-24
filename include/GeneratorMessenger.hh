@@ -3,8 +3,7 @@
 
 #include "G4UImessenger.hh"
 #include "globals.hh"
-
-class PrimaryGenerator;
+#include "PrimaryGenerator.hh"
 class G4UIdirectory;
 class G4UIcmdWith3VectorAndUnit;
 class G4UIcmdWithAString;
@@ -13,6 +12,7 @@ class G4UIcmdWithAnInteger;
 
 namespace SimCalModule
 {
+    class PrimaryGenerator;
     class GeneratorMessenger : public G4UImessenger
     {
     public:
@@ -31,7 +31,6 @@ namespace SimCalModule
         G4UIcmdWithABool* fCCNumu;
         G4UIcmdWithABool* fCCNutau;
         G4UIcmdWithABool* fNC;
-
     };
 }
 

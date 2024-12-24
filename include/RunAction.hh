@@ -4,7 +4,7 @@
 #include "globals.hh"
 #include "G4UserRunAction.hh"
 #include "EventAction.hh"
-#include "PrimaryGeneratorAction.hh"
+#include "PrimaryGenerator.hh"
 #include "TFile.h"
 #include "TTree.h"
 
@@ -63,7 +63,7 @@ namespace SimCalModule
         TTree *treeEvt;
         G4int EvtID;
         G4double ParticleEnergy;
-        G4double ftagNulabel;
+        G4int ftagNulabel;
         G4double Interaction_x;
         G4double Interaction_y;
         G4double Interaction_z;

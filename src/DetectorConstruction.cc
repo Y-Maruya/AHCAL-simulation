@@ -61,7 +61,9 @@ namespace SimCalModule
         EcalUnitParameter.SensitiveMatIndex = PlasticSciECAL;
         EcalUnitParameter.PassiveMatIndex = ESR;
         EcalUnitParameter.AttachMatIndex = Quartz;
-        
+        EcalUnitParameter.House_X = 45.0 * mm;
+        EcalUnitParameter.House_Y = 5.0 * mm;
+        EcalUnitParameter.House_Z = 2.0 * mm;
         HcalUnitParameter.ifDoubleSidedReadout = false;
         HcalUnitParameter.SensitiveLength = 3.0 * mm;
         HcalUnitParameter.SensitiveX = 40.0 * mm;
@@ -107,7 +109,7 @@ namespace SimCalModule
         HcalCellNumberX = 18;
         HcalCellNumberY = 18;
         HcalLayerNumber = 40;
-        EcalModuleType = 0; // 0:Off; 1:Cube; 2:Crossed bar; 3:ScW ECAL
+        EcalModuleType = 3; // 0:Off; 1:Cube; 2:Crossed bar; 3:ScW ECAL
         HcalModuleType = 1; // 0:Off; 1:AHCAL; 2:GSHCAL
         EcalStepTimeLimit = 150.0 * ns;
         HcalStepTimeLimit = 150.0 * ns;

@@ -1,4 +1,6 @@
 #include "PrimaryGenerator.hh"
+#include "GeneratorMessenger.hh" // Add this line
+#include "RunAction.hh" // Add this line
 #include "G4ParticleGun.hh"
 #include "G4Event.hh"
 #include "G4ParticleTable.hh"
@@ -21,11 +23,20 @@ namespace SimCalModule
 {
     PrimaryGenerator::PrimaryGenerator()
     : fpParticleGun(0),
-        fMessenger(new GeneratorMessenger(this))
+        fMessenger(new GeneratorMessenger(this)),
+        fInputFileName("faser3.10fbInv.1.gfaser.root"),
+        fFixedPrimaryVertexPosition(false),
+        fPrimaryVertexPosition(G4ThreeVector(0.0,0.0,0.25*cm)),
+        ftagNulabel(-1),
+        primaryenergy(0),
+        fNC(true),
+        fCCNue(true),
+        fCCNumu(true),
+        fCCNutau(true)
     //------------------------------------------------------------------------------
     {
     fpParticleGun = new G4ParticleGun();
-    G4cout << "PrimaryGenerator::PrimaryGenerator()" << G4endl;
+    // G4cout << "PrimaryGenerator::PrimaryGenerator()" << G4endl;
     }
 
     //------------------------------------------------------------------------------
@@ -41,7 +52,7 @@ namespace SimCalModule
     {
     // fpParticleGun->GeneratePrimaryVertex(anEvent);
 
-    std::cout<<"Generate Primaries from :" <<fInputFileName << std::endl;
+    // std::cout<<"Generate Primaries from :" <<fInputFileName << std::endl;
     TFile* file=new TFile(fInputFileName.c_str(),"READ");
     if(!file){
         std::cerr<<"File not found"<<std::endl;
@@ -155,11 +166,11 @@ namespace SimCalModule
         vertex->SetPrimary(particle);
     }
     anEvent->AddPrimaryVertex(vertex);
-    if(fRunAction){
-        fRunAction->AddPrimaryGeneratorData(ftagNulabel,E->at(0),vx*1000,vy*1000,vz*1000);
-    }else{
-        std::cerr<<"RunAction not found"<<std::endl;
-    }
+    // if(fRunAction){
+    //     fRunAction->AddPrimaryGeneratorData(ftagNulabel,E->at(0),vx*1000,vy*1000,vz*1000);
+    // }else{
+    //     std::cerr<<"RunAction not found"<<std::endl;
+    // }
     file->Close();
 
     }
@@ -199,4 +210,26 @@ namespace SimCalModule
     {
     fNC = nc;
     }
+
+    G4String PrimaryGenerator::GetInputFileName() const
+    {
+        return fInputFileName;
+    }
+
+    G4int PrimaryGenerator::GetftagNulabel() const
+    {
+        return ftagNulabel;
+    }
+
+    G4double PrimaryGenerator::GetPrimaryEnergy() const
+    {
+        return primaryenergy;
+    }
+
+    G4ThreeVector PrimaryGenerator::GetInteractionPlace() const
+    {
+        return fPrimaryVertexPosition;
+    }
+
+    
 }

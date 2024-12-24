@@ -10,7 +10,7 @@
 
 namespace SimCalModule
 {
-    RunAction::RunAction(PrimaryGeneratorAction *PGA)
+    RunAction::RunAction(PrimaryGenerator *PGA)
         : G4UserRunAction(), fPrimaryGen(PGA), fileRun(nullptr), treeEvt(nullptr)
     {
         ROOT::EnableThreadSafety();
@@ -28,7 +28,7 @@ namespace SimCalModule
         }
         if (G4RunManager::GetRunManager()->GetRunManagerType() != G4RunManager::masterRM)
         {
-            G4String rootFileName = "calo_" + fPrimaryGen->GetInputFileName();
+            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo";
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";
@@ -40,6 +40,10 @@ namespace SimCalModule
             treeEvt = new TTree("treeEvt", "Info stored at Event level");
             treeEvt->Branch("EvtID", &EvtID, "EvtID/I");
             treeEvt->Branch("ParticleEnergy", &ParticleEnergy, "ParticleEnergy/D");
+            treeEvt->Branch("Interaction_x", &Interaction_x, "Interaction_x/D");
+            treeEvt->Branch("Interaction_y", &Interaction_y, "Interaction_y/D");
+            treeEvt->Branch("Interaction_z", &Interaction_z, "Interaction_z/D");
+            treeEvt->Branch("ftagNulabel", &ftagNulabel, "ftagNulabel/I");
             treeEvt->Branch("CaloEdepSum", &CaloEdepSum, "CaloEdepSum/D");
             treeEvt->Branch("CaloVisibleEdepSum", &CaloVisibleEdepSum, "CaloVisibleEdepSum/D");
             treeEvt->Branch("EcalEdepSum", &EcalEdepSum, "EcalEdepSum/D");
@@ -69,7 +73,7 @@ namespace SimCalModule
             G4cout << "The run with RunID  " << aRun->GetRunID() << " is finished. " << G4endl;
         if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::masterRM)
         {
-            G4String rootFileName = "calo_" + fPrimaryGen->GetInputFileName();
+            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo";
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";
@@ -85,6 +89,7 @@ namespace SimCalModule
         }
         else
         {
+            fileRun->cd();
             treeEvt->Write();
             delete treeEvt;
             fileRun->Close();
@@ -103,6 +108,9 @@ namespace SimCalModule
         {
         case EvtID_Data:
             EvtID = data;
+            break;
+        case ftagNulabel_Data:
+            ftagNulabel = data;
             break;
         default:
         {
@@ -127,7 +135,12 @@ namespace SimCalModule
         case Interaction_x_Data:
             Interaction_x = data;
             break;
-        
+        case Interaction_y_Data:
+            Interaction_y = data;
+            break;
+        case Interaction_z_Data:
+            Interaction_z = data;
+            break;        
         case CaloEdepSum_Data:
             CaloEdepSum = data;
             break;

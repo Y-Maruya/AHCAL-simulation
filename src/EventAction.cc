@@ -28,7 +28,7 @@ namespace SimCalModule
         if (EvtID % 100 == 0)
             G4cout << "Start to simulate the event " << EvtID << G4endl;
 
-        const PrimaryGenerator *primary = static_cast<const PrimaryGenerator *>(G4RunManager::GetRunManager()->GetUserPrimaryGenerator());
+        const PrimaryGenerator *primary = static_cast<const PrimaryGenerator *>(G4RunManager::GetRunManager()->GetUserPrimaryGeneratorAction());
         ParticleEnergy = primary->GetPrimaryEnergy() / GeV;
         ftagNulabel = primary->GetftagNulabel();
         interaction_x = primary->GetInteractionPlace().x() / mm;
@@ -115,7 +115,10 @@ namespace SimCalModule
 
         fRunAction->TransferData(EvtID, EvtID_Data);
         fRunAction->TransferData(ParticleEnergy, ParticleEnergy_Data);
-        fRunAction
+        fRunAction->TransferData(ftagNulabel, ftagNulabel_Data);
+        fRunAction->TransferData(interaction_x, Interaction_x_Data);
+        fRunAction->TransferData(interaction_y, Interaction_y_Data);
+        fRunAction->TransferData(interaction_z, Interaction_z_Data);
         fRunAction->TransferData(CaloEdepSum, CaloEdepSum_Data);
         fRunAction->TransferData(CaloVisibleEdepSum, CaloVisibleEdepSum_Data);
         fRunAction->TransferData(EcalEdepSum, EcalEdepSum_Data);
@@ -144,6 +147,10 @@ namespace SimCalModule
     {
         EvtID = 0;
         ParticleEnergy = 0;
+        ftagNulabel = 0;
+        interaction_x = 0;
+        interaction_y = 0;
+        interaction_z = 0;
         CaloEdepSum = 0;
         CaloVisibleEdepSum = 0;
         EcalEdepSum = 0;

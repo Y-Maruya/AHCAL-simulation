@@ -1,29 +1,37 @@
-#ifndef PrimaryGeneratorMessenger_h
-#define PrimaryGeneratorMessenger_h 1
+#ifndef GeneratorMessenger_h
+#define GeneratorMessenger_h 1
 
 #include "G4UImessenger.hh"
 #include "globals.hh"
 
+class PrimaryGenerator;
 class G4UIdirectory;
-class G4UIcmdWithADoubleAndUnit;
-class G4UIcommand;
+class G4UIcmdWith3VectorAndUnit;
+class G4UIcmdWithAString;
+class G4UIcmdWithABool;
+class G4UIcmdWithAnInteger;
 
 namespace SimCalModule
 {
-    class PrimaryGeneratorAction;
-
-    class PrimaryGeneratorMessenger : public G4UImessenger
+    class GeneratorMessenger : public G4UImessenger
     {
     public:
-        PrimaryGeneratorMessenger(PrimaryGeneratorAction *);
-        ~PrimaryGeneratorMessenger() override;
+        GeneratorMessenger(PrimaryGenerator*);
+        ~GeneratorMessenger() override;
 
-        void SetNewValue(G4UIcommand *, G4String) override;
+        void SetNewValue(G4UIcommand*, G4String) override;
 
     private:
-        PrimaryGeneratorAction *fPrimaryGeneratorAction;
-        G4UIdirectory *GunDir;
-        G4UIcmdWithADoubleAndUnit *SetBeamSpreadSigmaCmd;
+        PrimaryGenerator* fPrimaryGenerator;
+        G4UIdirectory* fDirectory;
+        G4UIcmdWithAString* fInputFileName;
+        G4UIcmdWithABool* fFixedPrimaryVertexPosition;
+        G4UIcmdWith3VectorAndUnit* fPrimaryVertexPosition;
+        G4UIcmdWithABool* fCCNue;
+        G4UIcmdWithABool* fCCNumu;
+        G4UIcmdWithABool* fCCNutau;
+        G4UIcmdWithABool* fNC;
+
     };
 }
 

@@ -28,9 +28,7 @@ namespace SimCalModule
         }
         if (G4RunManager::GetRunManager()->GetRunManagerType() != G4RunManager::masterRM)
         {
-            G4String rootFileName = "calo_" + fPrimaryGen->GetParticleGun()->GetParticleDefinition()->GetParticleName() + "_";
-            rootFileName += G4BestUnit(fPrimaryGen->GetParticleGun()->GetParticleMomentum(), "Energy"); // GetParticleEnergy()
-            rootFileName += "_Run" + std::to_string(aRun->GetRunID());
+            G4String rootFileName = "calo_" + fPrimaryGen->GetInputFileName();
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";
@@ -71,9 +69,10 @@ namespace SimCalModule
             G4cout << "The run with RunID  " << aRun->GetRunID() << " is finished. " << G4endl;
         if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::masterRM)
         {
-            G4String rootFileName = "calo_" + fPrimaryGen->GetParticleGun()->GetParticleDefinition()->GetParticleName() + "_";
-            rootFileName += G4BestUnit(fPrimaryGen->GetParticleGun()->GetParticleMomentum(), "Energy"); // GetParticleEnergy()
-            rootFileName += "_Run" + std::to_string(aRun->GetRunID());
+            G4String rootFileName = "calo_" + fPrimaryGen->GetInputFileName();
+            if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
+                rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
+            rootFileName += ".root";
             while (rootFileName.find(" ") != G4String::npos)
             {
                 rootFileName.erase(rootFileName.find(" "), 1);
@@ -125,6 +124,10 @@ namespace SimCalModule
         case ParticleEnergy_Data:
             ParticleEnergy = data;
             break;
+        case Interaction_x_Data:
+            Interaction_x = data;
+            break;
+        
         case CaloEdepSum_Data:
             CaloEdepSum = data;
             break;

@@ -1,5 +1,5 @@
 #include "ActionInitialization.hh"
-#include "PrimaryGeneratorAction.hh"
+#include "PrimaryGenerator.hh"
 #include "EventAction.hh"
 #include "RunAction.hh"
 
@@ -16,13 +16,13 @@ namespace SimCalModule
 
     void ActionInitialization::BuildForMaster() const
     {
-        PrimaryGeneratorAction *primary = new PrimaryGeneratorAction;
+        PrimaryGenerator *primary = new PrimaryGenerator;
         SetUserAction(new RunAction(primary));
     }
 
     void ActionInitialization::Build() const
     {
-        PrimaryGeneratorAction *primary = new PrimaryGeneratorAction;
+        PrimaryGenerator *primary = new PrimaryGenerator;
         SetUserAction(primary);
         RunAction *run = new RunAction(primary);
         SetUserAction(run);

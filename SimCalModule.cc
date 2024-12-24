@@ -7,7 +7,7 @@
 #include "G4VisExecutive.hh"
 #include "G4SystemOfUnits.hh"
 
-#include "QGSP_BERT.hh"
+#include "FTFP_BERT.hh"
 
 #include "Randomize.hh"
 
@@ -30,15 +30,15 @@ int main(int argc, char **argv)
     G4Random::setTheSeed(seed);
 
 	// auto runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::SerialOnly);
-	auto runManager = G4RunManagerFactory::CreateRunManager();
-	G4int nThreads = std::min(G4Threading::G4GetNumberOfCores(), 10);
-	runManager->SetNumberOfThreads(nThreads);
+	auto* runManager = G4RunManagerFactory::CreateRunManager(G4RunManagerType::Serial);
+    // G4int nThreads = std::min(G4Threading::G4GetNumberOfCores(), 10);
+	// runManager->SetNumberOfThreads(nThreads);
 
     auto Detector = new DetectorConstruction();
     runManager->SetUserInitialization(Detector);
 
-    auto physicsList = new QGSP_BERT;
-    physicsList->SetDefaultCutValue(0.05 * mm);
+    auto physicsList = new FTFP_BERT;
+    // physicsList->SetDefaultCutValue(0.05 * mm);
     runManager->SetUserInitialization(physicsList);
 
     runManager->SetUserInitialization(new ActionInitialization);
@@ -70,7 +70,7 @@ int main(int argc, char **argv)
     }
 
     // GDML
-/*    if (argc == 4)
+    if (argc == 4)
     {
         G4GDMLParser parser;
         parser.SetRegionExport(true);
@@ -79,7 +79,7 @@ int main(int argc, char **argv)
         parser.SetOutputFileOverwrite(true);
         parser.Write(argv[3], G4TransportationManager::GetTransportationManager()->GetNavigatorForTracking()->GetWorldVolume()->GetLogicalVolume());
     }
-*/
+
     // job termination
     delete visManager;
     delete runManager;

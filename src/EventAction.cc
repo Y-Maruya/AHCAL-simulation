@@ -1,5 +1,5 @@
 #include "EventAction.hh"
-#include "PrimaryGeneratorAction.hh"
+#include "PrimaryGenerator.hh"
 #include "DetectorConstruction.hh"
 #include "EcalUnitSD.hh"
 #include "HcalUnitSD.hh"
@@ -28,8 +28,12 @@ namespace SimCalModule
         if (EvtID % 100 == 0)
             G4cout << "Start to simulate the event " << EvtID << G4endl;
 
-        const PrimaryGeneratorAction *primary = static_cast<const PrimaryGeneratorAction *>(G4RunManager::GetRunManager()->GetUserPrimaryGeneratorAction());
-        ParticleEnergy = primary->GetParticleGun()->GetParticleEnergy() / MeV;
+        const PrimaryGenerator *primary = static_cast<const PrimaryGenerator *>(G4RunManager::GetRunManager()->GetUserPrimaryGenerator());
+        ParticleEnergy = primary->GetPrimaryEnergy() / GeV;
+        ftagNulabel = primary->GetftagNulabel();
+        interaction_x = primary->GetInteractionPlace().x() / mm;
+        interaction_y = primary->GetInteractionPlace().y() / mm;
+        interaction_z = primary->GetInteractionPlace().z() / mm;
 
         const DetectorConstruction *detector = static_cast<const DetectorConstruction *>(G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
@@ -111,6 +115,7 @@ namespace SimCalModule
 
         fRunAction->TransferData(EvtID, EvtID_Data);
         fRunAction->TransferData(ParticleEnergy, ParticleEnergy_Data);
+        fRunAction
         fRunAction->TransferData(CaloEdepSum, CaloEdepSum_Data);
         fRunAction->TransferData(CaloVisibleEdepSum, CaloVisibleEdepSum_Data);
         fRunAction->TransferData(EcalEdepSum, EcalEdepSum_Data);

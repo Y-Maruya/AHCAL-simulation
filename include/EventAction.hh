@@ -25,6 +25,10 @@ namespace SimCalModule
         G4int fHcalCollID;
         G4int EvtID;
         G4double ParticleEnergy;
+        G4int ftagNulabel;
+        G4double interaction_x;
+        G4double interaction_y;
+        G4double interaction_z;
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;

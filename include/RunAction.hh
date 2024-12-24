@@ -14,6 +14,10 @@ namespace SimCalModule
     {
         EvtID_Data,
         ParticleEnergy_Data,
+        Interaction_x_Data,
+        Interaction_y_Data,
+        Interaction_z_Data,
+        ftagNulabel_Data,
         CaloEdepSum_Data,
         CaloVisibleEdepSum_Data,
         EcalEdepSum_Data,
@@ -37,13 +41,13 @@ namespace SimCalModule
     };
 
     class EventAction;
-    class PrimaryGeneratorAction;
+    class PrimaryGenerator;
 
     class RunAction : public G4UserRunAction
     {
 
     public:
-        RunAction(PrimaryGeneratorAction *);
+        RunAction(PrimaryGenerator *);
         ~RunAction() override;
         void BeginOfRunAction(const G4Run *) override;
         void EndOfRunAction(const G4Run *) override;
@@ -54,11 +58,15 @@ namespace SimCalModule
         void TransferData(std::vector<G4double>, SimuData);
 
     private:
-        PrimaryGeneratorAction *fPrimaryGen;
+        PrimaryGenerator *fPrimaryGen;
         TFile *fileRun;
         TTree *treeEvt;
         G4int EvtID;
         G4double ParticleEnergy;
+        G4double ftagNulabel;
+        G4double Interaction_x;
+        G4double Interaction_y;
+        G4double Interaction_z;
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;

@@ -1,0 +1,12 @@
+Universe     = Vanilla
+Getenv       = True
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/Offaxis/offaxis/utils/mac/GlobalSetup_AHCAL_$(Process).mac /eos/user/y/ymaruya/FASER/on/$(Process) $(Process) 
++JobFlavour = "workday"
+
+# comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
+Output = out/$(Process).stdout
+Error  = err/$(Process).stderr
+Log    = log/$(Process).log
+
+Queue 100

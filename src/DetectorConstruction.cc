@@ -64,6 +64,9 @@ namespace SimCalModule
         EcalUnitParameter.House_X = 45.0 * mm;
         EcalUnitParameter.House_Y = 5.0 * mm;
         EcalUnitParameter.House_Z = 2.0 * mm;
+        EcalUnitParameter.Sensitive_dig_out_X = 0.0 * mm;
+        EcalUnitParameter.Sensitive_dig_out_Y = 0.0 * mm;
+        EcalUnitParameter.Sensitive_dig_out_Z = 0.0 * mm;
         HcalUnitParameter.ifDoubleSidedReadout = false;
         HcalUnitParameter.SensitiveLength = 3.0 * mm;
         HcalUnitParameter.SensitiveX = 40.0 * mm;
@@ -81,6 +84,7 @@ namespace SimCalModule
         HcalUnitParameter.Sensitive_dig_out_MatIndex = Air;
         HcalUnitParameter.PassiveMatIndex = ESR;
         HcalUnitParameter.AttachMatIndex = Quartz;
+        Initial_pos = G4ThreeVector(0.0*mm,0.0*mm,3500*mm);
         EcalAbsorberThick = 3.2 * mm; // 3.2 mm for ScW ECAL
         HcalAbsorberThick = 20.0 * mm;
         EcalPCBThick = 2.0 * mm;
@@ -251,7 +255,7 @@ namespace SimCalModule
 
         // World
         G4double HalfCubicWorld = 5 * m;
-        G4Box *World_Solid = new G4Box("World_Solid", HalfCubicWorld, HalfCubicWorld, HalfCubicWorld);
+        G4Box *World_Solid = new G4Box("World_Solid", HalfCubicWorld, HalfCubicWorld, HalfCubicWorld+5 * m);
         G4LogicalVolume *World_Logical = new G4LogicalVolume(World_Solid, GetCaloMaterial(WorldMatIndex), "World_Logical");
         G4VPhysicalVolume *World_Physical = new G4PVPlacement(0, G4ThreeVector(), World_Logical, "World_Physical", 0, false, 0, ifcheckOverlaps);
 
@@ -262,7 +266,7 @@ namespace SimCalModule
         {
             UpstreamSolid = new G4Box("UpstreamSolid", UpstreamSizeX / 2., UpstreamSizeY / 2., UpstreamSizeZ / 2.);
             UpstreamLogical = new G4LogicalVolume(UpstreamSolid, GetCaloMaterial(UpstreamMatIndex), "UpstreamLogical");
-            new G4PVPlacement(0, G4ThreeVector(0, 0, -UpstreamSizeZ / 2. - 50. * mm), UpstreamLogical, "UpstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
+            new G4PVPlacement(0, G4ThreeVector(0, 0, -UpstreamSizeZ / 2. - 50. * mm)+Initial_pos, UpstreamLogical, "UpstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
         }
 
         // ECAL
@@ -303,16 +307,16 @@ namespace SimCalModule
                     for (G4int x = 0; x < EcalCellNumberX; x++)
                     {
                         EcalCopyNum++;
-                        new CaloUnitVolume("EcalUnit", EcalUnitInv, G4ThreeVector(EcalUnitSizeX * (EcalCellNumberX / 2. - 0.5 - x), EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - y), Zpos),
+                        new CaloUnitVolume("EcalUnit", EcalUnitInv, G4ThreeVector(EcalUnitSizeX * (EcalCellNumberX / 2. - 0.5 - x), EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
                                            ifcheckOverlaps, World_Logical, EcalUnitLogical, EcalSensitiveLogical, &EcalUnitParameter, false, EcalCopyNum, this);
                     }
                 }
                 Zpos += (EcalUnitSizeZ + EcalPCBThick) / 2.;
                 if (EcalPCBThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount / EcalCellMaxCount * EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount / EcalCellMaxCount * EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                 Zpos += (EcalPCBThick + EcalAbsorberThick) / 2.;
                 if (EcalAbsorberThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount / EcalCellMaxCount * EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount / EcalCellMaxCount * EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                 Zpos += (EcalAbsorberThick + EcalUnitSizeZ) / 2.;
             }
         }
@@ -336,22 +340,22 @@ namespace SimCalModule
                     for (G4int y = 0; y < EcalCellNumberY; y++)
                     {
                         EcalCopyNum++;
-                        new CaloUnitVolume("EcalUnit", EcalUnitRMHorizontal, G4ThreeVector(0, EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - y), Zpos),
+                        new CaloUnitVolume("EcalUnit", EcalUnitRMHorizontal, G4ThreeVector(0, EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
                                            ifcheckOverlaps, World_Logical, EcalUnitLogical, EcalSensitiveLogical, &EcalUnitParameter, false, EcalCopyNum, this);
                     }
                 else
                     for (G4int x = 0; x < EcalCellNumberX; x++)
                     {
                         EcalCopyNum++;
-                        new CaloUnitVolume("EcalUnit", EcalUnitRMVertical, G4ThreeVector(EcalUnitSizeY * (EcalCellNumberX / 2. - 0.5 - x), 0, Zpos),
+                        new CaloUnitVolume("EcalUnit", EcalUnitRMVertical, G4ThreeVector(EcalUnitSizeY * (EcalCellNumberX / 2. - 0.5 - x), 0, Zpos)+Initial_pos,
                                            ifcheckOverlaps, World_Logical, EcalUnitLogical, EcalSensitiveLogical, &EcalUnitParameter, false, EcalCopyNum, this);
                     }
                 Zpos += (EcalUnitSizeZ + EcalPCBThick) / 2.;
                 if (EcalPCBThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                 Zpos += (EcalPCBThick + EcalAbsorberThick) / 2.;
                 if (EcalAbsorberThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                 Zpos += (EcalAbsorberThick + EcalUnitSizeZ) / 2.;
             }
         }
@@ -366,7 +370,7 @@ namespace SimCalModule
             G4double Zpos = ECALCoverThick / 2.;
             auto ECALCoverSolid = new G4Box("ECALCoverSolid", EcalXYsize / 2., EcalXYsize / 2., ECALCoverThick / 2.);
             auto ECALCoverLogical = new G4LogicalVolume(ECALCoverSolid, GetCaloMaterial(Al), "ECALCoverLogical");
-            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), ECALCoverLogical, "ECALCoverPhysicalFront", World_Logical, false, 0, ifcheckOverlaps);
+            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, ECALCoverLogical, "ECALCoverPhysicalFront", World_Logical, false, 0, ifcheckOverlaps);
             Zpos += 2. * mm;
             Zpos += (ECALCoverThick + EcalUnitSizeZ) / 2.;
             auto EcalCellMax = std::to_string(std::max(EcalCellNumberX, EcalCellNumberY));
@@ -382,24 +386,24 @@ namespace SimCalModule
                         for (G4int x = 0; x < EcalCellNumberX; x++)
                         {
                             EcalCopyNum++;
-                            new CaloUnitVolume("EcalUnit", 0, G4ThreeVector(EcalUnitSizeX * (EcalCellNumberX / 2. - 0.5 - x), EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - y), Zpos),
+                            new CaloUnitVolume("EcalUnit", 0, G4ThreeVector(EcalUnitSizeX * (EcalCellNumberX / 2. - 0.5 - x), EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
                                                ifcheckOverlaps, World_Logical, EcalUnitLogical, EcalSensitiveLogical, &EcalUnitParameter, false, EcalCopyNum, this);
                         }
                     }
                     Zpos += (EcalUnitSizeZ + EcalPCBThick) / 2.;
                     if (EcalPCBThick > 0)
-                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                     Zpos += 0.75 * mm;
                     Zpos += (EcalPCBThick + EcalAbsorberThick) / 2.;
                     if (EcalAbsorberThick > 0)
-                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                     Zpos += (EcalAbsorberThick + EcalPCBThick) / 2.;
                     Zpos += 0.75 * mm;
                 }
                 else
                 {
                     if (EcalPCBThick > 0)
-                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalPCBLogical, "EcalPCBPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                     Zpos += (EcalUnitSizeZ + EcalPCBThick) / 2.;
                     for (G4int y = 0; y < EcalCellNumberX; y++)
                     {
@@ -407,14 +411,14 @@ namespace SimCalModule
                         for (G4int x = 0; x < EcalCellNumberY; x++)
                         {
                             EcalCopyNum++;
-                            new CaloUnitVolume("EcalUnit", EcalUnitRM, G4ThreeVector(EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - x), EcalUnitSizeX * (EcalCellNumberX / 2. - 0.5 - y), Zpos),
+                            new CaloUnitVolume("EcalUnit", EcalUnitRM, G4ThreeVector(EcalUnitSizeY * (EcalCellNumberY / 2. - 0.5 - x), EcalUnitSizeX * (EcalCellNumberX / 2. - 0.5 - y), Zpos)+Initial_pos,
                                                ifcheckOverlaps, World_Logical, EcalUnitLogical, EcalSensitiveLogical, &EcalUnitParameter, false, EcalCopyNum, this);
                         }
                     }
                     Zpos += 1.5 * mm;
                     Zpos += (EcalUnitSizeZ + EcalAbsorberThick) / 2.;
                     if (EcalAbsorberThick > 0)
-                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, EcalAbsLogical, "EcalAbsPhysical", World_Logical, false, EcalCopyNum / EcalCellMaxCount * EcalCellMaxCount, ifcheckOverlaps);
                     Zpos += (EcalAbsorberThick + EcalUnitSizeZ) / 2.;
                     Zpos += 1.5 * mm;
                 }
@@ -423,7 +427,7 @@ namespace SimCalModule
             Zpos -= 0.75 * mm;
             Zpos += 2. * mm;
             Zpos += ECALCoverThick / 2.;
-            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), ECALCoverLogical, "ECALCoverPhysicalBack", World_Logical, false, 0, ifcheckOverlaps);
+            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, ECALCoverLogical, "ECALCoverPhysicalBack", World_Logical, false, 0, ifcheckOverlaps);
         }
 
         // Intermediate
@@ -436,7 +440,7 @@ namespace SimCalModule
             G4double Zpos = IntermediateSizeZ / 2.;
             if (EcalModuleType > 0)
                 Zpos += (EcalUnitSizeZ + EcalPCBThick + EcalAbsorberThick) * EcalLayerNumber;
-            new G4PVPlacement(0, G4ThreeVector(0, 0, EcalUnitSizeZ * EcalLayerNumber + IntermediateSizeZ / 2.), IntermediateLogical, "IntermediatePhysical", World_Logical, false, 0, ifcheckOverlaps);
+            new G4PVPlacement(0, G4ThreeVector(0, 0, EcalUnitSizeZ * EcalLayerNumber + IntermediateSizeZ / 2.)+Initial_pos, IntermediateLogical, "IntermediatePhysical", World_Logical, false, 0, ifcheckOverlaps);
         }
 
         // HCAL
@@ -486,15 +490,15 @@ namespace SimCalModule
             if(HcaltriggerThick>0){
                 auto HCALtriggerSolid = new G4Box("HCALtriggerSolid", HcalXYsize / 2., HcalXYsize / 2., HcaltriggerThick / 2.);
                 auto HCALtriggerLogical = new G4LogicalVolume(HCALtriggerSolid, GetCaloMaterial(HcaltriggerIndex), "HCALtriggerLogical");
-                new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HCALtriggerLogical, "HCALtriggerPhysicalFront", World_Logical, false, 0, ifcheckOverlaps);
+                new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALtriggerLogical, "HCALtriggerPhysicalFront", World_Logical, false, 0, ifcheckOverlaps);
             }
-            Zpos += HcaltriggerThick + 1500. * mm;
+            Zpos += HcaltriggerThick + 230. * mm;
 
             G4double HCALCoverThick = 2. * mm;
             Zpos += HCALCoverThick / 2.;
             auto HCALCoverSolid = new G4Box("HCALCoverSolid", HcalXYsize / 2., HcalXYsize / 2., HCALCoverThick / 2.);
             auto HCALCoverLogical = new G4LogicalVolume(HCALCoverSolid, GetCaloMaterial(HcalAbsorberMatIndex), "HCALCoverLogical");
-            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HCALCoverLogical, "HCALCoverPhysicalFront", World_Logical, false, 0, ifcheckOverlaps);
+            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALCoverLogical, "HCALCoverPhysicalFront", World_Logical, false, 0, ifcheckOverlaps);
             Zpos += 2. * mm;
             Zpos += (HCALCoverThick + HcalUnitSizeZ) / 2.;
             for (G4int z = 0; z < HcalLayerNumber; z++)
@@ -505,29 +509,29 @@ namespace SimCalModule
                     for (G4int x = 0; x < HcalCellNumberX; x++)
                     {
                         HcalCopyNum++;
-                        new CaloUnitVolume("HcalUnit", HcalUnitInv, G4ThreeVector(HcalUnitSizeX * (HcalCellNumberX / 2. - 0.5 - x), HcalUnitSizeY * (HcalCellNumberY / 2. - 0.5 - y), Zpos),
+                        new CaloUnitVolume("HcalUnit", HcalUnitInv, G4ThreeVector(HcalUnitSizeX * (HcalCellNumberX / 2. - 0.5 - x), HcalUnitSizeY * (HcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
                                            ifcheckOverlaps, World_Logical, HcalUnitLogical, HcalSensitiveLogical, &HcalUnitParameter, false, HcalCopyNum, this);
                     }
                 }
                 Zpos += (HcalUnitSizeZ + HcalPCBThick) / 2.;
                 if (HcalPCBThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
 
 
                 Zpos += (HcalPCBThick + HcalPCB_Cu_Thick) / 2.;
 				if(HcalPCB_Cu_Thick>0)
-					new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HcalPCB_Cu_Logical, "HcalPCB_Cu_Physical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+					new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCB_Cu_Logical, "HcalPCB_Cu_Physical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
 
 
                 Zpos += (HcalPCB_Cu_Thick + HcalAbsorberThick) / 2. + HcalPCB_Abs_gap * mm;  // HcalPCBGap 4 mm
                 if (HcalAbsorberThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HcalAbsLogical, "HcalAbsPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalAbsLogical, "HcalAbsPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
                 Zpos += (HcalAbsorberThick + HcalUnitSizeZ) / 2.;
             }
             Zpos -= HcalUnitSizeZ / 2.;
             Zpos += 2. * mm;
             Zpos += HCALCoverThick / 2.;
-            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HCALCoverLogical, "HCALCoverPhysicalBack", World_Logical, false, 0, ifcheckOverlaps);
+            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALCoverLogical, "HCALCoverPhysicalBack", World_Logical, false, 0, ifcheckOverlaps);
         }
         else if (HcalModuleType == 2)
         {
@@ -549,16 +553,16 @@ namespace SimCalModule
                     for (G4int x = 0; x < HcalCellNumberX; x++)
                     {
                         HcalCopyNum++;
-                        new CaloUnitVolume("HcalUnit", HcalUnitInv, G4ThreeVector(HcalUnitSizeX * (HcalCellNumberX / 2. - 0.5 - x), HcalUnitSizeY * (HcalCellNumberY / 2. - 0.5 - y), Zpos),
+                        new CaloUnitVolume("HcalUnit", HcalUnitInv, G4ThreeVector(HcalUnitSizeX * (HcalCellNumberX / 2. - 0.5 - x), HcalUnitSizeY * (HcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
                                            ifcheckOverlaps, World_Logical, HcalUnitLogical, HcalSensitiveLogical, &HcalUnitParameter, false, HcalCopyNum, this);
                     }
                 }
                 Zpos += (HcalUnitSizeZ + HcalPCBThick) / 2.;
                 if (HcalPCBThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
                 Zpos += (HcalPCBThick + HcalAbsorberThick) / 2.;  // HcalPCBGap 4 mm
                 if (HcalAbsorberThick > 0)
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos), HcalAbsLogical, "HcalAbsPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalAbsLogical, "HcalAbsPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
                 Zpos += (HcalAbsorberThick + HcalUnitSizeZ) / 2.;
             }
         }

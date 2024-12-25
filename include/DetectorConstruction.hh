@@ -3,6 +3,7 @@
 
 #include "globals.hh"
 #include "G4VUserDetectorConstruction.hh"
+#include "G4ThreeVector.hh"
 #include "CaloUnitVolume.hh"
 #include "EcalUnitSD.hh"
 #include "HcalUnitSD.hh"
@@ -99,6 +100,7 @@ namespace SimCalModule
         CaloUnitParameter EcalUnitParameter;
         CaloUnitParameter HcalUnitParameter;
         G4bool ifcheckOverlaps;
+        G4ThreeVector Initial_pos;
         G4double EcalAbsorberThick;
         G4double HcalAbsorberThick;
         G4double EcalPCBThick;

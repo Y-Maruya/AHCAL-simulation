@@ -3,9 +3,9 @@
 /event/verbose 0
 /tracking/verbose 0
 
-/generator/inputFileName /rhome/maruya/OffaxisStudy/AHCAL-simulation/pi0.gfaser.root
+/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/run/muon.gfaser.root
 /generator/FixedPrimaryVertexPosition true
-/generator/PrimaryVertexPosition 0 0 -0.1 cm
+/generator/PrimaryVertexPosition 0 0 0 cm
 /run/initialize
 
 /run/beamOn 2

@@ -3,7 +3,7 @@
 /event/verbose 0
 /tracking/verbose 0
 
-/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/run/muon.gfaser.root
+/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/run/pion.gfaser.root
 /generator/FixedPrimaryVertexPosition true
 /generator/PrimaryVertexPosition 0 0 0 cm
 /run/initialize

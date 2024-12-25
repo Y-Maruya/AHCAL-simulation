@@ -1,11 +1,22 @@
 #include "Global.h"
-#include "TFile.h"
-#include "TTree.h"
+#include <TH2.h>
+#include <TH2Poly.h>
+#include <TH3D.h>
+#include <TStyle.h>
+#include <TCanvas.h>
+#include <TLatex.h>
+#include <TEventList.h>
+#include <TFile.h>
+#include <iostream>
+#include <string>
+#include <TMath.h>
+#include <TROOT.h>
+#include <TChain.h>
 #include <iostream>
 using namespace std;
 
 
-void BeamDataStructure(TString InputFile, TString OutputFile, Int_t ECALOption, Int_t min_event, Int_t max_event)
+void visualize(TString InputFile, TString OutputFile, Int_t ECALOption, Int_t min_event, Int_t max_event)
 {
     // if (gSystem->AccessPathName(InputDir + "/" + InputFileName))
     // {
@@ -83,6 +94,7 @@ void BeamDataStructure(TString InputFile, TString OutputFile, Int_t ECALOption, 
     Int_t NEvent = elist->GetN();
     for (Int_t i = 0; i < NEvent; i++)
     {
+        DataFile->cd();
         DetectorID.clear();
         CellID.clear();
         Hit_Energy.clear();
@@ -96,24 +108,26 @@ void BeamDataStructure(TString InputFile, TString OutputFile, Int_t ECALOption, 
         EventNum = i;
         // TH3D *totalhist_hcal = new TH3D(Form("totalhist_hcal_%d",EventID),"totalhist_hcal;x[mm];y[mm];z[mm]",20,-400,400,20,-400,400,400,3800,5000);
         TH2Poly *ecal_zx = new TH2Poly();
-        ecal_zx->SetName(Form("zx_%d",EventID));
+        ecal_zx->SetName(Form("zx_%d",EvtID));
         ecal_zx->SetTitle("zx;z[mm];x[mm]");
         TH2Poly *ecal_zy = new TH2Poly();
-        ecal_zy->SetName(Form("zy_%d",EventID));
+        ecal_zy->SetName(Form("zy_%d",EvtID));
         ecal_zy->SetTitle("zy;z[mm];y[mm]");
         for(int i=0;i<16;i++){
             for(int j=0;j<5;j++){
-                ecal_zx->AddBin(3500+4.25-1+19.9*i,(j-2)*45.3-22.5,3500+4.25+1+19.9*i,(j-2)*45.3+22.5);
-                ecal_zy->AddBin(3500+15.45-1+19.9*i,(j-2)*45.3-22.5,3500+15.45+1+19.9*i,(j-2)*45.3+22.5);
+                ecal_zx->AddBin(3500+4.25-2+19.9*i,(j-2)*45.3-22.5,3500+4.25+2+19.9*i,(j-2)*45.3+22.5);
+                ecal_zy->AddBin(3500+15.45-2+19.9*i,(j-2)*45.3-22.5,3500+15.45+2+19.9*i,(j-2)*45.3+22.5);
             }
             for(int j =0;j<42;j++){
-                ecal_zx->AddBin(3500+15.45-1+19.9*i,(j-20.5)*5.3-2.5,3500+15.45+1+19.9*i,(j-20.5)*5.3+2.5);
-                ecal_zy->AddBin(3500+4.25-1+19.9*i,(j-20.5)*5.3-2.5,3500+4.25+1+19.9*i,(j-20.5)*5.3+2.5);
+                ecal_zx->AddBin(3500+15.45-2+19.9*i,(j-20.5)*5.3-2.5,3500+15.45+2+19.9*i,(j-20.5)*5.3+2.5);
+                ecal_zy->AddBin(3500+4.25-2+19.9*i,(j-20.5)*5.3-2.5,3500+4.25+2+19.9*i,(j-20.5)*5.3+2.5);
+
             }
         }
         for(int i=0;i<40;i++){
             for(int j=0;j<18;j++){
-                ecal_zx->AddBin(4483.965-1.5-29.63*i,(j-9)*40.3-20,4483.965+1.5-29.63*i,(j-9)*40.3+20);
+                ecal_zx->AddBin(4483.965-3+29.63*i,(j-8.5)*40.3-20,4483.965+3+29.63*i,(j-8.5)*40.3+20);
+                ecal_zy->AddBin(4483.965-3+29.63*i,(j-8.5)*40.3-20,4483.965+3+29.63*i,(j-8.5)*40.3+20);
             }
         }
         if (ECALOption == 1)
@@ -131,21 +145,22 @@ void BeamDataStructure(TString InputFile, TString OutputFile, Int_t ECALOption, 
                 if(vecEcalToaCell->at(std::distance(vecEcalCellID->begin(), it))>100){
                     continue;
                 }
+                Double_t tmp_energy = vecEcalVisibleEdepCell->at(std::distance(vecEcalCellID->begin(), it));
                 if (ID_Z % 2 == 0)
                 {
                     Hit_X_tmp=5.3 * (20.5 - ID_Y + 1);
                     Hit_Y_tmp=45.3 * (2 - ID_X + 1);
                     Hit_Z_tmp=(ID_Z / 2 - 1) * 19.9 + 11.2 + 3500 + 4.25;
-                    ecal_zx->Fill(Hit_Z_tmp,Hit_X_tmp,vecEcalVisibleEdepCell->at(std::distance(vecEcalCellID->begin(), it)));
-                    ecal_zy->Fill(Hit_Z_tmp,Hit_Y_tmp,vecEcalVisibleEdepCell->at(std::distance(vecEcalCellID->begin(), it)));
+                    ecal_zx->Fill(Hit_Z_tmp,Hit_X_tmp,tmp_energy);
+                    ecal_zy->Fill(Hit_Z_tmp,Hit_Y_tmp,tmp_energy);
                 }
                 else
                 {
                     Hit_X_tmp=45.3 * (2 - ID_X + 1);
                     Hit_Y_tmp=5.3 * (20.5 - ID_Y + 1);
                     Hit_Z_tmp=(ID_Z - 1) / 2 * 19.9 + 3500 + 4.25;
-                    ecal_zx->Fill(Hit_Z_tmp,Hit_X_tmp,vecEcalVisibleEdepCell->at(std::distance(vecEcalCellID->begin(), it)));
-                    ecal_zy->Fill(Hit_Z_tmp,Hit_Y_tmp,vecEcalVisibleEdepCell->at(std::distance(vecEcalCellID->begin(), it)));
+                    ecal_zx->Fill(Hit_Z_tmp,Hit_X_tmp,tmp_energy);
+                    ecal_zy->Fill(Hit_Z_tmp,Hit_Y_tmp,tmp_energy);
                 }
             }
         for (auto it = vecHcalCellID->begin(); it != vecHcalCellID->end(); it++)
@@ -156,7 +171,6 @@ void BeamDataStructure(TString InputFile, TString OutputFile, Int_t ECALOption, 
             Int_t ChipID = (ID_X - 1) / 6 + (ID_Y - 1) / 6 * 3;
             Int_t MemoID = 0;
             Int_t ChannelID = (ID_X - 1) % 6 + (ID_Y - 1) % 6 * 6;
-            DetectorID.push_back(1);
             Double_t Hit_X_tmp,Hit_Y_tmp,Hit_Z_tmp;
             if(vecHcalToaCell->at(std::distance(vecHcalCellID->begin(), it))>100){
                 continue;
@@ -164,26 +178,55 @@ void BeamDataStructure(TString InputFile, TString OutputFile, Int_t ECALOption, 
             Hit_X_tmp=40.3 * (9 - 0.5 - ID_X + 1);
             Hit_Y_tmp=40.3 * (9 - 0.5 - ID_Y + 1);
             Hit_Z_tmp=(ID_Z - 1) * 29.63+4483.965;
-            ecal_zx->Fill(Hit_Z_tmp,Hit_X_tmp,vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it)));
-            ecal_zy->Fill(Hit_Z_tmp,Hit_Y_tmp,vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it)));
+            double tmp_energy = vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it));
+            ecal_zx->Fill(Hit_Z_tmp,Hit_X_tmp,tmp_energy);
+            ecal_zy->Fill(Hit_Z_tmp,Hit_Y_tmp,tmp_energy);
         }
-        TCanvas *c1 = new TCanvas("c1", "c1", 1600,1600);
-        c1->Divide(2,1);
-        c1->cd(1)->SetLogz();
-        ecal_zx->GetZaxis()->SetRangeUser(0.1,10000);
-        ecal_zx->Draw("colz");
-        c1->cd(2)->SetLogz();
-        ecal_zy->GetZaxis()->SetRangeUser(0.1,10000);
-        ecal_zy->Draw("colz");
-        if(gSystem->AccessPathName("img")){
-            gSystem->mkdir("img");
-        }
-        c1->SaveAs(Form("img/%d.png",EventID));
+        TCanvas *c1 = new TCanvas("c1", "c1", 4000,4000);
+        c1->Divide(1,2);
+        c1->cd(1);
+        ecal_zx->GetXaxis()->SetRangeUser(3400,6000);
+        ecal_zx->GetYaxis()->SetRangeUser(-900,900);
+        // ecal_zx->GetZaxis()->SetRangeUser(.1,10000);
+        ecal_zx->SetMaximum(1e4);
+        ecal_zx->SetMinimum(0.1);
+        gPad->SetLogz();
+        ecal_zx->Draw("colz 0");
+        c1->cd(2);
+        ecal_zy->GetXaxis()->SetRangeUser(3400,6000);
+        ecal_zy->GetYaxis()->SetRangeUser(-900,900);
+        ecal_zy->SetMaximum(1e4);
+        ecal_zy->SetMinimum(0.1);
+        gPad->SetLogz();
+        ecal_zy->Draw("colz 0");
+        
+        // if(gSystem->AccessPathName("img")){
+        //     std:cerr<<"err img dir hasn't created"<<std::endl;
+        //     return;
+        // }
+        gPad->Update(); 
+        c1->SaveAs(Form("img/%d.png",EvtID));
+        
+        ConvertFile->cd();
+        ecal_zx->Write();
+        ecal_zy->Write();
         delete c1;
     }
     delete treeEvt;
     DataFile->Close();
     ConvertFile->cd();
-    delete EventTree;
     ConvertFile->Close();
+}
+
+int main (int argc, char **argv){
+   if(argc != 5){
+      std::cout << "Usage: ./visualize inputname outputname startevent endevent" << std::endl;
+      return 1;
+   }
+   std::string inputname = argv[1];
+   std::string outputname = argv[2];
+   int startevent = std::stoi(argv[3]);
+   int endevent = std::stoi(argv[4]);
+   visualize(inputname,outputname,1,startevent,endevent);
+   return 0;
 }

@@ -36,12 +36,13 @@ void visualize(TString InputFile, TString OutputFile, Int_t ECALOption, Int_t mi
     std::vector<Double_t> Hit_Y;
     std::vector<Double_t> Hit_Z;
     // TString OutputFileName = "MC_" + InputFileName;
-    // if (!gSystem->AccessPathName(OutputDir + "/" + OutputFileName))
+    // if (!gSystem->AccessPathName(OutputDir + "/" + OutputFile))
     // {
-        // std::cout << "The MC file already exists. Skipped..." << std::endl;
-        // return;
+    //     std::cout << "The MC file already exists. Skipped..." << std::endl;
+    //     return;
     // }
-    TFile *ConvertFile = TFile::Open(OutputFile, "RECREATE");
+    TString OutputFilae = OutputFile +"/img.root";
+    TFile *ConvertFile = TFile::Open(OutputFilae, "RECREATE");
     //------------------------------------------------------
     Int_t EvtID;
     Double_t ParticleEnergy;
@@ -205,7 +206,7 @@ void visualize(TString InputFile, TString OutputFile, Int_t ECALOption, Int_t mi
         //     return;
         // }
         gPad->Update(); 
-        c1->SaveAs(Form("img/%d.png",EvtID));
+        c1->SaveAs(OutputFile+Form("/img%d.png",EvtID));
         
         ConvertFile->cd();
         ecal_zx->Write();

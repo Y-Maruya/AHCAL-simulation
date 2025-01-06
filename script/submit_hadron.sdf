@@ -1,0 +1,42 @@
+Universe     = Vanilla
+Getenv       = True
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule 
++JobFlavour = "nextweek"
+
+# comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_lam.mac
+Output = out/lam_$(Process).stdout
+Error  = err/lam_$(Process).stderr
+Log    = log/lam_$(Process).log
+Queue
+
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_nbar.mac
+Output = out/nbar_$(Process).stdout
+Error  = err/nbar_$(Process).stderr
+Log    = log/nbar_$(Process).log
+Queue
+
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_n.mac
+Output = out/n_$(Process).stdout
+Error  = err/n_$(Process).stderr
+Log    = log/n_$(Process).log
+Queue
+
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_lambar.mac
+Output = out/lambar_$(Process).stdout
+Error  = err/lambar_$(Process).stderr
+Log    = log/lambar_$(Process).log
+Queue
+
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_KS.mac
+Output = out/KS_$(Process).stdout
+Error  = err/KS_$(Process).stderr
+Log    = log/KS_$(Process).log
+Queue
+
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_KL.mac
+Output = out/KL_$(Process).stdout
+Error  = err/KL_$(Process).stderr
+Log    = log/KL_$(Process).log
+Queue
+

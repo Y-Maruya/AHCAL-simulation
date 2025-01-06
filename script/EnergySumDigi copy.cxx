@@ -1,12 +1,12 @@
-const Double_t MIPEnergy = 0.461; // Visible
+const Double_t MIPEnergy = 0.307; // Visible
 const Double_t MIPCut = 0.5;
 // const Double_t TimeCut = 150; // ns
 const Double_t ADCHLRatio = 37.5;
 const Double_t ADCError = 0.0002;
 const Int_t ADCLimit = 4000;
 const Int_t ADCSWITCH = 3000;
-const Int_t ADCBaseline = 350;
-const Double_t MIPResponse[2] = {17., 20.};
+const Int_t ADCBaseline = 395;
+const Double_t MIPResponse[2] = {17., 10.};
 const Double_t PEChargeMean[2] = {19.75, 29.4};
 const Double_t PEChargeSigma[2] = {3., 6.};
 const Double_t PEChargeNoise = 3;
@@ -56,17 +56,10 @@ Double_t SiPMDigi(Double_t edep, Int_t i, Int_t m)
     else
         return sMIP * MIPEnergy;
 }
-void SiPMtest(){
-    SiPMResponseFit->SetParameters(3082.88, 1.35524, 4.0577, 0.0206382, 0.109543);
-    TF1 * f1 = new TF1("SiPMDigi_test","SiPMDigi(x,1,1)",0,120);
-    TCanvas*c1 = new TCanvas("c1","c1");
-    f1->Draw();
-    c1->SaveAs("digi.png");
-}
+
 // --------------------------------------------------------------------
 void EnergySumDigi(TString InputDir, TString OutputDir, TString InputFileName)
 {
-    SiPMtest();
     if (gSystem->AccessPathName(InputDir + "/" + InputFileName))
     {
         std::cout << "Error! ROOT file: " << InputDir + "/" + InputFileName << " does not exist." << std::endl;
@@ -165,4 +158,3 @@ void EnergySumDigi(TString InputDir, TString OutputDir, TString InputFileName)
     delete EventTree;
     DataFile->Close();
 }
-

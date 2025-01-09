@@ -1,11 +1,11 @@
 Universe     = Vanilla
 Getenv       = True
-Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/script/BeamDataStructure
-+JobFlavour = "nextweek"
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/script/convert
++JobFlavour = "testmatch"
 
 # comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
-Arguments    = /eos/user/y/ymaruya/FASER/genie_data/faser_on.n100000.$(Process).gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/gfaser.input_test5_$(Process).root 1
-Output = out/trans6_$(Process).stdout
-Error  = err/trans6_$(Process).stderr
-Log    = log/trans6_$(Process).log
+Arguments    = /eos/user/y/ymaruya/FASER/genie_data/faser_on.n10000.$(Process).gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/output_$(Process).h5
+Output = out/trans_$(Process).stdout
+Error  = err/trans_$(Process).stderr
+Log    = log/trans_$(Process).log
 Queue 100

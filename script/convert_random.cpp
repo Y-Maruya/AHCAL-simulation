@@ -3,73 +3,17 @@
 #include <string>
 #include <H5Cpp.h>
 #include <TFile.h>
-#include <TTree.h>
-#include <TF1.h>
 #include <TRandom.h>
+#include <TTree.h>
 #include <TEventList.h>
 #include <TBranch.h>
-const Double_t MIPEnergy = 0.461; // Visible
-const Double_t MIPCut = 0.5;
-// const Double_t TimeCut = 150; // ns
-const Double_t ADCHLRatio = 37.5;
-const Double_t ADCError = 0.0002;
-const Int_t ADCLimit = 4000;
-const Int_t ADCSWITCH = 3000;
-const Int_t ADCBaseline = 350;
-const Double_t MIPResponse[2] = {17., 20.};
-const Double_t PEChargeMean[2] = {19.75, 29.4};
-const Double_t PEChargeSigma[2] = {3., 6.};
-const Double_t PEChargeNoise = 3;
+
 using namespace H5;
 Int_t GetBin1d(int bin1,int bin2,int bin3){
-    return (bin1)*42+(bin2)+(bin3)*42*5;
+    return gRandom->Integer(42*5)+(bin3)*42*5;
 }
 Int_t GetBin1d_AHCAL(int bin1,int bin2,int bin3){
-   return (bin1)*18+(bin2)+(bin3)*18*18;
-}
-auto SiPMResponseFit = new TF1("SiPMResponseFit", "0.876*((1-[1])*[0]*(1-exp(-x/[0]))+[1]*x)*([2]+1)/( [2]+x / ([0]*(1-exp(-x/[0]))) )*(1+[3]*exp(-x/[0]))*(1+[4])");
-
-Int_t ADCDigi(Int_t fADC)
-{
-    Int_t sAdc = -1;
-    while(sAdc < 0)
-        sAdc = std::round(gRandom->Gaus(fADC + ADCBaseline, (fADC + ADCBaseline) * ADCError));
-    if (sAdc > ADCLimit)
-        sAdc = ADCLimit;
-    if (sAdc > ADCSWITCH)
-    {
-        sAdc = -1;
-        while(sAdc < 0)
-            sAdc = std::round(gRandom->Gaus(fADC/ADCHLRatio + ADCBaseline, (fADC/ADCHLRatio + ADCBaseline) * ADCError));
-        if (sAdc > ADCLimit)
-            sAdc = ADCLimit;
-        return std::round((sAdc - ADCBaseline) * ADCHLRatio);
-    }
-    else
-    {
-        return (sAdc - ADCBaseline);
-    }
-}
-Double_t SiPMDigi(Double_t edep, Int_t i, Int_t m)
-{
-    // The Poisson distribution of scintillation process is not considered
-    // sPhoton = gRandom->Poisson(edep * LightYieldperMeV); 10000p.e./MeV
-    Int_t sPix = 0;
-    sPix = gRandom->Poisson(edep / MIPEnergy * MIPResponse[i]);
-    if (sPix > 2500)
-        sPix = std::round(SiPMResponseFit->Eval(sPix)); // HPK and NDL SiPMs has similar pixel number, assume equal
-    Double_t sChargeOutMean = sPix * PEChargeMean[i];
-    Double_t sChargeOutSigma = sqrt(sPix * PEChargeSigma[i] * PEChargeSigma[i] + PEChargeNoise * PEChargeNoise);
-    Int_t sChargeOut = -1;
-    while(sChargeOut < 0)
-        sChargeOut = std::round(gRandom->Gaus(sChargeOutMean, sChargeOutSigma));
-    if (m > 0)
-        sChargeOut = ADCDigi(sChargeOut);
-    Double_t sMIP = sChargeOut / PEChargeMean[i] / MIPResponse[i];
-    if (sMIP < MIPCut)
-        return 0;
-    else
-        return sMIP * MIPEnergy;
+   return gRandom->Integer(18*18)+(bin3)*18*18;
 }
 void convert_caloroot_to_h5(const std::string& root_file_path, const std::string& tree_name, const std::string& h5_file_path, size_t batch_size = 1000) {
     // Open the ROOT file
@@ -89,7 +33,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
     tree->Draw(">>elist", "ftagNulabel<4");
     TEventList *elist = (TEventList*)gDirectory->Get("elist");
     tree->SetEventList(elist);
-    SiPMResponseFit->SetParameters(3082.88, 1.35524, 4.0577, 0.0206382, 0.109543);
+
     std::cout << "Number of entries in the tree: " << elist->GetN() << std::endl;
     // Variables to hold the data
     // int ftagNulabel;
@@ -243,36 +187,27 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
                 if (ID_Z % 2 == 0)
                     std::swap(ID_X, ID_Y);
                 double tmp_energy=vecEcalVisibleEdepCell->at(std::distance(vecEcalCellID->begin(), it));
-                Int_t ChipID = (ID_Y - 1) / 7;
-                Int_t MemoID = 0;
-                Int_t ChannelID = (ID_Y - 1) % 7 * 5 + (ID_X - 1);
-                Int_t CellID = (ID_Z - 1) * 1e5 + ChipID * 1e4 + MemoID * 1e2 + ChannelID;
-                // double tmp_energy_digi=SiPMDigi(tmp_energy,(CellID/100000 - 40) / 38, 1);
-                double tmp_energy_digi=tmp_energy;
-                if(energy_deposit_SciW_data[index*32*42*5+GetBin1d(ID_X-1,ID_Y-1,ID_Z-1)]>0){
-                    std::cout<<"Error: energy deposit already exists"<<std::endl;
-                }else{
-                    energy_deposit_SciW_data[index*32*42*5+GetBin1d(ID_X-1,ID_Y-1,ID_Z-1)]=tmp_energy_digi;
+                Int_t id =0;
+                id = GetBin1d(ID_X-1,ID_Y-1,ID_Z-1);
+                while(energy_deposit_SciW_data[index*32*42*5+id]!=0.0){
+                    id = GetBin1d(ID_X-1,ID_Y-1,ID_Z-1);
                 }
-                total_energy_SciW_data[index]+=tmp_energy_digi;
+                energy_deposit_SciW_data[index*32*42*5+id]=tmp_energy;
+                total_energy_SciW_data[index]+=tmp_energy;
             }
             for (auto it = vecHcalCellID->begin(); it != vecHcalCellID->end(); it++)
             {
                 Int_t ID_X = *it % 100;
                 Int_t ID_Y = *it % 10000 / 100;
                 Int_t ID_Z = *it / 10000;
-                Int_t ChipID = (ID_X - 1) / 6 + (ID_Y - 1) / 6 * 3;
-                Int_t MemoID = 0;
-                Int_t ChannelID = (ID_X - 1) % 6 + (ID_Y - 1) % 6 * 6;
-                Int_t CellID = (ID_Z - 1) * 1e5 + ChipID * 1e4 + MemoID * 1e2 + ChannelID;
                 double tmp_energy=vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it));
-                double tmp_energy_digi=SiPMDigi(tmp_energy,(CellID/100000 - 40) / 38, 1);
-                if(energy_deposit_AHCAL_data[index*40*18*18+GetBin1d_AHCAL(ID_X-1,ID_Y-1,ID_Z-1)]>0){
-                    std::cout<<"Error: energy deposit already exists"<<std::endl;
-                }else{
-                    energy_deposit_AHCAL_data[index*40*18*18+GetBin1d_AHCAL(ID_X-1,ID_Y-1,ID_Z-1)]=tmp_energy_digi;
+                Int_t id =0;
+                id = GetBin1d_AHCAL(ID_X-1,ID_Y-1,ID_Z-1);
+                while(energy_deposit_AHCAL_data[index*40*18*18+id]!=0.0){
+                    id = GetBin1d_AHCAL(ID_X-1,ID_Y-1,ID_Z-1);
                 }
-                total_energy_AHCAL_data[index]+=tmp_energy_digi;
+                energy_deposit_AHCAL_data[index*40*18*18+id]=tmp_energy;
+                total_energy_AHCAL_data[index]+=tmp_energy;
             }
         }
         // Write the data to the HDF5 file
@@ -313,4 +248,4 @@ int main(int argc,char** argv){
     convert_caloroot_to_h5(root_file_path, tree_name, h5_file_path);
     return 0;
 }
-//g++ -o convert_withdigi convert_withdigi.cpp `root-config --cflags --libs` -lhdf5_cpp -lhdf5
+//g++ -o convert_random convert_random.cpp `root-config --cflags --libs` -lhdf5_cpp -lhdf5

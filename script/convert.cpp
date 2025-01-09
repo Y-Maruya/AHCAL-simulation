@@ -235,6 +235,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
 
     // Close the ROOT file
     root_file->Close();
+    h5_file.close();
 }
 
 int main(int argc,char** argv){

@@ -42,11 +42,15 @@ namespace SimCalModule
             return false;
         if (aStep->GetTrack()->GetGlobalTime() > detector->GetHcalStepTimeLimit())
             return false;
-
+        
         G4StepPoint *thePrePoint = aStep->GetPreStepPoint();
         G4StepPoint *thePostPoint = aStep->GetPostStepPoint();
-        G4int copyNo = thePrePoint->GetTouchableHandle()->GetCopyNumber(2);
-
+        G4int copyNo =0;
+        if (thePrePoint->GetPhysicalVolume()->GetName()=="HCALtriggerPhysicalFront"){
+            copyNo = thePrePoint->GetPhysicalVolume()->GetCopyNo();
+        }else{
+            copyNo = thePrePoint->GetTouchableHandle()->GetCopyNumber(2);
+        }
         HcalUnitHit *hit = nullptr;
 
         if (CellIDDecoder.find(copyNo) != CellIDDecoder.end())

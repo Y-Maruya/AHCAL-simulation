@@ -166,6 +166,10 @@ void visualize(TString InputFile, TString OutputFile, Int_t ECALOption, Int_t mi
             }
         for (auto it = vecHcalCellID->begin(); it != vecHcalCellID->end(); it++)
         {
+            if(*it < 10000){
+                std::cout<< vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it))<< std::endl;
+                (*it-1000)
+            }
             Int_t ID_X = *it % 100;
             Int_t ID_Y = *it % 10000 / 100;
             Int_t ID_Z = *it / 10000;
@@ -228,6 +232,6 @@ int main (int argc, char **argv){
    std::string outputname = argv[2];
    int startevent = std::stoi(argv[3]);
    int endevent = std::stoi(argv[4]);
-   visualize(inputname,outputname,1,startevent,endevent);
+   visualize(inputname,outputname,0,startevent,endevent);
    return 0;
 }

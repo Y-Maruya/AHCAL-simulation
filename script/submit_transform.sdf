@@ -1,7 +1,6 @@
 Universe     = Vanilla
 Getenv       = True
 Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/script/convert
-+JobFlavour = "testmatch"
 
 # comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
 Arguments    = /eos/user/y/ymaruya/FASER/genie_data/faser_on.n10000.$(Process).gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/output_$(Process).h5

@@ -188,6 +188,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
     DataSpace dataspace(1, dims);
 
     DataSet dataset_ftagNulabel = h5_file.createDataSet("ftagNulabel", PredType::NATIVE_INT, dataspace);
+    DataSet dataset_ParticleEnergy = h5_file.createDataSet("ParticleEnergy", PredType::NATIVE_FLOAT, dataspace);
     DataSet dataset_Interaction_x = h5_file.createDataSet("Interaction_x", PredType::NATIVE_FLOAT, dataspace);
     DataSet dataset_Interaction_y = h5_file.createDataSet("Interaction_y", PredType::NATIVE_FLOAT, dataspace);
     DataSet dataset_Interaction_z = h5_file.createDataSet("Interaction_z", PredType::NATIVE_FLOAT, dataspace);
@@ -204,6 +205,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
 
     // Buffers to hold the data
     std::vector<int> ftagNulabel_data(batch_size);
+    std::vector<float> ParticleEnergy_data(batch_size);
     std::vector<float> Interaction_x_data(batch_size);
     std::vector<float> Interaction_y_data(batch_size);
     std::vector<float> Interaction_z_data(batch_size);
@@ -224,6 +226,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
             }
             size_t index = i - start;
             ftagNulabel_data[index] = ftagNulabel;
+            ParticleEnergy_data[index] = ParticleEnergy;
             Interaction_x_data[index] = Interaction_x;
             Interaction_y_data[index] = Interaction_y;
             Interaction_z_data[index] = Interaction_z;
@@ -266,7 +269,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
                 Int_t ChannelID = (ID_X - 1) % 6 + (ID_Y - 1) % 6 * 6;
                 Int_t CellID = (ID_Z - 1) * 1e5 + ChipID * 1e4 + MemoID * 1e2 + ChannelID;
                 double tmp_energy=vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it));
-                double tmp_energy_digi=SiPMDigi(tmp_energy,(CellID/100000 - 40) / 38, 1);
+                double tmp_energy_digi=SiPMDigi(tmp_energy,(CellID/100000 - 40) / 38+1, 1);
                 if(energy_deposit_AHCAL_data[index*40*18*18+GetBin1d_AHCAL(ID_X-1,ID_Y-1,ID_Z-1)]>0){
                     std::cout<<"Error: energy deposit already exists"<<std::endl;
                 }else{
@@ -282,6 +285,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
 
         DataSpace memspace(1, count);
         dataset_ftagNulabel.write(ftagNulabel_data.data(), PredType::NATIVE_INT, memspace, dataspace);
+        dataset_ParticleEnergy.write(ParticleEnergy_data.data(), PredType::NATIVE_FLOAT, memspace, dataspace); 
         dataset_Interaction_x.write(Interaction_x_data.data(), PredType::NATIVE_FLOAT, memspace, dataspace);
         dataset_Interaction_y.write(Interaction_y_data.data(), PredType::NATIVE_FLOAT, memspace, dataspace);
         dataset_Interaction_z.write(Interaction_z_data.data(), PredType::NATIVE_FLOAT, memspace, dataspace);

@@ -34,6 +34,7 @@ namespace SimCalModule
         HcalUnitLogical = nullptr;
         EcalSensitiveLogical = nullptr;
         HcalSensitiveLogical = nullptr;
+        HcaltriggerLogical = nullptr;
         fEcalUnitSD.Put(0);
         fHcalUnitSD.Put(0);
         fFieldMessenger.Put(0);
@@ -84,12 +85,15 @@ namespace SimCalModule
         HcalUnitParameter.Sensitive_dig_out_MatIndex = Air;
         HcalUnitParameter.PassiveMatIndex = ESR;
         HcalUnitParameter.AttachMatIndex = Quartz;
-        Initial_pos = G4ThreeVector(0.0*mm,0.0*mm,3500*mm);
+        Initial_pos = G4ThreeVector(850.0*mm,330.0*mm,5570*mm);
         EcalAbsorberThick = 3.2 * mm; // 3.2 mm for ScW ECAL
         HcalAbsorberThick = 20.0 * mm;
         EcalPCBThick = 2.0 * mm;
-        HcaltriggerThick = 100.0 * mm;
+        HcaltriggerThick = 20.0 * mm;
         HcaltriggerIndex = PlasticSciHCAL;
+        HcalgraphiteThick = 50.0 * mm;
+        HCALgraphiteIndex = Graphite;
+        Hcaltriggernplane = 2;
         HcalPCBThick = 2.5 * mm;  //2.5mm *4/5 for PCB, 1mm for component
         HcalPCB_Cu_Thick = 0.0 * mm; //2.5mm *1/5
         HcalPCB_Abs_gap = 6.5 * mm - HcalPCBThick - HcalPCB_Cu_Thick;//4mm-1mm
@@ -113,7 +117,7 @@ namespace SimCalModule
         HcalCellNumberX = 18;
         HcalCellNumberY = 18;
         HcalLayerNumber = 40;
-        EcalModuleType = 3; // 0:Off; 1:Cube; 2:Crossed bar; 3:ScW ECAL
+        EcalModuleType = 0; // 0:Off; 1:Cube; 2:Crossed bar; 3:ScW ECAL
         HcalModuleType = 1; // 0:Off; 1:AHCAL; 2:GSHCAL
         EcalStepTimeLimit = 150.0 * ns;
         HcalStepTimeLimit = 150.0 * ns;
@@ -241,6 +245,8 @@ namespace SimCalModule
         SciGlassMat->GetIonisation()->SetBirksConstant(0.1 * mm / MeV);
         MaterialStore.push_back(SciGlassMat); // 17
 
+        G4Material *GraphiteMat = nistManager->FindOrBuildMaterial("G4_GRAPHITE");
+        MaterialStore.push_back(GraphiteMat);
         // Print material table
         G4cout << *(G4Material::GetMaterialTable()) << G4endl;
     }
@@ -486,13 +492,21 @@ namespace SimCalModule
             G4int HcalCopyNum = 0;
             Zpos -= HcalUnitSizeZ / 2.;    // Additional cover
 
-            Zpos += HcaltriggerThick;
+    
             if(HcaltriggerThick>0){
                 auto HCALtriggerSolid = new G4Box("HCALtriggerSolid", HcalXYsize / 2., HcalXYsize / 2., HcaltriggerThick / 2.);
-                auto HCALtriggerLogical = new G4LogicalVolume(HCALtriggerSolid, GetCaloMaterial(HcaltriggerIndex), "HCALtriggerLogical");
-                new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALtriggerLogical, "HCALtriggerPhysicalFront", World_Logical, false, 0, ifcheckOverlaps);
+                HcaltriggerLogical = new G4LogicalVolume(HCALtriggerSolid, GetCaloMaterial(HcaltriggerIndex), "HCALtriggerLogical");
+                auto HCALgraphiteSolid = new G4Box("HCALgraphiteSolid", HcalXYsize / 2., HcalXYsize / 2., HcalgraphiteThick / 2.);
+                auto HCALgraphiteLogical = new G4LogicalVolume(HCALgraphiteSolid,GetCaloMaterial(HCALgraphiteIndex), "HCALgraphiteLogical");    
+                for(int triggerplane = 0; triggerplane<Hcaltriggernplane;triggerplane++){
+                    Zpos += HcaltriggerThick / 2.;
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcaltriggerLogical, "HCALtriggerPhysicalFront", World_Logical, false, 1000+triggerplane, ifcheckOverlaps);
+                    Zpos += (HcaltriggerThick +HcalgraphiteThick)/ 2.;
+                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALgraphiteLogical, "HCALgraphitePhysicalFront", World_Logical, false, 2000+triggerplane, ifcheckOverlaps);
+                    Zpos += HcalgraphiteThick /2.;
+                }
             }
-            Zpos += HcaltriggerThick + 230. * mm;
+            Zpos += 50. * mm;
 
             G4double HCALCoverThick = 2. * mm;
             Zpos += HCALCoverThick / 2.;
@@ -612,7 +626,17 @@ namespace SimCalModule
             G4SDManager::GetSDMpointer()->AddNewDetector(fHcalUnitSD.Get());
             SetSensitiveDetector(HcalSensitiveLogical, fHcalUnitSD.Get());
         }
-
+        // HCAL Trigger
+        if(HcaltriggerThick>0){
+            if (!fHcalUnitSD.Get())
+            {
+                G4cout << "Construction /CaloDet/HcalSD" << G4endl;
+                HcalUnitSD *hcalunitSD = new HcalUnitSD("/CaloDet/HcalSD");
+                fHcalUnitSD.Put(hcalunitSD);
+            }
+            G4SDManager::GetSDMpointer()->AddNewDetector(fHcalUnitSD.Get());
+            SetSensitiveDetector(HcaltriggerLogical, fHcalUnitSD.Get());
+        } 
         // Field
         if (!fFieldMessenger.Get())
         {

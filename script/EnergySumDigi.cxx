@@ -58,10 +58,14 @@ Double_t SiPMDigi(Double_t edep, Int_t i, Int_t m)
 }
 void SiPMtest(){
     SiPMResponseFit->SetParameters(3082.88, 1.35524, 4.0577, 0.0206382, 0.109543);
-    TF1 * f1 = new TF1("SiPMDigi_test","SiPMDigi(x,1,1)",0,120);
+    TF1 * f1 = new TF1("SiPMDigi_test","SiPMDigi(x,1,1)",0,150);
     TCanvas*c1 = new TCanvas("c1","c1");
     f1->Draw();
     c1->SaveAs("digi.png");
+    TCanvas*c2 = new TCanvas("c2","c2");
+    SiPMResponseFit->SetRange(0,50000);
+    SiPMResponseFit->Draw();
+    c2->SaveAs("SiPMResponseFit.png");
 }
 // --------------------------------------------------------------------
 void EnergySumDigi(TString InputDir, TString OutputDir, TString InputFileName)

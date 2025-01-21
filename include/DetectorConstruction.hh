@@ -38,7 +38,8 @@ namespace SimCalModule
         BGO,
         PlasticSciHCAL,
         PlasticSciECAL,
-        SciGlass
+        SciGlass,
+        Graphite
     };
 
     struct CaloUnitParameter
@@ -105,6 +106,7 @@ namespace SimCalModule
         G4double HcalAbsorberThick;
         G4double EcalPCBThick;
         G4double HcaltriggerThick;
+        G4double HcalgraphiteThick;
         G4double HcalPCBThick;
         G4double HcalPCB_Cu_Thick;
         G4double HcalPCB_Abs_gap;
@@ -117,6 +119,7 @@ namespace SimCalModule
         G4double EcalStepTimeLimit;
         G4double HcalStepTimeLimit;
         MaterialIndex HcaltriggerIndex;
+        MaterialIndex HCALgraphiteIndex;
         MaterialIndex WorldMatIndex;
         MaterialIndex EcalAbsorberMatIndex;
         MaterialIndex HcalAbsorberMatIndex;
@@ -133,10 +136,12 @@ namespace SimCalModule
         G4int HcalCellNumberX;
         G4int HcalCellNumberY;
         G4int HcalLayerNumber;
+        G4int Hcaltriggernplane;
         G4LogicalVolume *EcalUnitLogical;
         G4LogicalVolume *HcalUnitLogical;
         G4LogicalVolume *EcalSensitiveLogical;
         G4LogicalVolume *HcalSensitiveLogical;
+        G4LogicalVolume *HcaltriggerLogical;
         CaloUnitVolume *EcalUnitVolume;
         CaloUnitVolume *HcalUnitVolume;
         std::vector<G4Material *> MaterialStore;

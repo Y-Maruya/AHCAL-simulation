@@ -1,0 +1,12 @@
+Universe     = Vanilla
+Getenv       = True
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/muon.mac $(Process) 
++JobFlavour = "testmatch"
+
+# comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
+Output = out/muon_$(Process).stdout
+Error  = err/muon_$(Process).stderr
+Log    = log/muon_$(Process).log
+
+Queue 1

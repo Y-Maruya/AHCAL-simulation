@@ -270,7 +270,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
                 Int_t it_int = *it;
                 if(it_int<10000){
                     Int_t vetoi = it_int-1000;
-                    veto_energy_data[index*2*vetoi]=vecHcalEdepCell->at(std::distance(vecHcalCellID->begin(), it));
+                    veto_energy_data[index*2 + vetoi]=vecHcalEdepCell->at(std::distance(vecHcalCellID->begin(), it));
                     // std::cout<<"detect veto"<<vetoi<<std::endl;
                     continue;
                 }

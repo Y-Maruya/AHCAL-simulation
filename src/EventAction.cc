@@ -117,15 +117,15 @@ namespace SimCalModule
         CaloEdepSum = EcalEdepSum + HcalEdepSum;
         CaloVisibleEdepSum = EcalVisibleEdepSum + HcalVisibleEdepSum;
         //TruthParticle
-        G4TrajectoryContainer* trajectoryContainer = event->GetTrajectoryContainer();
+        G4TrajectoryContainer* trajectoryContainer = anEvent->GetTrajectoryContainer();
         if (trajectoryContainer) {
             for (size_t i = 0; i < trajectoryContainer->size(); ++i) {
                 G4Trajectory* trajectory = static_cast<G4Trajectory*>((*trajectoryContainer)[i]);
                 G4double mass = G4ParticleTable::GetParticleTable()->FindParticle(trajectory->GetPDGEncoding())->GetPDGMass();
                 G4double energy = std::sqrt(trajectory->GetInitialMomentum().mag2() + mass * mass);
-                G4double v_x = trajectory->GetVertexPosition().x() / mm;
-                G4double v_y = trajectory->GetVertexPosition().y() / mm;
-                G4double v_z = trajectory->GetVertexPosition().z() / mm;
+                G4double v_x = trajectory->GetPoint(0)->GetPosition().x() / mm;
+                G4double v_y = trajectory->GetPoint(0)->GetPosition().y() / mm;
+                G4double v_z = trajectory->GetPoint(0)->GetPosition().z() / mm;
                 AddParticle(trajectory->GetPDGEncoding(), trajectory->GetInitialMomentum().x() / GeV, trajectory->GetInitialMomentum().y() / GeV, trajectory->GetInitialMomentum().z() / GeV,  energy /GeV, trajectory->GetParentID(), trajectory->GetTrackID(), v_x, v_y, v_z);
             }
         }else{

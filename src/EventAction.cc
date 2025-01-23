@@ -8,6 +8,10 @@
 #include "G4RunManager.hh"
 #include "G4SystemOfUnits.hh"
 #include "G4SDManager.hh"
+#include "G4Track.hh"
+#include "G4TrajectoryContainer.hh"
+#include "G4Trajectory.hh"
+
 
 namespace SimCalModule
 {
@@ -112,6 +116,21 @@ namespace SimCalModule
 
         CaloEdepSum = EcalEdepSum + HcalEdepSum;
         CaloVisibleEdepSum = EcalVisibleEdepSum + HcalVisibleEdepSum;
+        //TruthParticle
+        G4TrajectoryContainer* trajectoryContainer = event->GetTrajectoryContainer();
+        if (trajectoryContainer) {
+            for (size_t i = 0; i < trajectoryContainer->size(); ++i) {
+                G4Trajectory* trajectory = static_cast<G4Trajectory*>((*trajectoryContainer)[i]);
+                G4double mass = G4ParticleTable::GetParticleTable()->FindParticle(trajectory->GetPDGEncoding())->GetPDGMass();
+                G4double energy = std::sqrt(trajectory->GetInitialMomentum().mag2() + mass * mass);
+                G4double v_x = trajectory->GetVertexPosition().x() / mm;
+                G4double v_y = trajectory->GetVertexPosition().y() / mm;
+                G4double v_z = trajectory->GetVertexPosition().z() / mm;
+                AddParticle(trajectory->GetPDGEncoding(), trajectory->GetInitialMomentum().x() / GeV, trajectory->GetInitialMomentum().y() / GeV, trajectory->GetInitialMomentum().z() / GeV,  energy /GeV, trajectory->GetParentID(), trajectory->GetTrackID(), v_x, v_y, v_z);
+            }
+        }else{
+            G4cout << "No trajectory container found." << G4endl;
+        }
 
         fRunAction->TransferData(EvtID, EvtID_Data);
         fRunAction->TransferData(ParticleEnergy, ParticleEnergy_Data);
@@ -139,9 +158,21 @@ namespace SimCalModule
         fRunAction->TransferData(vecHcalVisibleEdepCell, vecHcalVisibleEdepCell_Data);
         fRunAction->TransferData(vecHcalHitTimeCell, vecHcalHitTimeCell_Data);
         fRunAction->TransferData(vecHcalToaCell, vecHcalToaCell_Data);
-
+        fRunAction->TransferData(nstoredTruthParticles, nstoredTruthParticles_Data);
+        fRunAction->TransferData(vecTruth_pdgID, vecTruth_pdgID_Data);
+        fRunAction->TransferData(vecTruth_px, vecTruth_px_Data);
+        fRunAction->TransferData(vecTruth_py, vecTruth_py_Data);
+        fRunAction->TransferData(vecTruth_pz, vecTruth_pz_Data);
+        fRunAction->TransferData(vecTruth_x, vecTruth_x_Data);
+        fRunAction->TransferData(vecTruth_y, vecTruth_y_Data);
+        fRunAction->TransferData(vecTruth_z, vecTruth_z_Data);
+        fRunAction->TransferData(vecTruth_energy, vecTruth_energy_Data);
+        fRunAction->TransferData(vecTruth_vertexIndex, vecTruth_vertexIndex_Data);
+        fRunAction->TransferData(vecTruth_trackID, vecTruth_trackID_Data);
         fRunAction->FillEvent();
     }
+
+
 
     void EventAction::ResetEventData()
     {
@@ -171,5 +202,31 @@ namespace SimCalModule
         vecHcalVisibleEdepCell.clear();
         vecHcalHitTimeCell.clear();
         vecHcalToaCell.clear();
+        nstoredTruthParticles = 0;
+        vecTruth_pdgID.clear();
+        vecTruth_px.clear();
+        vecTruth_py.clear();
+        vecTruth_pz.clear();
+        vecTruth_x.clear();
+        vecTruth_y.clear();
+        vecTruth_z.clear();
+        vecTruth_energy.clear();
+        vecTruth_vertexIndex.clear();
+        vecTruth_trackID.clear();
+    }
+
+    void EventAction::AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double v_x, G4double v_y, G4double v_z)
+    {
+        vecTruth_pdgID.push_back(pdgID);
+        vecTruth_px.push_back(px);
+        vecTruth_py.push_back(py);
+        vecTruth_pz.push_back(pz);
+        vecTruth_x.push_back(v_x);
+        vecTruth_y.push_back(v_y);
+        vecTruth_z.push_back(v_z);
+        vecTruth_energy.push_back(energy);
+        vecTruth_vertexIndex.push_back(vertexIndex);
+        vecTruth_trackID.push_back(trackID);
+        nstoredTruthParticles++;
     }
 }

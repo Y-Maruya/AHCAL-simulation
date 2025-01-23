@@ -18,6 +18,7 @@ namespace SimCalModule
         void BeginOfEventAction(const G4Event *) override;
         void EndOfEventAction(const G4Event *) override;
         void ResetEventData();
+        void AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID);
 
     private:
         RunAction *fRunAction;
@@ -49,6 +50,17 @@ namespace SimCalModule
         std::vector<G4double> vecHcalVisibleEdepCell;
         std::vector<G4double> vecHcalHitTimeCell;
         std::vector<G4double> vecHcalToaCell;
+        G4int nstoredTruthParticles;
+        std::vector<G4int> vecTruth_pdgID;
+        std::vector<G4double> vecTruth_px;
+        std::vector<G4double> vecTruth_py;
+        std::vector<G4double> vecTruth_pz;
+        std::vector<G4double> vecTruth_x;
+        std::vector<G4double> vecTruth_y;
+        std::vector<G4double> vecTruth_z;
+        std::vector<G4double> vecTruth_energy;
+        std::vector<G4int> vecTruth_vertexIndex;
+        std::vector<G4int> vecTruth_trackID;
     };
 }
 

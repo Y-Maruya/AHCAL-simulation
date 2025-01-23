@@ -2,7 +2,7 @@
 #include "PrimaryGenerator.hh"
 #include "EventAction.hh"
 #include "RunAction.hh"
-
+#include "TrackingAction.hh"
 namespace SimCalModule
 {
     ActionInitialization::ActionInitialization()
@@ -27,5 +27,6 @@ namespace SimCalModule
         RunAction *run = new RunAction(primary);
         SetUserAction(run);
         SetUserAction(new EventAction(run));
+        SetUserAction(new TrackingAction());
     }
 }

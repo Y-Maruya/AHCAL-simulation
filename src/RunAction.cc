@@ -64,6 +64,17 @@ namespace SimCalModule
             treeEvt->Branch("vecHcalVisibleEdepCell", &vecHcalVisibleEdepCell);
             treeEvt->Branch("vecHcalHitTimeCell", &vecHcalHitTimeCell);
             treeEvt->Branch("vecHcalToaCell", &vecHcalToaCell);
+            treeEvt->Branch("nstoredTruthParticles", &nstoredTruthParticles, "nstoredTruthParticles/I");
+            treeEvt->Branch("vecTruth_pdgID", &vecTruth_pdgID);
+            treeEvt->Branch("vecTruth_px", &vecTruth_px);
+            treeEvt->Branch("vecTruth_py", &vecTruth_py);
+            treeEvt->Branch("vecTruth_pz", &vecTruth_pz);
+            treeEvt->Branch("vecTruth_x", &vecTruth_x);
+            treeEvt->Branch("vecTruth_y", &vecTruth_y);
+            treeEvt->Branch("vecTruth_z", &vecTruth_z);
+            treeEvt->Branch("vecTruth_energy", &vecTruth_energy);
+            treeEvt->Branch("vecTruth_vertexIndex", &vecTruth_vertexIndex);
+            treeEvt->Branch("vecTruth_trackID", &vecTruth_trackID);
         }
     }
 
@@ -112,6 +123,10 @@ namespace SimCalModule
         case ftagNulabel_Data:
             ftagNulabel = data;
             break;
+        case nstoredTruthParticles_Data:
+            nstoredTruthParticles = data;
+            break;
+        
         default:
         {
             G4ExceptionDescription ed;
@@ -194,6 +209,15 @@ namespace SimCalModule
         case vecHcalStepsCell_Data:
             vecHcalStepsCell = data;
             break;
+        case vecTruth_pdgID_Data:
+            vecTruth_pdgID = data;
+            break;
+        case vecTruth_vertexIndex_Data:
+            vecTruth_vertexIndex = data;
+            break;
+        case vecTruth_trackID_Data:
+            vecTruth_trackID = data;
+            break;
         default:
         {
             G4ExceptionDescription ed;
@@ -234,6 +258,27 @@ namespace SimCalModule
             break;
         case vecHcalToaCell_Data:
             vecHcalToaCell = data;
+            break;
+        case vecTruth_px_Data:
+            vecTruth_px = data;
+            break;
+        case vecTruth_py_Data:
+            vecTruth_py = data;
+            break;
+        case vecTruth_pz_Data:
+            vecTruth_pz = data;
+            break;
+        case vecTruth_x_Data:
+            vecTruth_x = data;
+            break;
+        case vecTruth_y_Data:
+            vecTruth_y = data;
+            break;
+        case vecTruth_z_Data:
+            vecTruth_z = data;
+            break;
+        case vecTruth_energy_Data:
+            vecTruth_energy = data;
             break;
         default:
         {

@@ -5,4 +5,6 @@
 /out
 /script/img
 /script/*/*
+/script/*.png
+/script/*.root
 /mac

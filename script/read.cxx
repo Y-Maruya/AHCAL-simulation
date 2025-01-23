@@ -13,6 +13,7 @@
 #include <TROOT.h>
 #include <TChain.h>
 #include <iostream>
+#include <TF1.h>
 using namespace std;
 
 
@@ -24,7 +25,8 @@ void read(TString InputFile, TString OutputFile, Int_t min_event, Int_t max_even
     //     return;
     // }
     //------------------------------------------------------
-    gStyle->SetOptStat(0);
+    // gStyle->SetOptStat(0);
+    gStyle->SetOptFit(1111);
     gStyle->SetPalette(kRainBow);
     Int_t EventNum;
 	double total_Energy=0;
@@ -43,8 +45,8 @@ void read(TString InputFile, TString OutputFile, Int_t min_event, Int_t max_even
     // }
     TString OutputFilae = OutputFile +"/readed.root";
     TFile *ConvertFile = TFile::Open(OutputFilae, "RECREATE");
-    TH1F *h_muon_veto0 = new TH1F("h_muon_veto0", "h_muon_veto0;E_{dep}[MeV];Entries", 100, 0, 10);
-    TH1F *h_muon_veto1 = new TH1F("h_muon_veto1", "h_muon_veto1;E_{dep}[MeV];Entries", 100, 0, 10);
+    TH1F *h_muon_veto0 = new TH1F("h_muon_veto0", "h_muon_veto0;E_{dep}[MeV];Entries", 100, 0, 6);
+    TH1F *h_muon_veto1 = new TH1F("h_muon_veto1", "h_muon_veto1;E_{dep}[MeV];Entries", 100, 0, 6);
     //------------------------------------------------------
     Int_t EvtID;
     Double_t ParticleEnergy;
@@ -144,9 +146,14 @@ void read(TString InputFile, TString OutputFile, Int_t min_event, Int_t max_even
     ConvertFile->cd();
     TCanvas *c1 = new TCanvas("c1", "c1", 800, 600);
     h_muon_veto0->Draw();
+    TF1*landau= new TF1("landau","landau");
+    landau->SetParameter(2,0.18);
+    h_muon_veto0->Fit(landau,"M");
+
     c1->SaveAs(OutputFile + "/h_muon_veto0.png");
     TCanvas *c2 = new TCanvas("c2", "c2", 800, 600);
     h_muon_veto1->Draw();
+    h_muon_veto1->Fit(landau,"M");
     c2->SaveAs(OutputFile + "/h_muon_veto1.png");
     h_muon_veto0->Write();
     h_muon_veto1->Write();

@@ -39,7 +39,8 @@ namespace SimCalModule
         PlasticSciHCAL,
         PlasticSciECAL,
         SciGlass,
-        Graphite
+        Graphite,
+        Concrete
     };
 
     struct CaloUnitParameter

@@ -27,6 +27,6 @@ namespace SimCalModule
         RunAction *run = new RunAction(primary);
         SetUserAction(run);
         SetUserAction(new EventAction(run));
-        SetUserAction(new TrackingAction());
+        // SetUserAction(new TrackingAction());
     }
 }

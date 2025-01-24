@@ -93,7 +93,7 @@ namespace SimCalModule
         EcalAbsorberThick = 3.2 * mm; // 3.2 mm for ScW ECAL
         HcalAbsorberThick = 20.0 * mm;
         EcalPCBThick = 2.0 * mm;
-        HcaltriggerThick = 20.0 * mm;
+        HcaltriggerThick = 0 * mm;
         HcaltriggerIndex = PlasticSciHCAL;
         HcalgraphiteThick = 50.0 * mm;
         HCALgraphiteIndex = Graphite;
@@ -682,12 +682,12 @@ namespace SimCalModule
             EcalAbsLogical->SetVisAttributes(AbsVisAtt);
         if (HcalModuleType > 0 && HcalAbsorberThick > 0)
             HcalAbsLogical->SetVisAttributes(AbsVisAtt);
-        HcalAbsLogical->SetVisAttributes(AbsVisAtt);
+        // HcalAbsLogical->SetVisAttributes(AbsVisAtt);
         AbsVisAtt =new G4VisAttributes(G4Colour(0.9,0,0));
 		if(HcalPCB_Cu_Thick > 0)
 			HcalPCB_Cu_Logical->SetVisAttributes(AbsVisAtt);
         AbsVisAtt =new G4VisAttributes(G4Colour(0,0.9,0));
-        HcalPCBLogical->SetVisAttributes(AbsVisAtt);
+        // HcalPCBLogical->SetVisAttributes(AbsVisAtt);
         World_Logical->SetVisAttributes(G4VisAttributes::GetInvisible());
 
         return World_Physical;

@@ -13,12 +13,13 @@ namespace SimCalModule
         if ((track->GetVolume()->GetLogicalVolume()->GetName() == "TrenchAndWallLog" || track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
         && (track->GetNextVolume()->GetLogicalVolume()->GetName() == "TrenchAndWallLog" || track->GetNextVolume()->GetLogicalVolume()->GetName() == "World_Logical"))
         {
-            if(track->GetParentID() != 0){
-                track->SetStoreTrajectory(false);
+            if(track->GetParentID() > 10){
+                fpTrackingManager->SetStoreTrajectory(false);
             }
-        }else{
-            track->SetStoreTrajectory(true);
-        }
+            fpTrackingManager->SetStoreTrajectory(true);
+        }    
+        else
+            fpTrackingManager->SetStoreTrajectory(true);
     }
     void TrackingAction::PostUserTrackingAction(const G4Track* track) {
     }

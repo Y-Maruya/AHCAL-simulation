@@ -86,7 +86,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
         root_file->Close();
         return;
     }
-    tree->Draw(">>elist", "ftagNulabel<4");
+    tree->Draw(">>elist", "ftagNulabel<5");
     TEventList *elist = (TEventList*)gDirectory->Get("elist");
     tree->SetEventList(elist);
     // SiPMResponseFit->SetParameters(3082.88, 1.35524, 4.0577, 0.0206382, 0.109543);
@@ -102,6 +102,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
     Double_t Interaction_x;
     Double_t Interaction_y;
     Double_t Interaction_z;
+    Double_t Sum;
     Int_t ftagNulabel;
     // Double_t CaloEdepSum;
     // Double_t CaloVisibleEdepSum;
@@ -191,13 +192,15 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
     out_tree->Branch("Interaction_y", &Interaction_y, "Interaction_y/D");
     out_tree->Branch("Interaction_z", &Interaction_z, "Interaction_z/D");
     out_tree->Branch("ftagNulabel", &ftagNulabel, "ftagNulabel/I");
-    // out_tree->Branch("CaloEdepSum", &CaloEdepSum, "CaloEdepSum/D");
+    // out_tree->Branch("CaloEdepSum", &HcalVisibleEdepSum, "CaloEdepSum/D");
     out_tree->Branch("edep_sum", edep_sum, "edep_sum[40]/D");
+    out_tree->Branch("Sum",&Sum,"Sum/D");
     out_tree->Branch("veto_sum", veto_sum, "veto_sum[2]/D");
     out_tree->Branch("veto_timing",veto_timing,"veto_timing[2]/D");
     // Loop over the entries in the tree in batches
     for (Long64_t i = 0; i < total_entries; i += 1) {
         // root_file->cd();
+        Sum=0;
         for(int j=0;j<40;j++){
             edep_sum[j]=0;
         }
@@ -228,6 +231,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
             double tmp_energy=vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it));
             // double tmp_energy_digi=SiPMDigi(tmp_energy,(CellID/100000 - 40) / 38+1, 1);
             edep_sum[ID_Z-1]+=tmp_energy;
+            Sum+=tmp_energy;
         }
         out_tree->Fill();
     }

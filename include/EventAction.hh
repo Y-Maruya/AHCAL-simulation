@@ -18,7 +18,7 @@ namespace SimCalModule
         void BeginOfEventAction(const G4Event *) override;
         void EndOfEventAction(const G4Event *) override;
         void ResetEventData();
-        void AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID);
+        void AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz);
 
     private:
         RunAction *fRunAction;

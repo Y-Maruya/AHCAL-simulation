@@ -11,4 +11,4 @@ Output = out/Fluka_$(Jobid).stdout
 Error  = err/Fluka_$(Jobid).stderr
 Log    = log/Fluka_$(Jobid).log
 
-Queue 100
+Queue 10

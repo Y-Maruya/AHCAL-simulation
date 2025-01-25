@@ -7,15 +7,16 @@
 #include <fstream>
 #include <vector>
 int make_mac_hadron(){
-    
-    std::ofstream ofs("./mac/run_nbar.mac");
-    ofs<<"/control/verbose 2"<<std::endl;
-    ofs<<"/run/verbose 1"<<std::endl;
-    ofs<<"/event/verbose 0"<<std::endl;
-    ofs<<"/tracking/verbose 0"<<std::endl;
-    ofs<<"/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/FASERlink/FASER_neBkg/hadron_nbar.W.100000.0.gfaser.root"<<std::endl;
-    ofs<<"/generator/FixedPrimaryVertexPosition false"<<std::endl;
-    ofs<<"/run/initialize"<<std::endl;
-    ofs<<"/run/beamOn 10000"<<std::endl;
+    for (int i = 0;i<6;i++){
+        std::ofstream ofs(Form("./mac/run_hadron_%d.mac",i));
+        ofs<<"/control/verbose 2"<<std::endl;
+        ofs<<"/run/verbose 1"<<std::endl;
+        ofs<<"/event/verbose 0"<<std::endl;
+        ofs<<"/tracking/verbose 0"<<std::endl;
+        ofs<<"/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/FASERlink/FASER_neBkg/NeutralBkgflux_"<<i<<".gfaser.root"<<std::endl;
+        ofs<<"/generator/FixedPrimaryVertexPosition false"<<std::endl;
+        ofs<<"/run/initialize"<<std::endl;
+        ofs<<"/run/beamOn 10000"<<std::endl;
+    }
     return 0;
 }

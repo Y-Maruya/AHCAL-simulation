@@ -9,7 +9,6 @@ namespace SimCalModule
 
     void TrackingAction::PreUserTrackingAction(const G4Track* track) {
         fpTrackingManager->SetTrajectory(new G4Trajectory(track));
-        // fpTrackingManager->SetStoreTrajectory(true);
         // if ((track->GetVolume()->GetLogicalVolume()->GetName() == "TrenchAndWallLog" || track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
         // && (track->GetNextVolume()->GetLogicalVolume()->GetName() == "TrenchAndWallLog" || track->GetNextVolume()->GetLogicalVolume()->GetName() == "World_Logical"))
         // {

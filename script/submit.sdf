@@ -1,14 +1,12 @@
-Avalie = $(Process) + 200
-Jobid = $INT(Avalie)
 Universe     = Vanilla
 Getenv       = True
 Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule
-Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_$(Jobid).mac $(Jobid) 
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_$(Process).mac $(Process) 
 +JobFlavour = "testmatch"
 
 # comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
-Output = out/$(Jobid).stdout
-Error  = err/$(Jobid).stderr
-Log    = log/$(Jobid).log
+Output = out/$(Process).stdout
+Error  = err/$(Process).stderr
+Log    = log/$(Process).log
 
-Queue 800
+Queue 1000

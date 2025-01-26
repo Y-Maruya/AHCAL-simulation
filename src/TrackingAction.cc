@@ -1,6 +1,7 @@
 #include "TrackingAction.hh"
 #include "G4TrackingManager.hh"
 #include "G4Track.hh"
+#include "G4SystemOfUnits.hh"
 namespace SimCalModule
 {
     TrackingAction::TrackingAction() : G4UserTrackingAction() {}
@@ -31,12 +32,12 @@ namespace SimCalModule
         // }else{
         //     fpTrackingManager->SetStoreTrajectory(false);
         // }
-        G4ThreeVector vposition = track->GetVertexPosition()
-        Bool_t is_x = abs(vposition.x() -850*mm )< 500*mm;
-        Bool_t is_y = abs(vposition.y() -330*mm )< 500*mm;
-        Bool_t isFront_z = (vposition.z()-5570*mm)< 0;
-        Bool_t isFront = is_x && is_y && isFront_z;
-        if ( isFront )
+        G4ThreeVector vposition = track->GetVertexPosition();
+        // Bool_t is_x = abs(vposition.x() -850*mm )< 500*mm;
+        // Bool_t is_y = abs(vposition.y() -330*mm )< 500*mm;
+        // Bool_t isFront_z = (vposition.z()-5570*mm)< 0;
+        // Bool_t isFront = is_x && is_y && isFront_z;
+        if ( abs(vposition.x() -850 * mm )< 500 * mm && abs(vposition.y() -330 * mm )< 500 * mm && (vposition.z()-5570 * mm)< 0)
         {
             fpTrackingManager->SetStoreTrajectory(true);
             

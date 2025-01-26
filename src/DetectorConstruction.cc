@@ -9,6 +9,7 @@
 #include "G4ExtrudedSolid.hh"
 #include "G4UnionSolid.hh"
 #include "G4SubtractionSolid.hh"
+#include "G4MultiUnion.hh"
 #include "G4LogicalVolume.hh"
 #include "G4PVPlacement.hh"
 #include "G4ThreeVector.hh"
@@ -349,11 +350,37 @@ namespace SimCalModule
               new G4DisplacedSolid("DisplacedXtru", xtru, transformSubtraction);
 
         G4SubtractionSolid* subtractionSolid = new G4SubtractionSolid("TrenchAndWall", displacedUnion, displacedXtru);
+        // G4Box* backBox = new G4Box("BackBox", 3500 * mm, 718.64926 * mm, 2000 * mm); // z-length = 2000mm (half-length = 1000mm)
+        // G4ThreeVector backBoxPosition(576.9*mm, -177.6*mm -640.67537*mm, 4211 * mm + 2000 * mm-598.8*mm); // Positioned just behind the trap
+
+        // // ** MultiUnion to combine everything **
+        // G4MultiUnion* multiUnion = new G4MultiUnion("MultiUnion");
+
+        // // Add original subtraction solid
+        // G4Transform3D transformOriginal{G4RotationMatrix(), G4ThreeVector()}; // Identity transform
+        // multiUnion->AddNode(*subtractionSolid, transformOriginal);
+
+        // // Add back box
+        // G4RotationMatrix rotbackBox;
+        // rotbackBox.rotateX(0.721829429078283 * deg);
+        // rotbackBox.rotateY(-9.50550937438183 * deg);
+        // rotbackBox.rotateZ(-0.119210810400234 * deg);
+        // G4Transform3D transformBackBox(rotbackBox, backBoxPosition);
+        // multiUnion->AddNode(*backBox, transformBackBox);
+
+        // // Finalize the MultiUnion
+        // multiUnion->Voxelize();
+
+        // // ** Logical Volume and Placement **
+        // G4LogicalVolume* multiUnionLog = new G4LogicalVolume(multiUnion, GetCaloMaterial(Concrete), "TrenchAndWallLog");
+        // new G4PVPlacement(nullptr, G4ThreeVector(), multiUnionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
+
+
 
         G4LogicalVolume* subtractionLog = new G4LogicalVolume(subtractionSolid, GetCaloMaterial(Concrete), "TrenchAndWallLog");
         new G4PVPlacement(nullptr, G4ThreeVector(), subtractionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
 
-
+        
 
 
 

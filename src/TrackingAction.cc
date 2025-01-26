@@ -19,16 +19,31 @@ namespace SimCalModule
         // }    
         // else
         //     fpTrackingManager->SetStoreTrajectory(true);
-        if (track->GetParentID() == 0 && track->GetTrackID() == 1)
+        // if (track->GetParentID() == 0 && track->GetTrackID() == 1)
+        // {
+        //     if(track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
+        //     {
+        //         fpTrackingManager->EventAborted();
+        //     }
+        //     fpTrackingManager->SetStoreTrajectory(true);
+        // }else if (track->GetParentID() == 1){
+        //     fpTrackingManager->SetStoreTrajectory(true);
+        // }else{
+        //     fpTrackingManager->SetStoreTrajectory(false);
+        // }
+        G4ThreeVector vposition = track->GetVertexPosition()
+        Bool_t is_x = abs(vposition.x() -850*mm )< 500*mm;
+        Bool_t is_y = abs(vposition.y() -330*mm )< 500*mm;
+        Bool_t isFront_z = (vposition.z()-5570*mm)< 0;
+        Bool_t isFront = is_x && is_y && isFront_z;
+        if ( isFront )
         {
-            if(track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
-            {
-                fpTrackingManager->EventAborted();
-            }
             fpTrackingManager->SetStoreTrajectory(true);
-        }else if (track->GetParentID() == 1){
+            
+        }else if( track->GetParentID() == 0 && track->GetTrackID() == 1){
             fpTrackingManager->SetStoreTrajectory(true);
-        }else{
+        }
+        {
             fpTrackingManager->SetStoreTrajectory(false);
         }
     }

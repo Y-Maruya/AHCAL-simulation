@@ -3,7 +3,7 @@
 #include "DetectorConstruction.hh"
 #include "EcalUnitSD.hh"
 #include "HcalUnitSD.hh"
-
+#include "CLHEP/Units/PhysicalConstants.h"
 #include "G4Event.hh"
 #include "G4RunManager.hh"
 #include "G4SystemOfUnits.hh"
@@ -38,7 +38,12 @@ namespace SimCalModule
         interaction_x = primary->GetInteractionPlace().x() / mm;
         interaction_y = primary->GetInteractionPlace().y() / mm;
         interaction_z = primary->GetInteractionPlace().z() / mm;
-
+        SecondaryEnergy = primary->GetSecondaryEnergy() / GeV;
+        Secondarypdgid = primary->GetSecondarypdgid();
+        SecondaryMomentum_px = primary->GetSecondaryMomentum().x() /GeV/CLHEP::c_light;
+        SecondaryMomentum_py = primary->GetSecondaryMomentum().y() /GeV/CLHEP::c_light;
+        SecondaryMomentum_pz = primary->GetSecondaryMomentum().z() /GeV/CLHEP::c_light;
+    
         const DetectorConstruction *detector = static_cast<const DetectorConstruction *>(G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
         if (fEcalCollID < 0 && detector->GetEcalModuleType() > 0)
@@ -55,7 +60,10 @@ namespace SimCalModule
     }
 
     void EventAction::EndOfEventAction(const G4Event *anEvent)
-    {
+    {   
+        if (anEvent->IsAborted()==true){
+            return;
+        }
         G4HCofThisEvent *hitsCE = anEvent->GetHCofThisEvent();
         EcalUnitHitsCollection *EcalUnitHC = nullptr;
         HcalUnitHitsCollection *HcalUnitHC = nullptr;
@@ -129,7 +137,7 @@ namespace SimCalModule
                 AddParticle(trajectory->GetPDGEncoding(), trajectory->GetInitialMomentum().x() / GeV, trajectory->GetInitialMomentum().y() / GeV, trajectory->GetInitialMomentum().z() / GeV,  energy /GeV, trajectory->GetParentID(), trajectory->GetTrackID(), v_x, v_y, v_z);
             }
         }else{
-            G4cout << "No trajectory container found." << G4endl;
+            // G4cout << "No trajectory container found." << G4endl;
         }
 
         fRunAction->TransferData(EvtID, EvtID_Data);
@@ -138,6 +146,11 @@ namespace SimCalModule
         fRunAction->TransferData(interaction_x, Interaction_x_Data);
         fRunAction->TransferData(interaction_y, Interaction_y_Data);
         fRunAction->TransferData(interaction_z, Interaction_z_Data);
+        fRunAction->TransferData(SecondaryEnergy,SecondaryEnergy_Data);
+        fRunAction->TransferData(Secondarypdgid,Secondarypdgid_Data);
+        fRunAction->TransferData(SecondaryMomentum_px,SecondaryMomentum_px_Data);
+        fRunAction->TransferData(SecondaryMomentum_py,SecondaryMomentum_py_Data);
+        fRunAction->TransferData(SecondaryMomentum_pz,SecondaryMomentum_pz_Data);
         fRunAction->TransferData(CaloEdepSum, CaloEdepSum_Data);
         fRunAction->TransferData(CaloVisibleEdepSum, CaloVisibleEdepSum_Data);
         fRunAction->TransferData(EcalEdepSum, EcalEdepSum_Data);
@@ -182,6 +195,11 @@ namespace SimCalModule
         interaction_x = 0;
         interaction_y = 0;
         interaction_z = 0;
+        SecondaryEnergy = 0;
+        Secondarypdgid = 0;
+        SecondaryMomentum_px = 0;
+        SecondaryMomentum_py = 0;
+        SecondaryMomentum_pz = 0;
         CaloEdepSum = 0;
         CaloVisibleEdepSum = 0;
         EcalEdepSum = 0;

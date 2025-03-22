@@ -1,8 +1,7 @@
 #!/bin/bash
 
-for i in {400..999}
+for i in {0..5}
 do
-    ./convert /eos/user/y/ymaruya/FASER/genie_data/faser_on.n10000.${i}.gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/output_${i}.h5 
-    # ./convert_withdigi /eos/user/y/ymaruya/FASER/genie_data/faser_on.n10000.${i}.gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/output.withdigi_${i}.h5 
-    # ./convert_random /eos/user/y/ymaruya/FASER/genie_data/faser_on.n10000.${i}.gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/output.random_${i}.h5 
+    ./convert_withdigi_wg_hadron /afs/cern.ch/user/y/ymaruya/private/FASERlink/FASER_neBkg/NeutralBkgflux_${i}.gfaser_calo.root /afs/cern.ch/user/y/ymaruya/private/FASERlink/FASER_neBkg/NeutralBkgflux_${i}.h5
+    ./analysis /afs/cern.ch/user/y/ymaruya/private/FASERlink/FASER_neBkg/NeutralBkgflux_${i}.gfaser_calo.root /afs/cern.ch/user/y/ymaruya/private/FASERlink/FASER_neBkg/NeutralBkgflux_${i}.ana.root
 done

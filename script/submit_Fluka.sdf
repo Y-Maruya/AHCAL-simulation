@@ -2,7 +2,7 @@ Avalie = $(Process)
 Jobid = $INT(Avalie)
 Universe     = Vanilla
 Getenv       = True
-Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule_0mmW
 Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_Fluka_$(Jobid).mac $(Jobid) 
 +JobFlavour = "testmatch"
 
@@ -11,4 +11,4 @@ Output = out/Fluka_$(Jobid).stdout
 Error  = err/Fluka_$(Jobid).stderr
 Log    = log/Fluka_$(Jobid).log
 
-Queue 10
+Queue 2

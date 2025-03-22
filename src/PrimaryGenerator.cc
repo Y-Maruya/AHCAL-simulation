@@ -32,7 +32,12 @@ namespace SimCalModule
         fNC(true),
         fCCNue(true),
         fCCNumu(true),
-        fCCNutau(true)
+        fCCNutau(true),
+        secondarypdgid(0),
+        secondaryenergy(-1),
+        secondarymomentum_px(-1),
+        secondarymomentum_py(-1),
+        secondarymomentum_pz(-1)
     //------------------------------------------------------------------------------
     {
     fpParticleGun = new G4ParticleGun();
@@ -116,12 +121,27 @@ namespace SimCalModule
     for(size_t j=2;j<pdgc->size();j++){
         if(abs(pdgc->at(0))==12 && status->at(j)==1 && pdgc->at(j)==copysign(11,pdgc->at(0)) && firstMother->at(j)==0){
         ccnue = true;
+        secondarypdgid = pdgc->at(j);
+        secondarymomentum_px = px->at(j);
+        secondarymomentum_py = py->at(j);
+        secondarymomentum_pz = pz->at(j);
+        secondaryenergy = E->at(j);
         break;
         }else if(abs(pdgc->at(0))==14 && status->at(j)==1 && pdgc->at(j)==copysign(13,pdgc->at(0)) && firstMother->at(j)==0){
         ccnumu = true;
+        secondarypdgid = pdgc->at(j);
+        secondarymomentum_px = px->at(j);
+        secondarymomentum_py = py->at(j);
+        secondarymomentum_pz = pz->at(j);
+        secondaryenergy = E->at(j);
         break;
         }else if(abs(pdgc->at(0))==16 && status->at(j)==1 && pdgc->at(j)==copysign(15,pdgc->at(0)) && firstMother->at(j)==0){
         ccnutau = true;
+        secondarypdgid = pdgc->at(j);
+        secondarymomentum_px = px->at(j);
+        secondarymomentum_py = py->at(j);
+        secondarymomentum_pz = pz->at(j);
+        secondaryenergy = E->at(j);
         break;
         }else if(status->at(j)==1 && pdgc->at(j)==pdgc->at(0) && firstMother->at(j)==0){
         nc = true;
@@ -231,5 +251,20 @@ namespace SimCalModule
         return fPrimaryVertexPosition;
     }
 
+    G4double PrimaryGenerator::GetSecondaryEnergy() const
+    {
+        return secondaryenergy;
+    }
+
+    G4int PrimaryGenerator::GetSecondarypdgid() const
+    {
+        return secondarypdgid;
+    }
+
+    G4ThreeVector PrimaryGenerator::GetSecondaryMomentum() const
+    {
+        G4ThreeVector Momentum(secondarymomentum_px,secondarymomentum_py,secondarymomentum_pz);
+        return Momentum;
+    }
     
 }

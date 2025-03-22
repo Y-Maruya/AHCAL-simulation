@@ -63,6 +63,7 @@ Double_t SiPMDigi(Double_t edep, Int_t i, Int_t m)
     Int_t sChargeOut = -1;
     while(sChargeOut < 0)
         sChargeOut = std::round(gRandom->Gaus(sChargeOutMean, sChargeOutSigma));
+    // std::cout<<"edep: "<<edep<<", i: "<<i<<", m: "<<m<<", sPix: "<<sPix<<", sChargeOutMean: "<<sChargeOutMean<<", sChargeOutSigma: "<<sChargeOutSigma<<", sChargeOut: "<<sChargeOut<<std::endl;
     if (m > 0)
         sChargeOut = ADCDigi(sChargeOut);
     Double_t sMIP = sChargeOut / PEChargeMean[i] / MIPResponse[i];
@@ -71,8 +72,9 @@ Double_t SiPMDigi(Double_t edep, Int_t i, Int_t m)
     else
         return sMIP * MIPEnergy;
 }
-void convert_caloroot_to_h5(const std::string& root_file_path, const std::string& tree_name, const std::string& h5_file_path, size_t batch_size = 1000) {
+void convert_caloroot_to_h5(const std::string& root_file_path, const std::string& tree_name, const std::string& h5_file_path, size_t batch_size = 10000) {
     // Open the ROOT file
+    gRandom->SetSeed(142);
     TFile* root_file = TFile::Open(root_file_path.c_str());
     if (!root_file || root_file->IsZombie()) {
         std::cerr << "Error opening ROOT file: " << root_file_path << std::endl;

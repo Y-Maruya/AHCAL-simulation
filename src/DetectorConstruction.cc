@@ -96,9 +96,9 @@ namespace SimCalModule
         EcalPCBThick = 2.0 * mm;
         HcaltriggerThick = 20.0 * mm;
         HcaltriggerIndex = PlasticSciHCAL;
-        HcalgraphiteThick = 50.0 * mm;
-        HCALgraphiteIndex = Graphite;
-        Hcaltriggernplane = 2;
+        HcalgraphiteThick = 0.0 * mm;
+        HCALgraphiteIndex = W;
+        Hcaltriggernplane = 1;
         HcalPCBThick = 2.5 * mm;  //2.5mm *4/5 for PCB, 1mm for component
         HcalPCB_Cu_Thick = 0.0 * mm; //2.5mm *1/5
         HcalPCB_Abs_gap = 6.5 * mm - HcalPCBThick - HcalPCB_Cu_Thick;//4mm-1mm
@@ -290,8 +290,8 @@ namespace SimCalModule
         G4LogicalVolume *World_Logical = new G4LogicalVolume(World_Solid, GetCaloMaterial(WorldMatIndex), "World_Logical");
         G4VPhysicalVolume *World_Physical = new G4PVPlacement(0, G4ThreeVector(), World_Logical, "World_Physical", 0, false, 0, ifcheckOverlaps);
 
-        //Concrete
-                // G4GenericTrap
+        // Concrete
+        //         G4GenericTrap
         std::vector<G4TwoVector> vertices = {
             G4TwoVector(-3500*mm, 718.64926*mm),
             G4TwoVector(3500*mm, 718.64926*mm),
@@ -615,14 +615,24 @@ namespace SimCalModule
             if(HcaltriggerThick>0){
                 auto HCALtriggerSolid = new G4Box("HCALtriggerSolid", HcalXYsize / 2., HcalXYsize / 2., HcaltriggerThick / 2.);
                 HcaltriggerLogical = new G4LogicalVolume(HCALtriggerSolid, GetCaloMaterial(HcaltriggerIndex), "HCALtriggerLogical");
-                auto HCALgraphiteSolid = new G4Box("HCALgraphiteSolid", HcalXYsize / 2., HcalXYsize / 2., HcalgraphiteThick / 2.);
-                auto HCALgraphiteLogical = new G4LogicalVolume(HCALgraphiteSolid,GetCaloMaterial(HCALgraphiteIndex), "HCALgraphiteLogical");    
-                for(int triggerplane = 0; triggerplane<Hcaltriggernplane;triggerplane++){
-                    Zpos += HcaltriggerThick / 2.;
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcaltriggerLogical, "HCALtriggerPhysicalFront", World_Logical, false, 1000+triggerplane, ifcheckOverlaps);
-                    Zpos += (HcaltriggerThick +HcalgraphiteThick)/ 2.;
-                    new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALgraphiteLogical, "HCALgraphitePhysicalFront", World_Logical, false, 2000+triggerplane, ifcheckOverlaps);
-                    Zpos += HcalgraphiteThick /2.;
+                if (HcalgraphiteThick!=0.0*mm){
+                    auto HCALgraphiteSolid = new G4Box("HCALgraphiteSolid", HcalXYsize / 2., HcalXYsize / 2., HcalgraphiteThick / 2.);
+                    auto HCALgraphiteLogical = new G4LogicalVolume(HCALgraphiteSolid,GetCaloMaterial(HCALgraphiteIndex), "HCALgraphiteLogical");    
+                    for(int triggerplane = 0; triggerplane<Hcaltriggernplane;triggerplane++){
+                        Zpos += HcaltriggerThick / 2.;
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcaltriggerLogical, "HCALtriggerPhysicalFront", World_Logical, false, 1000+triggerplane, ifcheckOverlaps);
+                        Zpos += (HcaltriggerThick +HcalgraphiteThick)/ 2.;
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALgraphiteLogical, "HCALgraphitePhysicalFront", World_Logical, false, 2000+triggerplane, ifcheckOverlaps);
+                        Zpos += HcalgraphiteThick /2.;
+                    }
+                }else{
+                    for(int triggerplane = 0; triggerplane<Hcaltriggernplane;triggerplane++){
+                        Zpos += HcaltriggerThick / 2.;
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcaltriggerLogical, "HCALtriggerPhysicalFront", World_Logical, false, 1000+triggerplane, ifcheckOverlaps);
+                        Zpos += (HcaltriggerThick)/ 2.;
+                        // new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALgraphiteLogical, "HCALgraphitePhysicalFront", World_Logical, false, 2000+triggerplane, ifcheckOverlaps);
+                        // Zpos += HcalgraphiteThick /2.;
+                    }
                 }
             }
             Zpos += 50. * mm;

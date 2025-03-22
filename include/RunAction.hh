@@ -18,6 +18,11 @@ namespace SimCalModule
         Interaction_y_Data,
         Interaction_z_Data,
         ftagNulabel_Data,
+        SecondaryEnergy_Data,
+        Secondarypdgid_Data,
+        SecondaryMomentum_px_Data,
+        SecondaryMomentum_py_Data,
+        SecondaryMomentum_pz_Data,
         CaloEdepSum_Data,
         CaloVisibleEdepSum_Data,
         EcalEdepSum_Data,
@@ -78,6 +83,11 @@ namespace SimCalModule
         G4double Interaction_x;
         G4double Interaction_y;
         G4double Interaction_z;
+        G4double SecondaryEnergy;
+        G4int Secondarypdgid;
+        G4double SecondaryMomentum_px;
+        G4double SecondaryMomentum_py;
+        G4double SecondaryMomentum_pz;        
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;

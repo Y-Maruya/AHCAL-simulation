@@ -1,7 +1,7 @@
 #----------------------------------------------------------------------------
 # Setup the project
 cmake_minimum_required(VERSION 3.16...3.24)
-project(SimCalModule)
+project(SimCalModule_0mmW_hadron)
 
 #----------------------------------------------------------------------------
 # Find Geant4 package, activating all available UI and Vis drivers by default
@@ -40,8 +40,8 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 #----------------------------------------------------------------------------
 # Add the executable, and link it to the Geant4 libraries
 #
-add_executable(SimCalModule SimCalModule.cc ${sources} ${headers})
-target_link_libraries(SimCalModule ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
+add_executable(SimCalModule_0mmW_hadron SimCalModule.cc ${sources} ${headers})
+target_link_libraries(SimCalModule_0mmW_hadron ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory. This is so that we can
@@ -66,10 +66,10 @@ endforeach()
 # For internal Geant4 use - but has no effect if you build this
 # example standalone
 #
-add_custom_target(CalorimeterModule DEPENDS SimCalModule)
+add_custom_target(CalorimeterModule DEPENDS SimCalModule_300mmFe)
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX
 #
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/)
-install(TARGETS SimCalModule DESTINATION bin)
+install(TARGETS SimCalModule_0mmW_hadron DESTINATION bin)

@@ -269,7 +269,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
                 Int_t ChannelID = (ID_X - 1) % 6 + (ID_Y - 1) % 6 * 6;
                 Int_t CellID = (ID_Z - 1) * 1e5 + ChipID * 1e4 + MemoID * 1e2 + ChannelID;
                 double tmp_energy=vecHcalVisibleEdepCell->at(std::distance(vecHcalCellID->begin(), it));
-                double tmp_energy_digi=SiPMDigi(tmp_energy,(CellID/100000 - 40) / 38+1, 1);
+                double tmp_energy_digi=SiPMDigi(tmp_energy,(CellID/100000)/38, 1);
                 if(energy_deposit_AHCAL_data[index*40*18*18+GetBin1d_AHCAL(ID_X-1,ID_Y-1,ID_Z-1)]>0){
                     std::cout<<"Error: energy deposit already exists"<<std::endl;
                 }else{

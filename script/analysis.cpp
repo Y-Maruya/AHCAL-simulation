@@ -194,6 +194,7 @@ void convert_caloroot_to_h5(const std::string& root_file_path, const std::string
     out_tree->Branch("ftagNulabel", &ftagNulabel, "ftagNulabel/I");
     // out_tree->Branch("CaloEdepSum", &HcalVisibleEdepSum, "CaloEdepSum/D");
     out_tree->Branch("edep_sum", edep_sum, "edep_sum[40]/D");
+    out_tree->Branch("edep_sum", edep_sum, "edep_sum[40]/D");
     out_tree->Branch("Sum",&Sum,"Sum/D");
     out_tree->Branch("veto_sum", veto_sum, "veto_sum[2]/D");
     out_tree->Branch("veto_timing",veto_timing,"veto_timing[2]/D");

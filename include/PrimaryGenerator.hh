@@ -42,6 +42,9 @@ namespace SimCalModule
       G4int GetftagNulabel() const; // Add const
       G4double GetPrimaryEnergy() const; // Add const
       G4ThreeVector GetInteractionPlace() const; // Add const
+      G4double GetSecondaryEnergy() const;
+      G4int GetSecondarypdgid() const;
+      G4ThreeVector GetSecondaryMomentum() const;
 
     private:
       GeneratorMessenger* fMessenger;
@@ -56,7 +59,11 @@ namespace SimCalModule
       G4bool fCCNutau;
       G4int ftagNulabel;
       G4double primaryenergy;
-
+      G4double secondaryenergy;
+      G4int secondarypdgid;
+      G4double secondarymomentum_px;
+      G4double secondarymomentum_py;
+      G4double secondarymomentum_pz;
   };
 }
 

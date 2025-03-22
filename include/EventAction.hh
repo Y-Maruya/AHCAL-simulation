@@ -30,6 +30,11 @@ namespace SimCalModule
         G4double interaction_x;
         G4double interaction_y;
         G4double interaction_z;
+        G4double SecondaryEnergy;
+        G4int Secondarypdgid;
+        G4double SecondaryMomentum_px;
+        G4double SecondaryMomentum_py;
+        G4double SecondaryMomentum_pz;
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;

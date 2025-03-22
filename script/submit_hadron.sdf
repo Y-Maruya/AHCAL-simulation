@@ -1,6 +1,6 @@
 Universe     = Vanilla
 Getenv       = True
-Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule 
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule_0mmW_hadron
 +JobFlavour = "nextweek"
 
 # comment out the followings if you don't need to save STDOUT/STDERR/CondorLog

@@ -44,6 +44,11 @@ namespace SimCalModule
             treeEvt->Branch("Interaction_y", &Interaction_y, "Interaction_y/D");
             treeEvt->Branch("Interaction_z", &Interaction_z, "Interaction_z/D");
             treeEvt->Branch("ftagNulabel", &ftagNulabel, "ftagNulabel/I");
+            treeEvt->Branch("SecondaryEnergy",&SecondaryEnergy,"SecondaryEnergy/D");
+            treeEvt->Branch("Secondarypdgid",&Secondarypdgid,"Secondarypdgid/I");
+            treeEvt->Branch("SecondaryMomentum_px",&SecondaryMomentum_px,"SecondaryMomentum_px/D");
+            treeEvt->Branch("SecondaryMomentum_py",&SecondaryMomentum_py,"SecondaryMomentum_py/D");
+            treeEvt->Branch("SecondaryMomentum_pz",&SecondaryMomentum_pz,"SecondaryMomentum_pz/D");
             treeEvt->Branch("CaloEdepSum", &CaloEdepSum, "CaloEdepSum/D");
             treeEvt->Branch("CaloVisibleEdepSum", &CaloVisibleEdepSum, "CaloVisibleEdepSum/D");
             treeEvt->Branch("EcalEdepSum", &EcalEdepSum, "EcalEdepSum/D");
@@ -123,6 +128,9 @@ namespace SimCalModule
         case ftagNulabel_Data:
             ftagNulabel = data;
             break;
+        case Secondarypdgid_Data:
+            Secondarypdgid = data;
+            break;
         case nstoredTruthParticles_Data:
             nstoredTruthParticles = data;
             break;
@@ -155,7 +163,19 @@ namespace SimCalModule
             break;
         case Interaction_z_Data:
             Interaction_z = data;
-            break;        
+            break;
+        case SecondaryEnergy_Data:
+            SecondaryEnergy = data;
+            break;
+        case SecondaryMomentum_px_Data:
+            SecondaryMomentum_px = data;
+            break;
+        case SecondaryMomentum_py_Data:
+            SecondaryMomentum_py = data;
+            break;
+        case SecondaryMomentum_pz_Data:
+            SecondaryMomentum_pz = data;
+            break;
         case CaloEdepSum_Data:
             CaloEdepSum = data;
             break;

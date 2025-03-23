@@ -49,6 +49,9 @@ namespace SimCalModule
             treeEvt->Branch("SecondaryMomentum_px",&SecondaryMomentum_px,"SecondaryMomentum_px/D");
             treeEvt->Branch("SecondaryMomentum_py",&SecondaryMomentum_py,"SecondaryMomentum_py/D");
             treeEvt->Branch("SecondaryMomentum_pz",&SecondaryMomentum_pz,"SecondaryMomentum_pz/D");
+            treeEvt->Branch("fNumuCClabel",&fNumuCClabel,"fNumuCClabel/I");
+            treeEvt->Branch("D_id",&fD_id,"D_id/I");
+            treeEvt->Branch("Primary_trackid",&fPrimary_trackid,"Primary_trackid/I");
             treeEvt->Branch("CaloEdepSum", &CaloEdepSum, "CaloEdepSum/D");
             treeEvt->Branch("CaloVisibleEdepSum", &CaloVisibleEdepSum, "CaloVisibleEdepSum/D");
             treeEvt->Branch("EcalEdepSum", &EcalEdepSum, "EcalEdepSum/D");
@@ -80,6 +83,18 @@ namespace SimCalModule
             treeEvt->Branch("vecTruth_energy", &vecTruth_energy);
             treeEvt->Branch("vecTruth_vertexIndex", &vecTruth_vertexIndex);
             treeEvt->Branch("vecTruth_trackID", &vecTruth_trackID);
+            treeEvt->Branch("nstoredPlaneParticles", &nstoredPlaneParticles, "nstoredPlaneParticles/I");
+            treeEvt->Branch("vecPlane_pdgID", &vecPlane_pdgID);
+            treeEvt->Branch("vecPlane_px", &vecPlane_px);
+            treeEvt->Branch("vecPlane_py", &vecPlane_py);
+            treeEvt->Branch("vecPlane_pz", &vecPlane_pz);
+            treeEvt->Branch("vecPlane_x", &vecPlane_x);
+            treeEvt->Branch("vecPlane_y", &vecPlane_y);
+            treeEvt->Branch("vecPlane_z", &vecPlane_z);
+            treeEvt->Branch("vecPlane_energy", &vecPlane_energy);
+            treeEvt->Branch("vecPlane_vertexIndex", &vecPlane_vertexIndex);
+            treeEvt->Branch("vecPlane_trackID", &vecPlane_trackID);
+            treeEvt->Branch("vecPlane_primary_Dmeson", &vecPlane_primary_Dmeson);
         }
     }
 
@@ -134,7 +149,18 @@ namespace SimCalModule
         case nstoredTruthParticles_Data:
             nstoredTruthParticles = data;
             break;
-        
+        case nstoredPlaneParticles_Data:
+            nstoredPlaneParticles = data;
+            break;
+        case fNumuCClabel_Data:
+            fNumuCClabel = data;
+            break;
+        case fD_id_Data:
+            fD_id = data;
+            break;
+        case fPrimary_trackid_Data:
+            fPrimary_trackid = data;
+            break;
         default:
         {
             G4ExceptionDescription ed;
@@ -238,6 +264,19 @@ namespace SimCalModule
         case vecTruth_trackID_Data:
             vecTruth_trackID = data;
             break;
+        case vecPlane_pdgID_Data:
+            vecPlane_pdgID = data;
+            break;
+        case vecPlane_vertexIndex_Data:
+            vecPlane_vertexIndex = data;
+            break;
+        case vecPlane_trackID_Data:
+            vecPlane_trackID = data;
+            break;
+        case vecPlane_primary_Dmeson_Data:
+            vecPlane_primary_Dmeson = data;
+            break;
+        
         default:
         {
             G4ExceptionDescription ed;
@@ -300,6 +339,28 @@ namespace SimCalModule
         case vecTruth_energy_Data:
             vecTruth_energy = data;
             break;
+        case vecPlane_px_Data:
+            vecPlane_px = data;
+            break;
+        case vecPlane_py_Data:
+            vecPlane_py = data;
+            break;
+        case vecPlane_pz_Data:
+            vecPlane_pz = data;
+            break;
+        case vecPlane_x_Data:
+            vecPlane_x = data;
+            break;
+        case vecPlane_y_Data:
+            vecPlane_y = data;
+            break;
+        case vecPlane_z_Data:
+            vecPlane_z = data;
+            break;
+        case vecPlane_energy_Data:
+            vecPlane_energy = data;
+            break;
+        
         default:
         {
             G4ExceptionDescription ed;

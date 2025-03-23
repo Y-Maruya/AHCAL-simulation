@@ -104,7 +104,8 @@ namespace SimCalModule
         G4double SecondaryMomentum_py;
         G4double SecondaryMomentum_pz;
         G4int fNumuCClabel;
-        G4int fD_id;  
+        G4int fD_id;
+        G4int fPrimary_trackid;  
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;

@@ -45,7 +45,7 @@ namespace SimCalModule
         SecondaryMomentum_pz = primary->GetSecondaryMomentum().z() /GeV/CLHEP::c_light;
         fNumuCClabel = primary->GetNumuCClabel();
         fD_id = primary->GetD_id();
-        Primary_trackid = primary->GetPrimary_trackid();        
+        fPrimary_trackid = primary->GetPrimary_trackid();        
     
         const DetectorConstruction *detector = static_cast<const DetectorConstruction *>(G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
@@ -156,7 +156,7 @@ namespace SimCalModule
         fRunAction->TransferData(SecondaryMomentum_pz,SecondaryMomentum_pz_Data);
         fRunAction->TransferData(fNumuCClabel,fNumuCClabel_Data);
         fRunAction->TransferData(fD_id,fD_id_Data);
-        fRunAction->TransferData(Primary_trackid,Primary_trackid_Data);
+        fRunAction->TransferData(fPrimary_trackid,Primary_trackid_Data);
         fRunAction->TransferData(CaloEdepSum, CaloEdepSum_Data);
         fRunAction->TransferData(CaloVisibleEdepSum, CaloVisibleEdepSum_Data);
         fRunAction->TransferData(EcalEdepSum, EcalEdepSum_Data);
@@ -221,7 +221,7 @@ namespace SimCalModule
         SecondaryMomentum_pz = 0;
         fNumuCClabel = -1;
         fD_id = -1;
-        Primary_trackid = 0;
+        fPrimary_trackid = 0;
         CaloEdepSum = 0;
         CaloVisibleEdepSum = 0;
         EcalEdepSum = 0;
@@ -297,12 +297,15 @@ namespace SimCalModule
         nstoredPlaneParticles++;
     }
 
-    G4int GetfNumuCClabel() const
+    G4int EventAction::GetfNumuCClabel()
     {
         return fNumuCClabel;
     }
-    G4int GetfD_id() const
+    G4int EventAction::GetfD_id() 
     {
         return fD_id;
+    }
+    G4int EventAction::GetPrimary_trackid(){
+        return fPrimary_trackid;
     }
 }

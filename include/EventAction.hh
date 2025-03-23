@@ -19,10 +19,10 @@ namespace SimCalModule
         void EndOfEventAction(const G4Event *) override;
         void ResetEventData();
         void AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz);
-        void AddPlaneParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz);
-        G4int GetfNumuCClabel() const;
-        G4int GetfD_id() const;
-        G4int GetPrimary_trackid() const;
+        void AddPlaneParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz, int primaryy_D);
+        G4int GetfNumuCClabel();
+        G4int GetfD_id();
+        G4int GetPrimary_trackid();
     private:
         RunAction *fRunAction;
         G4int fEcalCollID;
@@ -38,9 +38,9 @@ namespace SimCalModule
         G4double SecondaryMomentum_px;
         G4double SecondaryMomentum_py;
         G4double SecondaryMomentum_pz;
-        G4dint fNumuCClabel;
+        G4int fNumuCClabel;
         G4int fD_id;
-        G4int Primary_trackid;
+        G4int fPrimary_trackid;
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;

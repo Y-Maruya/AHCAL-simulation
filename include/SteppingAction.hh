@@ -4,6 +4,7 @@
 #include <G4UserSteppingAction.hh>
 #include <G4Step.hh>
 #include <G4Event.hh>
+#include <EventAction.hh>
 
 class SteppingAction : public G4UserSteppingAction {
 public:
@@ -14,7 +15,7 @@ public:
 
 private:
     // Add any private members or methods here
-    EventAction* fEventAction;
+    SimCalModule::EventAction* fEventAction;
 };
 
 #endif // STEPPINGACTION_HH

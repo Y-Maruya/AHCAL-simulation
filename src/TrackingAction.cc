@@ -22,12 +22,12 @@ namespace SimCalModule
         //     fpTrackingManager->SetStoreTrajectory(true);
         if (track->GetParentID() == 0 && track->GetTrackID() == 1)
         {
-            if(track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
-            {
-                fpTrackingManager->EventAborted();
-            }
+            // if(track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
+            // {
+            //     fpTrackingManager->EventAborted();
+            // }
             fpTrackingManager->SetStoreTrajectory(true);
-        }else if (track->GetParentID() == 1){
+        }else if (track->GetParentID() < 20){
             fpTrackingManager->SetStoreTrajectory(true);
         }else{
             fpTrackingManager->SetStoreTrajectory(false);

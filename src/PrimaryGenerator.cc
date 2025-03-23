@@ -153,7 +153,7 @@ namespace SimCalModule
     }
     // std::string outputFileName = fInputFileName.substr(0,fInputFileName.find(".root"))+"_interaction.txt";
     // std::ofstream outputfile(outputFileName,std::ios_base::app);
-    outputfile<<anEvent->GetEventID();
+    // outputfile<<anEvent->GetEventID();
     if(ccnue){
         ftagNulabel = 0;
         // outputfile<<" CCNue";
@@ -175,8 +175,8 @@ namespace SimCalModule
         // outputfile<<" Other";
         ftagNulabel = 4;
     }
-    outputfile<<std::endl;
-    outputfile.close();
+    // outputfile<<std::endl;
+    // outputfile.close();
     if(!ccnue && !ccnumu && !ccnutau && !nc){
         std::cerr<<"other neutrino interaction found in event : "<<anEvent->GetEventID()<<std::endl;
     }

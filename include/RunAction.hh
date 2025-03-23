@@ -25,6 +25,7 @@ namespace SimCalModule
         SecondaryMomentum_pz_Data,
         fNumuCClabel_Data,
         fD_id_Data,
+        Primary_trackid_Data,
         CaloEdepSum_Data,
         CaloVisibleEdepSum_Data,
         EcalEdepSum_Data,

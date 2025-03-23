@@ -2,6 +2,8 @@
 #include "G4Step.hh"
 #include "G4Track.hh"
 #include "G4SystemOfUnits.hh"
+#include <G4RunManager.hh>
+#include "G4EventManager.hh"
 #include <fstream>
 
 SteppingAction::SteppingAction() : G4UserSteppingAction() {
@@ -12,7 +14,7 @@ SteppingAction::~SteppingAction() {}
 
 void SteppingAction::UserSteppingAction(const G4Step* step) {
     G4double zplane = 10.0 * mm;
-    fEventAction = static_cast<EventAction*>(G4RunManager::GetRunManager()->GetUserEventAction());
+    fEventAction = static_cast<SimCalModule::EventAction*>(G4RunManager::GetRunManager()->GetUserEventAction());
     G4StepPoint* preStep = step->GetPreStepPoint();
     G4StepPoint* postStep = step->GetPostStepPoint();
 
@@ -30,9 +32,9 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
         G4double vx = prePos.x() / mm;
         G4double vy = prePos.y() / mm;
         G4double vz = prePos.z() / mm;        
-        numuCC = fEventAction->GetfNumuCClabel();
-        primary_trackid = fEventAction->GetPrimary_trackid();
-        D_id = fEventAction->GetfD_id();
+        int numuCC = fEventAction->GetfNumuCClabel();
+        int primary_trackid = fEventAction->GetPrimary_trackid();
+        int D_id = fEventAction->GetfD_id();
         int primary_Dmeson = 0;
         if (trackID == primary_trackid) {
             primary_Dmeson = 1;
@@ -42,6 +44,6 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
                 primary_Dmeson = 2;
             }
         }
-        fEventAction->FillNtuple(zplane, pdgID, trackID, parentID, energy, px, py, pz, vx, vy, vz, primary_Dmeson);
+        fEventAction->AddPlaneParticle(pdgID, px, py, pz,energy,parentID,trackID, vx, vy, vz, primary_Dmeson);
     }
 }

@@ -677,6 +677,18 @@ namespace SimCalModule
             Zpos += 2. * mm;
             Zpos += HCALCoverThick / 2.;
             new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALCoverLogical, "HCALCoverPhysicalBack", World_Logical, false, 0, ifcheckOverlaps);
+            //absorber
+
+            // Downstream
+            G4Box *DownstreamSolid = nullptr;
+            G4LogicalVolume *DownstreamLogical = nullptr;
+            
+            DownstreamSolid = new G4Box("DownstreamSolid", HcalXYsize / 2., HcalXYsize / 2., DownstreamSizeZ / 2.);
+            DownstreamLogical = new G4LogicalVolume(DownstreamSolid, GetCaloMaterial(DownstreamMatIndex), "DownstreamLogical");
+            Zpos += HcalUnitSizeZ / 2.;
+            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
+            Zpos += DownstreamSizeZ / 2.;
+            std::cout<<"Zpos: "<< Zpos<<std::endl;            
         }
         else if (HcalModuleType == 2)
         {
@@ -711,18 +723,6 @@ namespace SimCalModule
                 Zpos += (HcalAbsorberThick + HcalUnitSizeZ) / 2.;
             }
         }
-        //absorber
-
-        // Downstream
-        G4Box *DownstreamSolid = nullptr;
-        G4LogicalVolume *DownstreamLogical = nullptr;
-        
-        DownstreamSolid = new G4Box("DownstreamSolid", HcalXYsize / 2., HcalXYsize / 2., DownstreamSizeZ / 2.);
-        DownstreamLogical = new G4LogicalVolume(DownstreamSolid, GetCaloMaterial(DownstreamMatIndex), "DownstreamLogical");
-        Zpos += HcalUnitSizeZ / 2.;
-        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
-        Zpos += DownstreamSizeZ / 2.;
-        std::cout<<"Zpos: "<< Zpos<<std::endl;
         
 
         // Visualization attributes

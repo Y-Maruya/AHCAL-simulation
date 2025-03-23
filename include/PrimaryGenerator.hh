@@ -45,6 +45,9 @@ namespace SimCalModule
       G4double GetSecondaryEnergy() const;
       G4int GetSecondarypdgid() const;
       G4ThreeVector GetSecondaryMomentum() const;
+      G4int GetNumuCClabel() const;
+      G4int GetD_id() const;
+      G5int GetPrimary_trackid() const;
 
     private:
       GeneratorMessenger* fMessenger;
@@ -64,6 +67,9 @@ namespace SimCalModule
       G4double secondarymomentum_px;
       G4double secondarymomentum_py;
       G4double secondarymomentum_pz;
+      G4int fNumuCClabel;
+      G4int D_id;
+      G4int Primary_trackid;
   };
 }
 

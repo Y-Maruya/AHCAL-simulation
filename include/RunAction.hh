@@ -23,6 +23,8 @@ namespace SimCalModule
         SecondaryMomentum_px_Data,
         SecondaryMomentum_py_Data,
         SecondaryMomentum_pz_Data,
+        fNumuCClabel_Data,
+        fD_id_Data,
         CaloEdepSum_Data,
         CaloVisibleEdepSum_Data,
         EcalEdepSum_Data,
@@ -53,7 +55,19 @@ namespace SimCalModule
         vecTruth_z_Data,
         vecTruth_energy_Data,
         vecTruth_vertexIndex_Data,
-        vecTruth_trackID_Data
+        vecTruth_trackID_Data,
+        nstoredPlaneParticles_Data,
+        vecPlane_pdgID_Data,
+        vecPlane_px_Data,
+        vecPlane_py_Data,
+        vecPlane_pz_Data,
+        vecPlane_x_Data,
+        vecPlane_y_Data,
+        vecPlane_z_Data,
+        vecPlane_energy_Data,
+        vecPlane_vertexIndex_Data,
+        vecPlane_trackID_Data,
+        vecPlane_primary_Dmeson_Data
     };
 
     class EventAction;
@@ -87,7 +101,9 @@ namespace SimCalModule
         G4int Secondarypdgid;
         G4double SecondaryMomentum_px;
         G4double SecondaryMomentum_py;
-        G4double SecondaryMomentum_pz;        
+        G4double SecondaryMomentum_pz;
+        G4int fNumuCClabel;
+        G4int fD_id;  
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;
@@ -119,6 +135,18 @@ namespace SimCalModule
         std::vector<G4double> vecTruth_energy;
         std::vector<G4int> vecTruth_vertexIndex;
         std::vector<G4int> vecTruth_trackID;
+        G4int nstoredPlaneParticles;
+        std::vector<G4int> vecPlane_pdgID;
+        std::vector<G4double> vecPlane_px;
+        std::vector<G4double> vecPlane_py;
+        std::vector<G4double> vecPlane_pz;
+        std::vector<G4double> vecPlane_x;
+        std::vector<G4double> vecPlane_y;
+        std::vector<G4double> vecPlane_z;
+        std::vector<G4double> vecPlane_energy;
+        std::vector<G4int> vecPlane_vertexIndex;
+        std::vector<G4int> vecPlane_trackID;
+        std::vector<G4int> vecPlane_primary_Dmeson;
     };
 }
 

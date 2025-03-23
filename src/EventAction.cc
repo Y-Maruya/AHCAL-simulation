@@ -43,6 +43,9 @@ namespace SimCalModule
         SecondaryMomentum_px = primary->GetSecondaryMomentum().x() /GeV/CLHEP::c_light;
         SecondaryMomentum_py = primary->GetSecondaryMomentum().y() /GeV/CLHEP::c_light;
         SecondaryMomentum_pz = primary->GetSecondaryMomentum().z() /GeV/CLHEP::c_light;
+        fNumuCClabel = primary->GetNumuCClabel();
+        fD_id = primary->GetD_id();
+        Primary_trackid = primary->GetPrimary_trackid();        
     
         const DetectorConstruction *detector = static_cast<const DetectorConstruction *>(G4RunManager::GetRunManager()->GetUserDetectorConstruction());
 
@@ -151,6 +154,9 @@ namespace SimCalModule
         fRunAction->TransferData(SecondaryMomentum_px,SecondaryMomentum_px_Data);
         fRunAction->TransferData(SecondaryMomentum_py,SecondaryMomentum_py_Data);
         fRunAction->TransferData(SecondaryMomentum_pz,SecondaryMomentum_pz_Data);
+        fRunAction->TransferData(fNumuCClabel,fNumuCClabel_Data);
+        fRunAction->TransferData(fD_id,fD_id_Data);
+        fRunAction->TransferData(Primary_trackid,Primary_trackid_Data);
         fRunAction->TransferData(CaloEdepSum, CaloEdepSum_Data);
         fRunAction->TransferData(CaloVisibleEdepSum, CaloVisibleEdepSum_Data);
         fRunAction->TransferData(EcalEdepSum, EcalEdepSum_Data);
@@ -182,6 +188,19 @@ namespace SimCalModule
         fRunAction->TransferData(vecTruth_energy, vecTruth_energy_Data);
         fRunAction->TransferData(vecTruth_vertexIndex, vecTruth_vertexIndex_Data);
         fRunAction->TransferData(vecTruth_trackID, vecTruth_trackID_Data);
+        fRunAction->TransferData(nstoredPlaneParticles, nstoredPlaneParticles_Data);
+        fRunAction->TransferData(vecPlane_pdgID, vecPlane_pdgID_Data);
+        fRunAction->TransferData(vecPlane_px, vecPlane_px_Data);
+        fRunAction->TransferData(vecPlane_py, vecPlane_py_Data);
+        fRunAction->TransferData(vecPlane_pz, vecPlane_pz_Data);
+        fRunAction->TransferData(vecPlane_x, vecPlane_x_Data);
+        fRunAction->TransferData(vecPlane_y, vecPlane_y_Data);
+        fRunAction->TransferData(vecPlane_z, vecPlane_z_Data);
+        fRunAction->TransferData(vecPlane_energy, vecPlane_energy_Data);
+        fRunAction->TransferData(vecPlane_vertexIndex, vecPlane_vertexIndex_Data);
+        fRunAction->TransferData(vecPlane_trackID, vecPlane_trackID_Data);
+        fRunAction->TransferData(vecPlane_primary_Dmeson, vecPlane_primary_Dmeson_Data);
+
         fRunAction->FillEvent();
     }
 
@@ -200,6 +219,9 @@ namespace SimCalModule
         SecondaryMomentum_px = 0;
         SecondaryMomentum_py = 0;
         SecondaryMomentum_pz = 0;
+        fNumuCClabel = -1;
+        fD_id = -1;
+        Primary_trackid = 0;
         CaloEdepSum = 0;
         CaloVisibleEdepSum = 0;
         EcalEdepSum = 0;
@@ -231,6 +253,18 @@ namespace SimCalModule
         vecTruth_energy.clear();
         vecTruth_vertexIndex.clear();
         vecTruth_trackID.clear();
+        nstoredPlaneParticles = 0;
+        vecPlane_pdgID.clear();
+        vecPlane_px.clear();
+        vecPlane_py.clear();
+        vecPlane_pz.clear();
+        vecPlane_x.clear();
+        vecPlane_y.clear();
+        vecPlane_z.clear();
+        vecPlane_energy.clear();
+        vecPlane_vertexIndex.clear();
+        vecPlane_trackID.clear();
+        vecPlane_primary_Dmeson.clear();
     }
 
     void EventAction::AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double v_x, G4double v_y, G4double v_z)
@@ -246,5 +280,29 @@ namespace SimCalModule
         vecTruth_vertexIndex.push_back(vertexIndex);
         vecTruth_trackID.push_back(trackID);
         nstoredTruthParticles++;
+    }
+    void EventAction::AddPlaneParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double v_x, G4double v_y, G4double v_z, int primary_Dmeson)
+    {
+        vecPlane_pdgID.push_back(pdgID);
+        vecPlane_px.push_back(px);
+        vecPlane_py.push_back(py);
+        vecPlane_pz.push_back(pz);
+        vecPlane_energy.push_back(energy);
+        vecPlane_x.push_back(v_x);
+        vecPlane_y.push_back(v_y);
+        vecPlane_z.push_back(v_z);
+        vecPlane_vertexIndex.push_back(vertexIndex);
+        vecPlane_trackID.push_back(trackID);
+        vecPlane_primary_Dmeson.push_back(primary_Dmeson);
+        nstoredPlaneParticles++;
+    }
+
+    G4int GetfNumuCClabel() const
+    {
+        return fNumuCClabel;
+    }
+    G4int GetfD_id() const
+    {
+        return fD_id;
     }
 }

@@ -19,7 +19,10 @@ namespace SimCalModule
         void EndOfEventAction(const G4Event *) override;
         void ResetEventData();
         void AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz);
-
+        void AddPlaneParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz);
+        G4int GetfNumuCClabel() const;
+        G4int GetfD_id() const;
+        G4int GetPrimary_trackid() const;
     private:
         RunAction *fRunAction;
         G4int fEcalCollID;
@@ -35,6 +38,9 @@ namespace SimCalModule
         G4double SecondaryMomentum_px;
         G4double SecondaryMomentum_py;
         G4double SecondaryMomentum_pz;
+        G4dint fNumuCClabel;
+        G4int fD_id;
+        G4int Primary_trackid;
         G4double CaloEdepSum;
         G4double CaloVisibleEdepSum;
         G4double EcalEdepSum;
@@ -66,6 +72,19 @@ namespace SimCalModule
         std::vector<G4double> vecTruth_energy;
         std::vector<G4int> vecTruth_vertexIndex;
         std::vector<G4int> vecTruth_trackID;
+        G4int nstoredPlaneParticles;
+        std::vector<G4int> vecPlane_pdgID;
+        std::vector<G4double> vecPlane_px;
+        std::vector<G4double> vecPlane_py;
+        std::vector<G4double> vecPlane_pz;
+        std::vector<G4double> vecPlane_x;
+        std::vector<G4double> vecPlane_y;
+        std::vector<G4double> vecPlane_z;
+        std::vector<G4double> vecPlane_energy;
+        std::vector<G4int> vecPlane_vertexIndex;
+        std::vector<G4int> vecPlane_trackID;
+        std::vector<G4int> vecPlane_primary_Dmeson;
+
     };
 }
 

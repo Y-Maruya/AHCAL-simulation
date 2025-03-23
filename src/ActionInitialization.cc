@@ -3,6 +3,7 @@
 #include "EventAction.hh"
 #include "RunAction.hh"
 #include "TrackingAction.hh"
+#include "SteppingAction.hh"
 namespace SimCalModule
 {
     ActionInitialization::ActionInitialization()
@@ -27,6 +28,7 @@ namespace SimCalModule
         RunAction *run = new RunAction(primary);
         SetUserAction(run);
         SetUserAction(new EventAction(run));
+        SetUserAction(new SteppingAction());
         SetUserAction(new TrackingAction());
     }
 }

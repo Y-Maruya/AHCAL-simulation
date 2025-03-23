@@ -37,7 +37,10 @@ namespace SimCalModule
         secondaryenergy(-1),
         secondarymomentum_px(-1),
         secondarymomentum_py(-1),
-        secondarymomentum_pz(-1)
+        secondarymomentum_pz(-1),
+        fNumuCClabel(-1),
+        fD_id(-1),
+        fPrimary_trackid(-1)
     //------------------------------------------------------------------------------
     {
     fpParticleGun = new G4ParticleGun();
@@ -148,27 +151,28 @@ namespace SimCalModule
         break;
         }
     }
-    std::string outputFileName = fInputFileName.substr(0,fInputFileName.find(".root"))+"_interaction.txt";
-    std::ofstream outputfile(outputFileName,std::ios_base::app);
+    // std::string outputFileName = fInputFileName.substr(0,fInputFileName.find(".root"))+"_interaction.txt";
+    // std::ofstream outputfile(outputFileName,std::ios_base::app);
     outputfile<<anEvent->GetEventID();
     if(ccnue){
         ftagNulabel = 0;
-        outputfile<<" CCNue";
+        // outputfile<<" CCNue";
     }
     if(ccnumu){
-        outputfile<<" CCNumu";
+        // outputfile<<" CCNumu";
         ftagNulabel = 1;
+        fNumuCClabel = 0;
     }
     if(ccnutau){
-        outputfile<<" CCNutau";
+        // outputfile<<" CCNutau";
         ftagNulabel = 2;
     }
     if(nc){
-        outputfile<<" NC";
+        // outputfile<<" NC";
         ftagNulabel = 3;
     }
     if(!ccnue && !ccnumu && !ccnutau && !nc){
-        outputfile<<" Other";
+        // outputfile<<" Other";
         ftagNulabel = 4;
     }
     outputfile<<std::endl;
@@ -184,6 +188,23 @@ namespace SimCalModule
         if(status->at(j)!=1) continue;
         G4PrimaryParticle* particle = new G4PrimaryParticle(pdgc->at(j),px->at(j)*GeV,py->at(j)*GeV,pz->at(j)*GeV);
         vertex->SetPrimary(particle);
+    }
+    for (size_t j = 0; j < pdgc->size(); j++){
+        G4PrimaryParticle* particle = vertex->GetPrimary(j);
+        if (abs(particle->GetPDGcode()) == 13 && particle->GetPx() == secondarymomentum_px*GeV && particle->GetPy() == secondarymomentum_py*GeV && particle->GetPz() == secondarymomentum_pz*GeV){
+            fPrimary_trackid = j;
+            break;
+        }
+    }
+    if (ccnumu){
+        for (size_t j = 0; j < pdgc->size(); j++){
+            G4PrimaryParticle* particle = vertex->GetPrimary(j);
+            if (particle->GetPDGcode()/100 % 10 == 4 || particle->GetPDGcode() < 1e6){
+                fD_id = j;
+                fNumuCClabel = 1;
+                break;
+            }
+        }
     }
     anEvent->AddPrimaryVertex(vertex);
     // if(fRunAction){
@@ -266,5 +287,20 @@ namespace SimCalModule
         G4ThreeVector Momentum(secondarymomentum_px,secondarymomentum_py,secondarymomentum_pz);
         return Momentum;
     }
-    
+
+    G4int PrimaryGenerator::GetNumuCClabel() const
+    {
+        return fNumuCClabel;
+    }
+
+    G4int PrimaryGenerator::GetD_id() const
+    {
+        return fD_id;
+    }
+
+    G4int PrimaryGenerator::GetPrimary_trackid() const
+    {
+        return fPrimary_trackid;
+    }
+
 }

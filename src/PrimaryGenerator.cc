@@ -189,7 +189,7 @@ namespace SimCalModule
         G4PrimaryParticle* particle = new G4PrimaryParticle(pdgc->at(j),px->at(j)*GeV,py->at(j)*GeV,pz->at(j)*GeV);
         vertex->SetPrimary(particle);
     }
-    for (size_t j = 0; j < pdgc->size(); j++){
+    for (size_t j = 0; j < vertex->GetNumberOfParticle(); j++){
         G4PrimaryParticle* particle = vertex->GetPrimary(j);
         if (abs(particle->GetPDGcode()) == 13 && particle->GetPx() == secondarymomentum_px*GeV && particle->GetPy() == secondarymomentum_py*GeV && particle->GetPz() == secondarymomentum_pz*GeV){
             fPrimary_trackid = j;
@@ -197,7 +197,7 @@ namespace SimCalModule
         }
     }
     if (ccnumu){
-        for (size_t j = 0; j < pdgc->size(); j++){
+        for (size_t j = 0; j < vertex->GetNumberOfParticle(); j++){
             G4PrimaryParticle* particle = vertex->GetPrimary(j);
             if (particle->GetPDGcode()/100 % 10 == 4 || particle->GetPDGcode() < 1e6){
                 fD_id = j;

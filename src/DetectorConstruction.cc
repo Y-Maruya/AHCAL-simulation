@@ -290,95 +290,95 @@ namespace SimCalModule
         G4LogicalVolume *World_Logical = new G4LogicalVolume(World_Solid, GetCaloMaterial(WorldMatIndex), "World_Logical");
         G4VPhysicalVolume *World_Physical = new G4PVPlacement(0, G4ThreeVector(), World_Logical, "World_Physical", 0, false, 0, ifcheckOverlaps);
 
-        // Concrete
-        //         G4GenericTrap
-        std::vector<G4TwoVector> vertices = {
-            G4TwoVector(-3500*mm, 718.64926*mm),
-            G4TwoVector(3500*mm, 718.64926*mm),
-            G4TwoVector(3500*mm, -2000*mm),
-            G4TwoVector(-3500*mm, -2000*mm),
-            G4TwoVector(-3500*mm, 0*mm),
-            G4TwoVector(3500*mm, 0*mm),
-            G4TwoVector(3500*mm, -2000*mm),
-            G4TwoVector(-3500*mm, -2000*mm)
-        };
-        G4GenericTrap* trap = new G4GenericTrap("G4GenericTrap", 4211*mm, vertices);
+        // // Concrete
+        // //         G4GenericTrap
+        // std::vector<G4TwoVector> vertices = {
+        //     G4TwoVector(-3500*mm, 718.64926*mm),
+        //     G4TwoVector(3500*mm, 718.64926*mm),
+        //     G4TwoVector(3500*mm, -2000*mm),
+        //     G4TwoVector(-3500*mm, -2000*mm),
+        //     G4TwoVector(-3500*mm, 0*mm),
+        //     G4TwoVector(3500*mm, 0*mm),
+        //     G4TwoVector(3500*mm, -2000*mm),
+        //     G4TwoVector(-3500*mm, -2000*mm)
+        // };
+        // G4GenericTrap* trap = new G4GenericTrap("G4GenericTrap", 4211*mm, vertices);
 
-        // G4Box
-        G4Box* box = new G4Box("G4Box", 3500*mm, 1359.32463*mm, 2500*mm);
+        // // G4Box
+        // G4Box* box = new G4Box("G4Box", 3500*mm, 1359.32463*mm, 2500*mm);
 
-        // Union
-        G4ThreeVector unionPos(0, -640.67537*mm, -6711*mm);
-        G4UnionSolid* unionSolid = new G4UnionSolid("Union", trap, box, nullptr, unionPos);
+        // // Union
+        // G4ThreeVector unionPos(0, -640.67537*mm, -6711*mm);
+        // G4UnionSolid* unionSolid = new G4UnionSolid("Union", trap, box, nullptr, unionPos);
 
-        // G4ExtrudedSolid
-        std::vector<G4TwoVector> xtruVertices = {
-            G4TwoVector(-249.688535823926*mm, -2092.67262661278*mm),
-            G4TwoVector(-659.688533689763*mm, -2092.64659428002*mm),
-            G4TwoVector(-659.491619954808*mm, 1008.99935688666*mm),
-            G4TwoVector(-624.297268814504*mm, 1219.15023222633*mm),
-            G4TwoVector(-251.251278073094*mm, 3447.75579600066*mm),
-            G4TwoVector(598.577583878622*mm, 3447.70183734512*mm),
-            G4TwoVector(750.663203602453*mm, 3447.69217883377*mm),
-            G4TwoVector(750.405939461698*mm, -604.546168540679*mm),
-            G4TwoVector(750.362673186257*mm, -1286.04595907448*mm),
-            G4TwoVector(436.065806982358*mm, -3162.76081141812*mm),
-            G4TwoVector(-249.75647241976*mm, -3162.76184973231*mm)
-        };
-        std::vector<G4ExtrudedSolid::ZSection> zSections = {
-            G4ExtrudedSolid::ZSection(-375*mm, G4TwoVector(0, 0), 1),
-            G4ExtrudedSolid::ZSection(375*mm, G4TwoVector(0, 0), 1)
-        };
-        G4ExtrudedSolid* xtru = new G4ExtrudedSolid("G4ExtrudedSolid", xtruVertices, zSections);
+        // // G4ExtrudedSolid
+        // std::vector<G4TwoVector> xtruVertices = {
+        //     G4TwoVector(-249.688535823926*mm, -2092.67262661278*mm),
+        //     G4TwoVector(-659.688533689763*mm, -2092.64659428002*mm),
+        //     G4TwoVector(-659.491619954808*mm, 1008.99935688666*mm),
+        //     G4TwoVector(-624.297268814504*mm, 1219.15023222633*mm),
+        //     G4TwoVector(-251.251278073094*mm, 3447.75579600066*mm),
+        //     G4TwoVector(598.577583878622*mm, 3447.70183734512*mm),
+        //     G4TwoVector(750.663203602453*mm, 3447.69217883377*mm),
+        //     G4TwoVector(750.405939461698*mm, -604.546168540679*mm),
+        //     G4TwoVector(750.362673186257*mm, -1286.04595907448*mm),
+        //     G4TwoVector(436.065806982358*mm, -3162.76081141812*mm),
+        //     G4TwoVector(-249.75647241976*mm, -3162.76184973231*mm)
+        // };
+        // std::vector<G4ExtrudedSolid::ZSection> zSections = {
+        //     G4ExtrudedSolid::ZSection(-375*mm, G4TwoVector(0, 0), 1),
+        //     G4ExtrudedSolid::ZSection(375*mm, G4TwoVector(0, 0), 1)
+        // };
+        // G4ExtrudedSolid* xtru = new G4ExtrudedSolid("G4ExtrudedSolid", xtruVertices, zSections);
 
-        G4ThreeVector firstPos(576.9*mm, -177.6*mm, -598.8*mm);
-        G4RotationMatrix firstRot;
-        firstRot.rotateX(0.721829429078283*deg);
-        firstRot.rotateY(-9.50550937438183*deg);
-        firstRot.rotateZ(-0.119210810400234*deg);
-        G4Transform3D transformFirst(firstRot, firstPos);
+        // G4ThreeVector firstPos(576.9*mm, -177.6*mm, -598.8*mm);
+        // G4RotationMatrix firstRot;
+        // firstRot.rotateX(0.721829429078283*deg);
+        // firstRot.rotateY(-9.50550937438183*deg);
+        // firstRot.rotateZ(-0.119210810400234*deg);
+        // G4Transform3D transformFirst(firstRot, firstPos);
 
-        G4VSolid* displacedUnion =
-            new G4DisplacedSolid("DisplacedUnion", unionSolid, transformFirst);
-        // Subtraction
-        G4RotationMatrix rotSubtraction;
-        rotSubtraction.rotateX(90*deg);
-        G4ThreeVector posSubtraction(0, 75*mm, 0);
-        G4Transform3D transformSubtraction(rotSubtraction, posSubtraction);
+        // G4VSolid* displacedUnion =
+        //     new G4DisplacedSolid("DisplacedUnion", unionSolid, transformFirst);
+        // // Subtraction
+        // G4RotationMatrix rotSubtraction;
+        // rotSubtraction.rotateX(90*deg);
+        // G4ThreeVector posSubtraction(0, 75*mm, 0);
+        // G4Transform3D transformSubtraction(rotSubtraction, posSubtraction);
 
-        G4VSolid* displacedXtru =
-              new G4DisplacedSolid("DisplacedXtru", xtru, transformSubtraction);
+        // G4VSolid* displacedXtru =
+        //       new G4DisplacedSolid("DisplacedXtru", xtru, transformSubtraction);
 
-        G4SubtractionSolid* subtractionSolid = new G4SubtractionSolid("TrenchAndWall", displacedUnion, displacedXtru);
-        // G4Box* backBox = new G4Box("BackBox", 3500 * mm, 718.64926 * mm, 2000 * mm); // z-length = 2000mm (half-length = 1000mm)
-        // G4ThreeVector backBoxPosition(576.9*mm, -177.6*mm -640.67537*mm, 4211 * mm + 2000 * mm-598.8*mm); // Positioned just behind the trap
+        // G4SubtractionSolid* subtractionSolid = new G4SubtractionSolid("TrenchAndWall", displacedUnion, displacedXtru);
+        // // G4Box* backBox = new G4Box("BackBox", 3500 * mm, 718.64926 * mm, 2000 * mm); // z-length = 2000mm (half-length = 1000mm)
+        // // G4ThreeVector backBoxPosition(576.9*mm, -177.6*mm -640.67537*mm, 4211 * mm + 2000 * mm-598.8*mm); // Positioned just behind the trap
 
-        // // ** MultiUnion to combine everything **
-        // G4MultiUnion* multiUnion = new G4MultiUnion("MultiUnion");
+        // // // ** MultiUnion to combine everything **
+        // // G4MultiUnion* multiUnion = new G4MultiUnion("MultiUnion");
 
-        // // Add original subtraction solid
-        // G4Transform3D transformOriginal{G4RotationMatrix(), G4ThreeVector()}; // Identity transform
-        // multiUnion->AddNode(*subtractionSolid, transformOriginal);
+        // // // Add original subtraction solid
+        // // G4Transform3D transformOriginal{G4RotationMatrix(), G4ThreeVector()}; // Identity transform
+        // // multiUnion->AddNode(*subtractionSolid, transformOriginal);
 
-        // // Add back box
-        // G4RotationMatrix rotbackBox;
-        // rotbackBox.rotateX(0.721829429078283 * deg);
-        // rotbackBox.rotateY(-9.50550937438183 * deg);
-        // rotbackBox.rotateZ(-0.119210810400234 * deg);
-        // G4Transform3D transformBackBox(rotbackBox, backBoxPosition);
-        // multiUnion->AddNode(*backBox, transformBackBox);
+        // // // Add back box
+        // // G4RotationMatrix rotbackBox;
+        // // rotbackBox.rotateX(0.721829429078283 * deg);
+        // // rotbackBox.rotateY(-9.50550937438183 * deg);
+        // // rotbackBox.rotateZ(-0.119210810400234 * deg);
+        // // G4Transform3D transformBackBox(rotbackBox, backBoxPosition);
+        // // multiUnion->AddNode(*backBox, transformBackBox);
 
-        // // Finalize the MultiUnion
-        // multiUnion->Voxelize();
+        // // // Finalize the MultiUnion
+        // // multiUnion->Voxelize();
 
-        // // ** Logical Volume and Placement **
-        // G4LogicalVolume* multiUnionLog = new G4LogicalVolume(multiUnion, GetCaloMaterial(Concrete), "TrenchAndWallLog");
-        // new G4PVPlacement(nullptr, G4ThreeVector(), multiUnionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
+        // // // ** Logical Volume and Placement **
+        // // G4LogicalVolume* multiUnionLog = new G4LogicalVolume(multiUnion, GetCaloMaterial(Concrete), "TrenchAndWallLog");
+        // // new G4PVPlacement(nullptr, G4ThreeVector(), multiUnionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
 
 
 
-        G4LogicalVolume* subtractionLog = new G4LogicalVolume(subtractionSolid, GetCaloMaterial(Concrete), "TrenchAndWallLog");
-        new G4PVPlacement(nullptr, G4ThreeVector(), subtractionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
+        // G4LogicalVolume* subtractionLog = new G4LogicalVolume(subtractionSolid, GetCaloMaterial(Concrete), "TrenchAndWallLog");
+        // new G4PVPlacement(nullptr, G4ThreeVector(), subtractionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
 
         
 

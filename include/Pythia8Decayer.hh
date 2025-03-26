@@ -5,7 +5,7 @@
 #include "G4VExtDecayer.hh"
 #include "globals.hh"
 
-#include "Pythia8_i/Pythia8_i.h"
+#include "Pythia8/Pythia.h"
 
 class G4Track;
 class G4DecayProducts;

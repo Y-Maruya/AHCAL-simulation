@@ -82,7 +82,7 @@ int main(int argc, char **argv)
     
     // set a short name for the plugin
     G4PhysListRegistry* plReg = G4PhysListRegistry::Instance();
-    plReg->AddPhysicsExtension("PY8DK", "Py8DecayerPhysics");
+    plReg->AddPhysicsExtension("PY8DK", "Pythia8DecayerPhysics");
     
     physicsList = plFactory.GetReferencePhysList(physListName);
     
@@ -98,10 +98,10 @@ int main(int argc, char **argv)
     }
     
     runManager->SetUserInitialization(physicsList);
-    auto physicsList = new FTFP_BERT;
+    // auto physicsList = new FTFP_BERT;
     // physicsList->RegisterPhysics(new G4DecayPhysics());
     // physicsList->SetDefaultCutValue(0.05 * mm);
-    runManager->SetUserInitialization(physicsList);
+    // runManager->SetUserInitialization(physicsList);
 
     runManager->SetUserInitialization(new ActionInitialization);
 

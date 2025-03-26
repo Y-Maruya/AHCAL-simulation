@@ -1,6 +1,7 @@
 #include "Pythia8Decayer.hh"
 #include "G4ParticleDefinition.hh"
 #include "G4DynamicParticle.hh"
+#include "G4ParticleTable.hh"
 #include "G4Track.hh"
 #include "G4ParticleChange.hh"
 #include "G4SystemOfUnits.hh"
@@ -9,7 +10,7 @@ Pythia8Decayer::Pythia8Decayer( const std::string s )
  : G4VExtDecayer(s)
 {
   // In the constructor, make a decayer instance, so that it's initialized here and not in the event loop
-  std::string docstring = Pythia8_i::xmlpath();
+  std::string docstring = "../share/Pythia8/xmldoc";
   m_decayer = std::make_unique<Pythia8::Pythia>(docstring);
 
   m_decayer->readString("ProcessLevel:all = off"); 
@@ -23,7 +24,7 @@ Pythia8Decayer::Pythia8Decayer( const std::string s )
   m_decayer->readString("Init:showAllParticleData=false");
   m_decayer->readString("Init:showChangedParticleData=false");
   //
-  // specify how many Py8 events to print out, at either level
+  // specify how many Pythia8 events to print out, at either level
   // in this particular case print out a maximum of 10 events
   //
   m_decayer->readString("Next:numberShowProcess = 0" );
@@ -74,24 +75,22 @@ G4DecayProducts* Pythia8Decayer::ImportDecayProducts(const G4Track& aTrack){
 
    // specify polarization, if any
    
-   // special logic for primary taus(anti-taus), assumed to have polarization -1(+1), respectively
-   // verified from the polarization info in Genie output
-   double spinup;
-   FaserTrackInformation* info = dynamic_cast<FaserTrackInformation*>(aTrack.GetUserInformation());
-   if (info != nullptr && abs(pdgid) == 15 && (info->GetClassification() == TrackClassification::Primary || info->GetClassification() == TrackClassification::RegeneratedPrimary))
-   {
-       G4cout << "Primary tau decay identified." << G4endl;
-       spinup = (pdgid > 0 ? -1 : +1);
-   }
-   else
-   // NOTE: while in Py8 polarization is a double variable , 
+   // // special logic for primary taus(anti-taus), assumed to have polarization -1(+1), respectively
+   // // verified from the polarization info in Genie output
+   // double spinup;
+   // FaserTrackInformation* info = dynamic_cast<FaserTrackInformation*>(aTrack.GetUserInformation());
+   // if (info != nullptr && abs(pdgid) == 15 && (info->GetClassification() == TrackClassification::Primary || info->GetClassification() == TrackClassification::RegeneratedPrimary))
+   // {
+   //     G4cout << "Primary tau decay identified." << G4endl;
+   //     spinup = (pdgid > 0 ? -1 : +1);
+   // }
+   // else
+   // NOTE: while in Pythia8 polarization is a double variable , 
    //       in reality it's expected to be -1, 0., or 1 in case of "external" tau's, 
    //       similar to LHA SPINUP; see Particle Decays, Hadron and Tau Decays in docs at
    //       https://pythia.org/manuals/pythia8305/Welcome.html
    //       so it's not able to handle anything like 0.99, thus we're rounding off    
-   {
-       spinup = round( std::cos( aTrack.GetPolarization().angle( aTrack.GetMomentumDirection() ) ) );
-   }
+   double spinup = round( std::cos( aTrack.GetPolarization().angle( aTrack.GetMomentumDirection() ) ) );
    G4cout << "Using " << aTrack.GetParticleDefinition()->GetParticleName() << " helicity " << spinup << " for Pythia8 decay." << G4endl;
    m_decayer->event.back().pol( spinup );
 

@@ -688,7 +688,7 @@ namespace SimCalModule
             Zpos += 50 *mm + DownstreamSizeZ /2 ;
             new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
             Zpos += DownstreamSizeZ / 2.;
-            std::cout<<"Zpos: "<< Zpos<<std::endl;            
+            std::cout<<"Zpos: "<< Zpos+Initial_pos.z()<<std::endl;            
         }
         else if (HcalModuleType == 2)
         {

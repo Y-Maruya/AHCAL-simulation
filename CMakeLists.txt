@@ -22,8 +22,23 @@ find_package(ROOT REQUIRED)
 message(STATUS "Found ROOT: ${ROOT_DIR}.")
 add_definitions(-DWITHROOT)
 include_directories(${ROOT_INCLUDE_DIRS})
-find_package(Pythia8 REQUIRED)
+#----------------------------------------------------------------------------
+# Setting pythia8 on LCG
+find_package(PkgConfig REQUIRED)
+
+# pythia8-config を使って include と lib を取得
+execute_process(COMMAND $ENV{PYTHIA8}/bin/pythia8-config --cxxflags OUTPUT_VARIABLE PYTHIA8_CXX_FLAGS OUTPUT_STRIP_TRAILING_WHITESPACE)
+execute_process(COMMAND $ENV{PYTHIA8}/bin/pythia8-config --libs OUTPUT_VARIABLE PYTHIA8_LIBS OUTPUT_STRIP_TRAILING_WHITESPACE)
+
+# 変数の設定
+set(PYTHIA8_INCLUDE_DIR "$ENV{PYTHIA8}/include")
+set(PYTHIA8_LIBRARY "$ENV{PYTHIA8}/lib/libpythia8.so")
+
 include_directories(${PYTHIA8_INCLUDE_DIR})
+link_directories("$ENV{PYTHIA8}/lib")
+
+message(STATUS "PYTHIA8 Include Dir: ${PYTHIA8_INCLUDE_DIR}")
+message(STATUS "PYTHIA8 Libraries: ${PYTHIA8_LIBRARY}")
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project

@@ -1,0 +1,4427 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-02 [MT]   (8-December-2023)
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+
+***** Table : Nb of materials = 21 *****
+
+ Material: G4_Galactic    density:  0.000 mg/cm3  RadL: 204310098.490 pc   Nucl.Int.Length: 113427284.261 pc 
+                       Imean:  21.800 eV   temperature:   2.73 K  pressure:   0.00 atm
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material:   G4_AIR    density:  1.205 mg/cm3  RadL: 303.921 m    Nucl.Int.Length: 710.095 m  
+                       Imean:  85.700 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:   0.01 %  ElmAbundance   0.02 % 
+
+   --->  Element: N (N)   Z =  7.0   N =    14   A = 14.007 g/mole
+         --->  Isotope:   N14   Z =  7   N =  14   A =  14.00 g/mole   abundance: 99.632 %
+         --->  Isotope:   N15   Z =  7   N =  15   A =  15.00 g/mole   abundance:  0.368 %
+          ElmMassFraction:  75.53 %  ElmAbundance  78.44 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  23.18 %  ElmAbundance  21.07 % 
+
+   --->  Element: Ar (Ar)   Z = 18.0   N =    40   A = 39.948 g/mole
+         --->  Isotope:  Ar36   Z = 18   N =  36   A =  35.97 g/mole   abundance:  0.337 %
+         --->  Isotope:  Ar38   Z = 18   N =  38   A =  37.96 g/mole   abundance:  0.063 %
+         --->  Isotope:  Ar40   Z = 18   N =  40   A =  39.96 g/mole   abundance: 99.600 %
+          ElmMassFraction:   1.28 %  ElmAbundance   0.47 % 
+
+
+ Material:    G4_Al    density:  2.699 g/cm3   RadL:   8.896 cm   Nucl.Int.Length:  38.894 cm 
+                       Imean: 166.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Al (Al)   Z = 13.0   N =    27   A = 26.982 g/mole
+         --->  Isotope:  Al27   Z = 13   N =  27   A =  26.98 g/mole   abundance: 100.000 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material:    G4_Si    density:  2.330 g/cm3   RadL:   9.366 cm   Nucl.Int.Length:  45.660 cm 
+                       Imean: 173.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Si (Si)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  Si28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  Si29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  Si30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material:    G4_Fe    density:  7.874 g/cm3   RadL:   1.757 cm   Nucl.Int.Length:  16.990 cm 
+                       Imean: 286.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Fe (Fe)   Z = 26.0   N =    56   A = 55.845 g/mole
+         --->  Isotope:  Fe54   Z = 26   N =  54   A =  53.94 g/mole   abundance:  5.845 %
+         --->  Isotope:  Fe56   Z = 26   N =  56   A =  55.93 g/mole   abundance: 91.754 %
+         --->  Isotope:  Fe57   Z = 26   N =  57   A =  56.94 g/mole   abundance:  2.119 %
+         --->  Isotope:  Fe58   Z = 26   N =  58   A =  57.93 g/mole   abundance:  0.282 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material:     G4_W    density: 19.300 g/cm3   RadL:   3.504 mm   Nucl.Int.Length:  10.312 cm 
+                       Imean: 727.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: W (W)   Z = 74.0   N =   184   A = 183.842 g/mole
+         --->  Isotope:  W180   Z = 74   N = 180   A = 179.95 g/mole   abundance:  0.120 %
+         --->  Isotope:  W182   Z = 74   N = 182   A = 181.95 g/mole   abundance: 26.500 %
+         --->  Isotope:  W183   Z = 74   N = 183   A = 182.95 g/mole   abundance: 14.310 %
+         --->  Isotope:  W184   Z = 74   N = 184   A = 183.95 g/mole   abundance: 30.640 %
+         --->  Isotope:  W186   Z = 74   N = 186   A = 185.95 g/mole   abundance: 28.430 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material:    G4_Cu    density:  8.960 g/cm3   RadL:   1.436 cm   Nucl.Int.Length:  15.588 cm 
+                       Imean: 322.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Cu (Cu)   Z = 29.0   N =    64   A = 63.546 g/mole
+         --->  Isotope:  Cu63   Z = 29   N =  63   A =  62.93 g/mole   abundance: 69.170 %
+         --->  Isotope:  Cu65   Z = 29   N =  65   A =  64.93 g/mole   abundance: 30.830 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material:      CuW    density: 16.450 g/cm3   RadL:   4.426 mm   Nucl.Int.Length:  11.373 cm 
+                       Imean: 634.701 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: W (W)   Z = 74.0   N =   184   A = 183.842 g/mole
+         --->  Isotope:  W180   Z = 74   N = 180   A = 179.95 g/mole   abundance:  0.120 %
+         --->  Isotope:  W182   Z = 74   N = 182   A = 181.95 g/mole   abundance: 26.500 %
+         --->  Isotope:  W183   Z = 74   N = 183   A = 182.95 g/mole   abundance: 14.310 %
+         --->  Isotope:  W184   Z = 74   N = 184   A = 183.95 g/mole   abundance: 30.640 %
+         --->  Isotope:  W186   Z = 74   N = 186   A = 185.95 g/mole   abundance: 28.430 %
+          ElmMassFraction:  85.00 %  ElmAbundance  66.20 % 
+
+   --->  Element: Cu (Cu)   Z = 29.0   N =    64   A = 63.546 g/mole
+         --->  Isotope:  Cu63   Z = 29   N =  63   A =  62.93 g/mole   abundance: 69.170 %
+         --->  Isotope:  Cu65   Z = 29   N =  65   A =  64.93 g/mole   abundance: 30.830 %
+          ElmMassFraction:  15.00 %  ElmAbundance  33.80 % 
+
+
+ Material:    Steel    density:  7.850 g/cm3   RadL:   1.770 cm   Nucl.Int.Length:  16.997 cm 
+                       Imean: 284.280 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:   0.22 %  ElmAbundance   1.01 % 
+
+   --->  Element: Mn (Mn)   Z = 25.0   N =    55   A = 54.938 g/mole
+         --->  Isotope:  Mn55   Z = 25   N =  55   A =  54.94 g/mole   abundance: 100.000 %
+          ElmMassFraction:   1.40 %  ElmAbundance   1.41 % 
+
+   --->  Element: Si (Si)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  Si28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  Si29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  Si30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+          ElmMassFraction:   0.35 %  ElmAbundance   0.69 % 
+
+   --->  Element: P (P)   Z = 15.0   N =    31   A = 30.974 g/mole
+         --->  Isotope:   P31   Z = 15   N =  31   A =  30.97 g/mole   abundance: 100.000 %
+          ElmMassFraction:   0.04 %  ElmAbundance   0.08 % 
+
+   --->  Element: S (S)   Z = 16.0   N =    32   A = 32.066 g/mole
+         --->  Isotope:   S32   Z = 16   N =  32   A =  31.97 g/mole   abundance: 94.930 %
+         --->  Isotope:   S33   Z = 16   N =  33   A =  32.97 g/mole   abundance:  0.760 %
+         --->  Isotope:   S34   Z = 16   N =  34   A =  33.97 g/mole   abundance:  4.290 %
+         --->  Isotope:   S36   Z = 16   N =  36   A =  35.97 g/mole   abundance:  0.020 %
+          ElmMassFraction:   0.05 %  ElmAbundance   0.09 % 
+
+   --->  Element: Fe (Fe)   Z = 26.0   N =    56   A = 55.845 g/mole
+         --->  Isotope:  Fe54   Z = 26   N =  54   A =  53.94 g/mole   abundance:  5.845 %
+         --->  Isotope:  Fe56   Z = 26   N =  56   A =  55.93 g/mole   abundance: 91.754 %
+         --->  Isotope:  Fe57   Z = 26   N =  57   A =  56.94 g/mole   abundance:  2.119 %
+         --->  Isotope:  Fe58   Z = 26   N =  58   A =  57.93 g/mole   abundance:  0.282 %
+          ElmMassFraction:  97.94 %  ElmAbundance  96.73 % 
+
+
+ Material: G4_SILICON_DIOXIDE SiO_2   density:  2.320 g/cm3   RadL:  11.658 cm   Nucl.Int.Length:  41.317 cm 
+                       Imean: 139.200 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Si (Si)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  Si28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  Si29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  Si30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+          ElmMassFraction:  46.74 %  ElmAbundance  33.33 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  53.26 %  ElmAbundance  66.67 % 
+
+
+ Material:    Epoxy    density:  1.250 g/cm3   RadL:  32.800 cm   Nucl.Int.Length:  60.584 cm 
+                       Imean:  70.995 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  68.74 %  ElmAbundance  42.31 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   6.29 %  ElmAbundance  46.15 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  24.97 %  ElmAbundance  11.54 % 
+
+
+ Material:      FR4    density:  1.860 g/cm3   RadL:  17.324 cm   Nucl.Int.Length:  45.791 cm 
+                       Imean:  95.146 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Si (Si)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  Si28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  Si29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  Si30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+          ElmMassFraction:  24.68 %  ElmAbundance   9.74 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  39.91 %  ElmAbundance  27.65 % 
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  32.44 %  ElmAbundance  29.94 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   2.97 %  ElmAbundance  32.67 % 
+
+
+ Material:      ESR    density:  1.380 g/cm3   RadL:  28.950 cm   Nucl.Int.Length:  56.734 cm 
+                       Imean:  75.967 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  62.50 %  ElmAbundance  45.45 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   4.20 %  ElmAbundance  36.36 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  33.30 %  ElmAbundance  18.18 % 
+
+
+ Material: G4_PbWO4    density:  8.280 g/cm3   RadL:   8.925 mm   Nucl.Int.Length:  20.740 cm 
+                       Imean: 542.741 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  14.06 %  ElmAbundance  66.67 % 
+
+   --->  Element: Pb (Pb)   Z = 82.0   N =   207   A = 207.217 g/mole
+         --->  Isotope: Pb204   Z = 82   N = 204   A = 203.97 g/mole   abundance:  1.400 %
+         --->  Isotope: Pb206   Z = 82   N = 206   A = 205.97 g/mole   abundance: 24.100 %
+         --->  Isotope: Pb207   Z = 82   N = 207   A = 206.98 g/mole   abundance: 22.100 %
+         --->  Isotope: Pb208   Z = 82   N = 208   A = 207.98 g/mole   abundance: 52.400 %
+          ElmMassFraction:  45.54 %  ElmAbundance  16.67 % 
+
+   --->  Element: W (W)   Z = 74.0   N =   184   A = 183.842 g/mole
+         --->  Isotope:  W180   Z = 74   N = 180   A = 179.95 g/mole   abundance:  0.120 %
+         --->  Isotope:  W182   Z = 74   N = 182   A = 181.95 g/mole   abundance: 26.500 %
+         --->  Isotope:  W183   Z = 74   N = 183   A = 182.95 g/mole   abundance: 14.310 %
+         --->  Isotope:  W184   Z = 74   N = 184   A = 183.95 g/mole   abundance: 30.640 %
+         --->  Isotope:  W186   Z = 74   N = 186   A = 185.95 g/mole   abundance: 28.430 %
+          ElmMassFraction:  40.40 %  ElmAbundance  16.67 % 
+
+
+ Material:   G4_BGO    density:  7.130 g/cm3   RadL:   1.118 cm   Nucl.Int.Length:  22.710 cm 
+                       Imean: 534.100 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Bi (Bi)   Z = 83.0   N =   209   A = 208.980 g/mole
+         --->  Isotope: Bi209   Z = 83   N = 209   A = 208.98 g/mole   abundance: 100.000 %
+          ElmMassFraction:  67.10 %  ElmAbundance  21.05 % 
+
+   --->  Element: Ge (Ge)   Z = 32.0   N =    73   A = 72.613 g/mole
+         --->  Isotope:  Ge70   Z = 32   N =  70   A =  69.92 g/mole   abundance: 20.840 %
+         --->  Isotope:  Ge72   Z = 32   N =  72   A =  71.92 g/mole   abundance: 27.540 %
+         --->  Isotope:  Ge73   Z = 32   N =  73   A =  72.92 g/mole   abundance:  7.730 %
+         --->  Isotope:  Ge74   Z = 32   N =  74   A =  73.92 g/mole   abundance: 36.280 %
+         --->  Isotope:  Ge76   Z = 32   N =  76   A =  75.92 g/mole   abundance:  7.610 %
+          ElmMassFraction:  17.49 %  ElmAbundance  15.79 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  15.41 %  ElmAbundance  63.16 % 
+
+
+ Material: G4_POLYSTYRENE    density:  1.060 g/cm3   RadL:  41.313 cm   Nucl.Int.Length:  68.750 cm 
+                       Imean:  68.700 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  92.26 %  ElmAbundance  50.00 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   7.74 %  ElmAbundance  50.00 % 
+
+
+ Material: polystyrene    density:  1.032 g/cm3   RadL:  42.433 cm   Nucl.Int.Length:  70.615 cm 
+                       Imean:  68.700 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  92.26 %  ElmAbundance  50.00 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   7.74 %  ElmAbundance  50.00 % 
+
+
+ Material: G4_PLASTIC_SC_VINYLTOLUENE    density:  1.032 g/cm3   RadL:  42.544 cm   Nucl.Int.Length:  69.969 cm 
+                       Imean:  64.700 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:  91.47 %  ElmAbundance  47.37 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   8.53 %  ElmAbundance  52.63 % 
+
+
+ Material: SciGlass    density:  6.000 g/cm3   RadL:   1.616 cm   Nucl.Int.Length:  23.831 cm 
+                       Imean: 332.520 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: Si (Si)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  Si28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  Si29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  Si30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+          ElmMassFraction:   1.40 %  ElmAbundance   2.28 % 
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  15.36 %  ElmAbundance  43.74 % 
+
+   --->  Element: B (B)   Z =  5.0   N =    11   A = 10.811 g/mole
+         --->  Isotope:   B10   Z =  5   N =  10   A =  10.01 g/mole   abundance: 19.900 %
+         --->  Isotope:   B11   Z =  5   N =  11   A =  11.01 g/mole   abundance: 80.100 %
+          ElmMassFraction:   2.70 %  ElmAbundance  11.39 % 
+
+   --->  Element: F (F)   Z =  9.0   N =    19   A = 18.998 g/mole
+         --->  Isotope:   F19   Z =  9   N =  19   A =  19.00 g/mole   abundance: 100.000 %
+          ElmMassFraction:   8.83 %  ElmAbundance  21.18 % 
+
+   --->  Element: Gd (Gd)   Z = 64.0   N =   157   A = 157.252 g/mole
+         --->  Isotope: Gd152   Z = 64   N = 152   A = 151.92 g/mole   abundance:  0.200 %
+         --->  Isotope: Gd154   Z = 64   N = 154   A = 153.92 g/mole   abundance:  2.180 %
+         --->  Isotope: Gd155   Z = 64   N = 155   A = 154.92 g/mole   abundance: 14.800 %
+         --->  Isotope: Gd156   Z = 64   N = 156   A = 155.92 g/mole   abundance: 20.470 %
+         --->  Isotope: Gd157   Z = 64   N = 157   A = 156.92 g/mole   abundance: 15.650 %
+         --->  Isotope: Gd158   Z = 64   N = 158   A = 157.92 g/mole   abundance: 24.840 %
+         --->  Isotope: Gd160   Z = 64   N = 160   A = 159.93 g/mole   abundance: 21.860 %
+          ElmMassFraction:  69.19 %  ElmAbundance  20.05 % 
+
+   --->  Element: Ce (Ce)   Z = 58.0   N =   140   A = 140.115 g/mole
+         --->  Isotope: Ce136   Z = 58   N = 136   A = 135.91 g/mole   abundance:  0.185 %
+         --->  Isotope: Ce138   Z = 58   N = 138   A = 137.91 g/mole   abundance:  0.251 %
+         --->  Isotope: Ce140   Z = 58   N = 140   A = 139.91 g/mole   abundance: 88.450 %
+         --->  Isotope: Ce142   Z = 58   N = 142   A = 141.91 g/mole   abundance: 11.114 %
+          ElmMassFraction:   0.70 %  ElmAbundance   0.23 % 
+
+   --->  Element: Ge (Ge)   Z = 32.0   N =    73   A = 72.613 g/mole
+         --->  Isotope:  Ge70   Z = 32   N =  70   A =  69.92 g/mole   abundance: 20.840 %
+         --->  Isotope:  Ge72   Z = 32   N =  72   A =  71.92 g/mole   abundance: 27.540 %
+         --->  Isotope:  Ge73   Z = 32   N =  73   A =  72.92 g/mole   abundance:  7.730 %
+         --->  Isotope:  Ge74   Z = 32   N =  74   A =  73.92 g/mole   abundance: 36.280 %
+         --->  Isotope:  Ge76   Z = 32   N =  76   A =  75.92 g/mole   abundance:  7.610 %
+          ElmMassFraction:   1.82 %  ElmAbundance   1.14 % 
+
+
+ Material: G4_GRAPHITE Graphite   density:  2.210 g/cm3   RadL:  19.320 cm   Nucl.Int.Length:  36.269 cm 
+                       Imean:  81.000 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction: 100.00 %  ElmAbundance 100.00 % 
+
+
+ Material: Concrete    density:  2.400 g/cm3   RadL:  10.377 cm   Nucl.Int.Length:  40.297 cm 
+                       Imean: 125.204 eV   temperature: 293.15 K  pressure:   1.00 atm
+
+   --->  Element: O (O)   Z =  8.0   N =    16   A = 15.999 g/mole
+         --->  Isotope:   O16   Z =  8   N =  16   A =  15.99 g/mole   abundance: 99.757 %
+         --->  Isotope:   O17   Z =  8   N =  17   A =  17.00 g/mole   abundance:  0.038 %
+         --->  Isotope:   O18   Z =  8   N =  18   A =  18.00 g/mole   abundance:  0.205 %
+          ElmMassFraction:  50.00 %  ElmAbundance  58.02 % 
+
+   --->  Element: Si (Si)   Z = 14.0   N =    28   A = 28.085 g/mole
+         --->  Isotope:  Si28   Z = 14   N =  28   A =  27.98 g/mole   abundance: 92.230 %
+         --->  Isotope:  Si29   Z = 14   N =  29   A =  28.98 g/mole   abundance:  4.683 %
+         --->  Isotope:  Si30   Z = 14   N =  30   A =  29.97 g/mole   abundance:  3.087 %
+          ElmMassFraction:  20.00 %  ElmAbundance  13.22 % 
+
+   --->  Element: Ca (Ca)   Z = 20.0   N =    40   A = 40.078 g/mole
+         --->  Isotope:  Ca40   Z = 20   N =  40   A =  39.96 g/mole   abundance: 96.941 %
+         --->  Isotope:  Ca42   Z = 20   N =  42   A =  41.96 g/mole   abundance:  0.647 %
+         --->  Isotope:  Ca43   Z = 20   N =  43   A =  42.96 g/mole   abundance:  0.135 %
+         --->  Isotope:  Ca44   Z = 20   N =  44   A =  43.96 g/mole   abundance:  2.086 %
+         --->  Isotope:  Ca46   Z = 20   N =  46   A =  45.95 g/mole   abundance:  0.004 %
+         --->  Isotope:  Ca48   Z = 20   N =  48   A =  47.95 g/mole   abundance:  0.187 %
+          ElmMassFraction:  20.00 %  ElmAbundance   9.26 % 
+
+   --->  Element: Na (Na)   Z = 11.0   N =    23   A = 22.990 g/mole
+         --->  Isotope:  Na23   Z = 11   N =  23   A =  22.99 g/mole   abundance: 100.000 %
+          ElmMassFraction:   1.00 %  ElmAbundance   0.81 % 
+
+   --->  Element: Fe (Fe)   Z = 26.0   N =    56   A = 55.845 g/mole
+         --->  Isotope:  Fe54   Z = 26   N =  54   A =  53.94 g/mole   abundance:  5.845 %
+         --->  Isotope:  Fe56   Z = 26   N =  56   A =  55.93 g/mole   abundance: 91.754 %
+         --->  Isotope:  Fe57   Z = 26   N =  57   A =  56.94 g/mole   abundance:  2.119 %
+         --->  Isotope:  Fe58   Z = 26   N =  58   A =  57.93 g/mole   abundance:  0.282 %
+          ElmMassFraction:   1.40 %  ElmAbundance   0.47 % 
+
+   --->  Element: Al (Al)   Z = 13.0   N =    27   A = 26.982 g/mole
+         --->  Isotope:  Al27   Z = 13   N =  27   A =  26.98 g/mole   abundance: 100.000 %
+          ElmMassFraction:   3.00 %  ElmAbundance   2.06 % 
+
+   --->  Element: C (C)   Z =  6.0   N =    12   A = 12.011 g/mole
+         --->  Isotope:   C12   Z =  6   N =  12   A =  12.00 g/mole   abundance: 98.930 %
+         --->  Isotope:   C13   Z =  6   N =  13   A =  13.00 g/mole   abundance:  1.070 %
+          ElmMassFraction:   3.00 %  ElmAbundance   4.64 % 
+
+   --->  Element: K (K)   Z = 19.0   N =    39   A = 39.098 g/mole
+         --->  Isotope:   K39   Z = 19   N =  39   A =  38.96 g/mole   abundance: 93.258 %
+         --->  Isotope:   K40   Z = 19   N =  40   A =  39.96 g/mole   abundance:  0.012 %
+         --->  Isotope:   K41   Z = 19   N =  41   A =  40.96 g/mole   abundance:  6.730 %
+          ElmMassFraction:   1.00 %  ElmAbundance   0.47 % 
+
+   --->  Element: H (H)   Z =  1.0   N =     1   A =  1.008 g/mole
+         --->  Isotope:    H1   Z =  1   N =   1   A =   1.01 g/mole   abundance: 99.989 %
+         --->  Isotope:    H2   Z =  1   N =   2   A =   2.01 g/mole   abundance:  0.011 %
+          ElmMassFraction:   0.60 %  ElmAbundance  11.05 % 
+
+
+
+DetectorConstruction initialized.
+G4PhysListRegistry::GetModularPhysicsList <FTFP_BERT+PY8DK>, as "FTFP_BERT" with extensions "+PY8DK"
+<<< Geant4 Physics List simulation engine: FTFP_BERT
+
+<<< RegisterPhysics with Pythia8DecayerPhysics "PY8DK"
+<<< Reference Physics List FTFP_BERT+PY8DK is built
+
+Visualization Manager instantiating with verbosity "warnings (3)"...
+Visualization Manager initialising...
+Registering graphics systems...
+
+You have successfully registered the following graphics systems.
+Registered graphics systems are:
+  ASCIITree (ATree)
+  DAWNFILE (DAWNFILE)
+  G4HepRepFile (HepRepFile)
+  RayTracer (RayTracer)
+  VRML2FILE (VRML2FILE)
+  gMocrenFile (gMocrenFile)
+  TOOLSSG_OFFSCREEN (TSG_OFFSCREEN)
+  TOOLSSG_OFFSCREEN (TSG_OFFSCREEN, TSG_FILE)
+  OpenGLImmediateQt (OGLIQt, OGLI)
+  OpenGLStoredQt (OGLSQt, OGL, OGLS)
+  OpenGLImmediateXm (OGLIXm, OGLIQt_FALLBACK)
+  OpenGLStoredXm (OGLSXm, OGLSQt_FALLBACK)
+  OpenGLImmediateX (OGLIX, OGLIQt_FALLBACK, OGLIXm_FALLBACK)
+  OpenGLStoredX (OGLSX, OGLSQt_FALLBACK, OGLSXm_FALLBACK)
+  RayTracerX (RayTracerX)
+  Qt3D (Qt3D)
+  TOOLSSG_X11_GLES (TSG_X11_GLES, TSGX11, TSG_XT_GLES_FALLBACK)
+  TOOLSSG_XT_GLES (TSG_XT_GLES, TSGXt, TSG_QT_GLES_FALLBACK)
+  TOOLSSG_XT_ZB (TSG_XT_ZB, TSGXtZB)
+  TOOLSSG_QT_GLES (TSG_QT_GLES, TSGQt, TSG)
+  TOOLSSG_QT_ZB (TSG_QT_ZB, TSGQtZB)
+Default graphics system is: TSG_OFFSCREEN (based on batch session).
+Default window size hint is: 600x600-0+0 (based on G4VisManager initialisation).
+Note: Parameters specified on the command line will override these defaults.
+      Use "vis/open" without parameters to get these defaults.
+
+Registering model factories...
+
+You have successfully registered the following model factories.
+Registered model factories:
+  generic
+  drawByAttribute
+  drawByCharge
+  drawByOriginVolume
+  drawByParticleID
+  drawByEncounteredVolume
+
+Registered models:
+  None
+
+Registered filter factories:
+  attributeFilter
+  chargeFilter
+  originVolumeFilter
+  particleFilter
+  encounteredVolumeFilter
+
+Registered filters:
+  None
+
+You have successfully registered the following user vis actions.
+Run Duration User Vis Actions: none
+End of Event User Vis Actions: none
+End of Run User Vis Actions: none
+
+Some /vis commands (optionally) take a string to specify colour.
+"/vis/list" to see available colours.
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/FASERlink/genie_data/faser_off_AHCAL0mmW_charm.central.1000ifb.0tmp.gfaser.root
+/generator/FixedPrimaryVertexPosition false
+/run/initialize
+Zpos: 1712.2
+Construction /CaloDet/HcalSD
+
+ hInelastic FTFP_BERT : threshold between BERT and FTFP is over the interval 
+ for pions :   3 to 6 GeV
+ for kaons :   3 to 6 GeV
+ for proton :  3 to 6 GeV
+ for neutron : 3 to 6 GeV
+
+### Adding tracking cuts for neutron  TimeCut(ns)= 10000  KinEnergyCut(MeV)= 0
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.310      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change: 25 Jul 2023  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 26 Mar 2025 at 03:33:47    |  | 
+ |  |                                                                              |  | 
+ |  |   Program documentation and an archive of historic versions is found on:     |  | 
+ |  |                                                                              |  | 
+ |  |                               https://pythia.org/                            |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is authored by a collaboration consisting of:                       |  | 
+ |  |                                                                              |  | 
+ |  |   Christian Bierlich, Naomi Cooke, Nishita Desai, Leif Gellersen,            |  | 
+ |  |   Ilkka Helenius, Philip Ilten, Leif Lonnblad, Stephen Mrenna,               |  | 
+ |  |   Stefan Prestel, Christian Preuss, Torbjorn Sjostrand, Peter Skands,        |  | 
+ |  |   Marius Utheim and Rob Verheyen.                                            |  | 
+ |  |                                                                              |  | 
+ |  |   The complete list of authors, including contact information and            |  | 
+ |  |   affiliations, can be found on https://pythia.org/.                         |  | 
+ |  |   Problems or bugs should be reported on email at authors@pythia.org.        |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is C. Bierlich et al,                           |  | 
+ |  |   'A comprehensive guide to the physics and usage of Pythia 8.3',            |  | 
+ |  |   SciPost Phys. Codebases 8-r8.3 (2022) [arXiv:2203.11601 [hep-ph]]          |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is released under the GNU General Public Licence version 2 or later.|  | 
+ |  |   Please respect the MCnet Guidelines for Event Generator Authors and Users. |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2023 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+Setting ext decayer for: B+
+Setting ext decayer for: B+
+Setting ext decayer for: B-
+Setting ext decayer for: B-
+Setting ext decayer for: B0
+Setting ext decayer for: Bc+
+Setting ext decayer for: Bc-
+Setting ext decayer for: Bs0
+Setting ext decayer for: D+
+Setting ext decayer for: D-
+Setting ext decayer for: D0
+Setting ext decayer for: Ds+
+Setting ext decayer for: Ds-
+Setting ext decayer for: J/psi
+Setting ext decayer for: N(1440)+
+Setting ext decayer for: N(1440)0
+Setting ext decayer for: N(1520)+
+Setting ext decayer for: N(1520)0
+Setting ext decayer for: N(1535)+
+Setting ext decayer for: N(1535)0
+Setting ext decayer for: N(1650)+
+Setting ext decayer for: N(1650)0
+Setting ext decayer for: N(1675)+
+Setting ext decayer for: N(1675)0
+Setting ext decayer for: N(1680)+
+Setting ext decayer for: N(1680)0
+Setting ext decayer for: N(1700)+
+Setting ext decayer for: N(1700)0
+Setting ext decayer for: N(1710)+
+Setting ext decayer for: N(1710)0
+Setting ext decayer for: N(1720)+
+Setting ext decayer for: N(1720)0
+Setting ext decayer for: N(1900)+
+Setting ext decayer for: N(1900)0
+Setting ext decayer for: N(1990)+
+Setting ext decayer for: N(1990)0
+Setting ext decayer for: N(2090)+
+Setting ext decayer for: N(2090)0
+Setting ext decayer for: N(2190)+
+Setting ext decayer for: N(2190)0
+Setting ext decayer for: N(2220)+
+Setting ext decayer for: N(2220)0
+Setting ext decayer for: N(2250)+
+Setting ext decayer for: N(2250)0
+Setting ext decayer for: Upsilon
+Setting ext decayer for: a0(1450)+
+Setting ext decayer for: a0(1450)-
+Setting ext decayer for: a0(1450)0
+Setting ext decayer for: a0(980)+
+Setting ext decayer for: a0(980)-
+Setting ext decayer for: a0(980)0
+Setting ext decayer for: a1(1260)+
+Setting ext decayer for: a1(1260)-
+Setting ext decayer for: a1(1260)0
+Setting ext decayer for: a2(1320)+
+Setting ext decayer for: a2(1320)-
+Setting ext decayer for: a2(1320)0
+Setting ext decayer for: anti_B0
+Setting ext decayer for: anti_Bs0
+Setting ext decayer for: anti_D0
+Setting ext decayer for: anti_N(1440)+
+Setting ext decayer for: anti_N(1440)0
+Setting ext decayer for: anti_N(1520)+
+Setting ext decayer for: anti_N(1520)0
+Setting ext decayer for: anti_N(1535)+
+Setting ext decayer for: anti_N(1535)0
+Setting ext decayer for: anti_N(1650)+
+Setting ext decayer for: anti_N(1650)0
+Setting ext decayer for: anti_N(1675)+
+Setting ext decayer for: anti_N(1675)0
+Setting ext decayer for: anti_N(1680)+
+Setting ext decayer for: anti_N(1680)0
+Setting ext decayer for: anti_N(1700)+
+Setting ext decayer for: anti_N(1700)0
+Setting ext decayer for: anti_N(1710)+
+Setting ext decayer for: anti_N(1710)0
+Setting ext decayer for: anti_N(1720)+
+Setting ext decayer for: anti_N(1720)0
+Setting ext decayer for: anti_N(1900)+
+Setting ext decayer for: anti_N(1900)0
+Setting ext decayer for: anti_N(1990)+
+Setting ext decayer for: anti_N(1990)0
+Setting ext decayer for: anti_N(2090)+
+Setting ext decayer for: anti_N(2090)0
+Setting ext decayer for: anti_N(2190)+
+Setting ext decayer for: anti_N(2190)0
+Setting ext decayer for: anti_N(2220)+
+Setting ext decayer for: anti_N(2220)0
+Setting ext decayer for: anti_N(2250)+
+Setting ext decayer for: anti_N(2250)0
+Setting ext decayer for: anti_delta(1600)+
+Setting ext decayer for: anti_delta(1600)++
+Setting ext decayer for: anti_delta(1600)-
+Setting ext decayer for: anti_delta(1600)0
+Setting ext decayer for: anti_delta(1620)+
+Setting ext decayer for: anti_delta(1620)++
+Setting ext decayer for: anti_delta(1620)-
+Setting ext decayer for: anti_delta(1620)0
+Setting ext decayer for: anti_delta(1700)+
+Setting ext decayer for: anti_delta(1700)++
+Setting ext decayer for: anti_delta(1700)-
+Setting ext decayer for: anti_delta(1700)0
+Setting ext decayer for: anti_delta(1900)+
+Setting ext decayer for: anti_delta(1900)++
+Setting ext decayer for: anti_delta(1900)-
+Setting ext decayer for: anti_delta(1900)0
+Setting ext decayer for: anti_delta(1905)+
+Setting ext decayer for: anti_delta(1905)++
+Setting ext decayer for: anti_delta(1905)-
+Setting ext decayer for: anti_delta(1905)0
+Setting ext decayer for: anti_delta(1910)+
+Setting ext decayer for: anti_delta(1910)++
+Setting ext decayer for: anti_delta(1910)-
+Setting ext decayer for: anti_delta(1910)0
+Setting ext decayer for: anti_delta(1920)+
+Setting ext decayer for: anti_delta(1920)++
+Setting ext decayer for: anti_delta(1920)-
+Setting ext decayer for: anti_delta(1920)0
+Setting ext decayer for: anti_delta(1930)+
+Setting ext decayer for: anti_delta(1930)++
+Setting ext decayer for: anti_delta(1930)-
+Setting ext decayer for: anti_delta(1930)0
+Setting ext decayer for: anti_delta(1950)+
+Setting ext decayer for: anti_delta(1950)++
+Setting ext decayer for: anti_delta(1950)-
+Setting ext decayer for: anti_delta(1950)0
+Setting ext decayer for: anti_delta+
+Setting ext decayer for: anti_delta++
+Setting ext decayer for: anti_delta-
+Setting ext decayer for: anti_delta0
+Setting ext decayer for: anti_doublehyperH4
+Setting ext decayer for: anti_doublehyperdoubleneutron
+Setting ext decayer for: anti_hyperH4
+Setting ext decayer for: anti_hyperHe5
+Setting ext decayer for: anti_hyperalpha
+Setting ext decayer for: anti_hypertriton
+Setting ext decayer for: anti_k(1460)0
+Setting ext decayer for: anti_k0_star(1430)0
+Setting ext decayer for: anti_k1(1270)0
+Setting ext decayer for: anti_k1(1400)0
+Setting ext decayer for: anti_k2(1770)0
+Setting ext decayer for: anti_k2_star(1430)0
+Setting ext decayer for: anti_k2_star(1980)0
+Setting ext decayer for: anti_k3_star(1780)0
+Setting ext decayer for: anti_k_star(1410)0
+Setting ext decayer for: anti_k_star(1680)0
+Setting ext decayer for: anti_k_star0
+Setting ext decayer for: anti_kaon0
+Setting ext decayer for: anti_lambda
+Setting ext decayer for: anti_lambda(1405)
+Setting ext decayer for: anti_lambda(1520)
+Setting ext decayer for: anti_lambda(1600)
+Setting ext decayer for: anti_lambda(1670)
+Setting ext decayer for: anti_lambda(1690)
+Setting ext decayer for: anti_lambda(1800)
+Setting ext decayer for: anti_lambda(1810)
+Setting ext decayer for: anti_lambda(1820)
+Setting ext decayer for: anti_lambda(1830)
+Setting ext decayer for: anti_lambda(1890)
+Setting ext decayer for: anti_lambda(2100)
+Setting ext decayer for: anti_lambda(2110)
+Setting ext decayer for: anti_lambda_b
+Setting ext decayer for: anti_lambda_c+
+Setting ext decayer for: anti_neutron
+Setting ext decayer for: anti_omega-
+Setting ext decayer for: anti_omega_b-
+Setting ext decayer for: anti_omega_c0
+Setting ext decayer for: anti_sigma(1385)+
+Setting ext decayer for: anti_sigma(1385)-
+Setting ext decayer for: anti_sigma(1385)0
+Setting ext decayer for: anti_sigma(1660)+
+Setting ext decayer for: anti_sigma(1660)-
+Setting ext decayer for: anti_sigma(1660)0
+Setting ext decayer for: anti_sigma(1670)+
+Setting ext decayer for: anti_sigma(1670)-
+Setting ext decayer for: anti_sigma(1670)0
+Setting ext decayer for: anti_sigma(1750)+
+Setting ext decayer for: anti_sigma(1750)-
+Setting ext decayer for: anti_sigma(1750)0
+Setting ext decayer for: anti_sigma(1775)+
+Setting ext decayer for: anti_sigma(1775)-
+Setting ext decayer for: anti_sigma(1775)0
+Setting ext decayer for: anti_sigma(1915)+
+Setting ext decayer for: anti_sigma(1915)-
+Setting ext decayer for: anti_sigma(1915)0
+Setting ext decayer for: anti_sigma(1940)+
+Setting ext decayer for: anti_sigma(1940)-
+Setting ext decayer for: anti_sigma(1940)0
+Setting ext decayer for: anti_sigma(2030)+
+Setting ext decayer for: anti_sigma(2030)-
+Setting ext decayer for: anti_sigma(2030)0
+Setting ext decayer for: anti_sigma+
+Setting ext decayer for: anti_sigma-
+Setting ext decayer for: anti_sigma0
+Setting ext decayer for: anti_sigma_b+
+Setting ext decayer for: anti_sigma_b-
+Setting ext decayer for: anti_sigma_b0
+Setting ext decayer for: anti_sigma_c+
+Setting ext decayer for: anti_sigma_c++
+Setting ext decayer for: anti_sigma_c0
+Setting ext decayer for: anti_triton
+Setting ext decayer for: anti_xi(1530)-
+Setting ext decayer for: anti_xi(1530)0
+Setting ext decayer for: anti_xi(1690)-
+Setting ext decayer for: anti_xi(1690)0
+Setting ext decayer for: anti_xi(1820)-
+Setting ext decayer for: anti_xi(1820)0
+Setting ext decayer for: anti_xi(1950)-
+Setting ext decayer for: anti_xi(1950)0
+Setting ext decayer for: anti_xi(2030)-
+Setting ext decayer for: anti_xi(2030)0
+Setting ext decayer for: anti_xi-
+Setting ext decayer for: anti_xi0
+Setting ext decayer for: anti_xi_b-
+Setting ext decayer for: anti_xi_b0
+Setting ext decayer for: anti_xi_c+
+Setting ext decayer for: anti_xi_c0
+Setting ext decayer for: b1(1235)+
+Setting ext decayer for: b1(1235)-
+Setting ext decayer for: b1(1235)0
+Setting ext decayer for: delta(1600)+
+Setting ext decayer for: delta(1600)++
+Setting ext decayer for: delta(1600)-
+Setting ext decayer for: delta(1600)0
+Setting ext decayer for: delta(1620)+
+Setting ext decayer for: delta(1620)++
+Setting ext decayer for: delta(1620)-
+Setting ext decayer for: delta(1620)0
+Setting ext decayer for: delta(1700)+
+Setting ext decayer for: delta(1700)++
+Setting ext decayer for: delta(1700)-
+Setting ext decayer for: delta(1700)0
+Setting ext decayer for: delta(1900)+
+Setting ext decayer for: delta(1900)++
+Setting ext decayer for: delta(1900)-
+Setting ext decayer for: delta(1900)0
+Setting ext decayer for: delta(1905)+
+Setting ext decayer for: delta(1905)++
+Setting ext decayer for: delta(1905)-
+Setting ext decayer for: delta(1905)0
+Setting ext decayer for: delta(1910)+
+Setting ext decayer for: delta(1910)++
+Setting ext decayer for: delta(1910)-
+Setting ext decayer for: delta(1910)0
+Setting ext decayer for: delta(1920)+
+Setting ext decayer for: delta(1920)++
+Setting ext decayer for: delta(1920)-
+Setting ext decayer for: delta(1920)0
+Setting ext decayer for: delta(1930)+
+Setting ext decayer for: delta(1930)++
+Setting ext decayer for: delta(1930)-
+Setting ext decayer for: delta(1930)0
+Setting ext decayer for: delta(1950)+
+Setting ext decayer for: delta(1950)++
+Setting ext decayer for: delta(1950)-
+Setting ext decayer for: delta(1950)0
+Setting ext decayer for: delta+
+Setting ext decayer for: delta++
+Setting ext decayer for: delta-
+Setting ext decayer for: delta0
+Setting ext decayer for: doublehyperH4
+Setting ext decayer for: doublehyperdoubleneutron
+Setting ext decayer for: eta
+Setting ext decayer for: eta(1295)
+Setting ext decayer for: eta(1405)
+Setting ext decayer for: eta(1475)
+Setting ext decayer for: eta2(1645)
+Setting ext decayer for: eta2(1870)
+Setting ext decayer for: eta_prime
+Setting ext decayer for: etac
+Setting ext decayer for: f0(1370)
+Setting ext decayer for: f0(1500)
+Setting ext decayer for: f0(1710)
+Setting ext decayer for: f0(500)
+Setting ext decayer for: f0(980)
+Setting ext decayer for: f1(1285)
+Setting ext decayer for: f1(1420)
+Setting ext decayer for: f2(1270)
+Setting ext decayer for: f2(1810)
+Setting ext decayer for: f2(2010)
+Setting ext decayer for: f2_prime(1525)
+Setting ext decayer for: h1(1170)
+Setting ext decayer for: h1(1380)
+Setting ext decayer for: hyperH4
+Setting ext decayer for: hyperHe5
+Setting ext decayer for: hyperalpha
+Setting ext decayer for: hypertriton
+Setting ext decayer for: k(1460)+
+Setting ext decayer for: k(1460)-
+Setting ext decayer for: k(1460)0
+Setting ext decayer for: k0_star(1430)+
+Setting ext decayer for: k0_star(1430)-
+Setting ext decayer for: k0_star(1430)0
+Setting ext decayer for: k1(1270)+
+Setting ext decayer for: k1(1270)-
+Setting ext decayer for: k1(1270)0
+Setting ext decayer for: k1(1400)+
+Setting ext decayer for: k1(1400)-
+Setting ext decayer for: k1(1400)0
+Setting ext decayer for: k2(1770)+
+Setting ext decayer for: k2(1770)-
+Setting ext decayer for: k2(1770)0
+Setting ext decayer for: k2_star(1430)+
+Setting ext decayer for: k2_star(1430)-
+Setting ext decayer for: k2_star(1430)0
+Setting ext decayer for: k2_star(1980)+
+Setting ext decayer for: k2_star(1980)-
+Setting ext decayer for: k2_star(1980)0
+Setting ext decayer for: k3_star(1780)+
+Setting ext decayer for: k3_star(1780)-
+Setting ext decayer for: k3_star(1780)0
+Setting ext decayer for: k_star(1410)+
+Setting ext decayer for: k_star(1410)-
+Setting ext decayer for: k_star(1410)0
+Setting ext decayer for: k_star(1680)+
+Setting ext decayer for: k_star(1680)-
+Setting ext decayer for: k_star(1680)0
+Setting ext decayer for: k_star+
+Setting ext decayer for: k_star-
+Setting ext decayer for: k_star0
+Setting ext decayer for: kaon+
+Setting ext decayer for: kaon-
+Setting ext decayer for: kaon0
+Setting ext decayer for: kaon0L
+Setting ext decayer for: kaon0S
+Setting ext decayer for: lambda
+Setting ext decayer for: lambda(1405)
+Setting ext decayer for: lambda(1520)
+Setting ext decayer for: lambda(1600)
+Setting ext decayer for: lambda(1670)
+Setting ext decayer for: lambda(1690)
+Setting ext decayer for: lambda(1800)
+Setting ext decayer for: lambda(1810)
+Setting ext decayer for: lambda(1820)
+Setting ext decayer for: lambda(1830)
+Setting ext decayer for: lambda(1890)
+Setting ext decayer for: lambda(2100)
+Setting ext decayer for: lambda(2110)
+Setting ext decayer for: lambda_b
+Setting ext decayer for: lambda_c+
+Setting ext decayer for: mu+
+Setting ext decayer for: mu-
+Setting ext decayer for: neutron
+Setting ext decayer for: omega
+Setting ext decayer for: omega(1420)
+Setting ext decayer for: omega(1650)
+Setting ext decayer for: omega-
+Setting ext decayer for: omega3(1670)
+Setting ext decayer for: omega_b-
+Setting ext decayer for: omega_c0
+Setting ext decayer for: phi
+Setting ext decayer for: phi(1680)
+Setting ext decayer for: phi3(1850)
+Setting ext decayer for: pi(1300)+
+Setting ext decayer for: pi(1300)-
+Setting ext decayer for: pi(1300)0
+Setting ext decayer for: pi+
+Setting ext decayer for: pi-
+Setting ext decayer for: pi0
+Setting ext decayer for: pi2(1670)+
+Setting ext decayer for: pi2(1670)-
+Setting ext decayer for: pi2(1670)0
+Setting ext decayer for: rho(1450)+
+Setting ext decayer for: rho(1450)-
+Setting ext decayer for: rho(1450)0
+Setting ext decayer for: rho(1700)+
+Setting ext decayer for: rho(1700)-
+Setting ext decayer for: rho(1700)0
+Setting ext decayer for: rho+
+Setting ext decayer for: rho-
+Setting ext decayer for: rho0
+Setting ext decayer for: rho3(1690)+
+Setting ext decayer for: rho3(1690)-
+Setting ext decayer for: rho3(1690)0
+Setting ext decayer for: sigma(1385)+
+Setting ext decayer for: sigma(1385)-
+Setting ext decayer for: sigma(1385)0
+Setting ext decayer for: sigma(1660)+
+Setting ext decayer for: sigma(1660)-
+Setting ext decayer for: sigma(1660)0
+Setting ext decayer for: sigma(1670)+
+Setting ext decayer for: sigma(1670)-
+Setting ext decayer for: sigma(1670)0
+Setting ext decayer for: sigma(1750)+
+Setting ext decayer for: sigma(1750)-
+Setting ext decayer for: sigma(1750)0
+Setting ext decayer for: sigma(1775)+
+Setting ext decayer for: sigma(1775)-
+Setting ext decayer for: sigma(1775)0
+Setting ext decayer for: sigma(1915)+
+Setting ext decayer for: sigma(1915)-
+Setting ext decayer for: sigma(1915)0
+Setting ext decayer for: sigma(1940)+
+Setting ext decayer for: sigma(1940)-
+Setting ext decayer for: sigma(1940)0
+Setting ext decayer for: sigma(2030)+
+Setting ext decayer for: sigma(2030)-
+Setting ext decayer for: sigma(2030)0
+Setting ext decayer for: sigma+
+Setting ext decayer for: sigma-
+Setting ext decayer for: sigma0
+Setting ext decayer for: sigma_b+
+Setting ext decayer for: sigma_b-
+Setting ext decayer for: sigma_b0
+Setting ext decayer for: sigma_c+
+Setting ext decayer for: sigma_c++
+Setting ext decayer for: sigma_c0
+Setting ext decayer for: tau+
+Setting ext decayer for: tau+
+Setting ext decayer for: tau-
+Setting ext decayer for: tau-
+Setting ext decayer for: triton
+Setting ext decayer for: xi(1530)-
+Setting ext decayer for: xi(1530)0
+Setting ext decayer for: xi(1690)-
+Setting ext decayer for: xi(1690)0
+Setting ext decayer for: xi(1820)-
+Setting ext decayer for: xi(1820)0
+Setting ext decayer for: xi(1950)-
+Setting ext decayer for: xi(1950)0
+Setting ext decayer for: xi(2030)-
+Setting ext decayer for: xi(2030)0
+Setting ext decayer for: xi-
+Setting ext decayer for: xi0
+Setting ext decayer for: xi_b-
+Setting ext decayer for: xi_b0
+Setting ext decayer for: xi_c+
+Setting ext decayer for: xi_c0
+/run/beamOn 3430
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                1
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      100 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               7
+Verbose level                                      1
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Urban
+Use built-in Birks satuaration                     0
+Build CSDA range enabled                           0
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 1 GeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           1
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 100 TeV in 61 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  100 TeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 7 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 TeV in 56 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina : Emin=    0 eV  Emax=  100 TeV
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 100 TeV, 18 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+     BetheHeitlerLPM : Emin=    0 eV  Emax=  100 TeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 150 keV, 7 bins/decade, spline: 0
+      LambdaPrime table from 150 keV to 100 TeV in 62 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  100 TeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e-  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+CoulombScat:  for e- XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for e+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e+  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+annihil:  for e+ XStype:2 SubType=5 BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for GenericIon  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for GenericIon  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+msc:  for alpha  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for alpha  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV
+          BetheBloch : Emin=7.9452 MeV Emax=  100 TeV
+
+msc:  for anti_proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for anti_proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for anti_proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for anti_proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for anti_proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+-----------------------------------------------------------------------
+                           Hadronic Processes for neutron
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronElasticXS: 0 eV  ---> 100 TeV
+  Process: neutronInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:      G4NeutronInelasticXS: 0 eV  ---> 100 TeV
+  Process: nCapture
+        Model:               nRadCapture: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+  Process: nKiller
+-----------------------------------------------------------------------
+                           Hadronic Processes for B-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: B-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for D-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: D-Inelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for GenericIon
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for He3
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: He3Inelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for alpha
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: alphaInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_He3
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_He3Inelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_alpha
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_alphaInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_deuteron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_deuteronInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-------------------------------------------------------------------------
+                           Hadronic Processes for anti_hypertriton
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_lambda
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: anti_lambdaInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_neutron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_proton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_triton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_tritonInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for deuteron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: dInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for e+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for e-
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for gamma
+  Process: photonNuclear
+        Model:               GammaNPreco: 0 eV  ---> 200 MeV
+        Model:            BertiniCascade: 199 MeV ---> 6 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+     Cr_sctns:            GammaNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for kaon+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: kaon+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for kaon-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: kaon-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for lambda
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: lambdaInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for mu+
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for mu-
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+  Process: muMinusCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for pi+
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: pi+Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for pi-
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: pi-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for proton
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: protonInelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for sigma-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: sigma-Inelastic
+        Model:                      FTFP: 3 GeV ---> 100 TeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for triton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: tInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+=======================================================================
+======       Geant4 Native Pre-compound Model Parameters       ========
+=======================================================================
+Type of pre-compound inverse x-section              3
+Pre-compound model active                           1
+Pre-compound excitation low energy                  100 keV
+Pre-compound excitation high energy                 30 MeV
+Angular generator for pre-compound model            1
+Use NeverGoBack option for pre-compound model       0
+Use SoftCutOff option for pre-compound model        0
+Use CEM transitions for pre-compound model          1
+Use GNASH transitions for pre-compound model        0
+Use HETC submodel for pre-compound model            0
+=======================================================================
+======       Nuclear De-excitation Module Parameters           ========
+=======================================================================
+Type of de-excitation inverse x-section             3
+Type of de-excitation factory                       Evaporation+GEM
+Number of de-excitation channels                    68
+Min excitation energy                               10 eV 
+Min energy per nucleon for multifragmentation       200 GeV
+Limit excitation energy for Fermi BreakUp           20 MeV
+Level density (1/MeV)                               0.075
+Use simple level density model                      1
+Use discrete excitation energy of the residual      1
+Time limit for long lived isomeres                  1 ns 
+Isomer production flag                              1
+Internal e- conversion flag                         1
+Store e- internal conversion data                   0
+Correlated gamma emission flag                      0
+Max 2J for sampling of angular correlations         10
+=======================================================================
+
+========= Table of registered couples ============================
+
+Index : 0     used in the geometry : Yes
+ Material : G4_AIR
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 1     used in the geometry : Yes
+ Material : polystyrene
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.1038 keV    e-  280.095 keV    e+  273.315 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 2     used in the geometry : Yes
+ Material : G4_POLYSTYRENE
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.12507 keV    e-  285.029 keV    e+  278.025 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 3     used in the geometry : Yes
+ Material : Steel
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  17.1646 keV    e-  952.983 keV    e+  905.002 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 4     used in the geometry : Yes
+ Material : G4_Galactic
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  990 eV     e-  990 eV     e+  990 eV  proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 5     used in the geometry : Yes
+ Material : ESR
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  2.59953 keV    e-  326.995 keV    e+  318.19 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 6     used in the geometry : Yes
+ Material : FR4
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  3.69419 keV    e-  389.055 keV    e+  377.343 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+Index : 7     used in the geometry : Yes
+ Material : G4_Fe
+ Range cuts        :  gamma  700 um     e-  700 um     e+  700 um  proton 700 um 
+ Energy thresholds :  gamma  17.2487 keV    e-  954.642 keV    e+  906.513 keV proton 70 keV
+ Region(s) which use this couple : 
+    DefaultRegionForTheWorld
+
+==================================================================
+
+G4VisManager: Using G4TrajectoryDrawByCharge as fallback trajectory model.
+See commands in /vis/modeling/trajectories/ for other options.
+### Run 0 starts.
+>>> The Run 0 has started. <<<
+Start to simulate the event 0
+D meson interaction at position: (514.078,304.115,6556.84) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 50.4806 GeV)
+ - pi0 (Momentum: 45.1508 GeV)
+ - kaon- (Momentum: 162.679 GeV)
+D meson interaction at position: (1137.33,52.8361,5877.62) mm
+Outgoing particles from D meson reaction:
+ - kaon- (Momentum: 14.8202 GeV)
+ - pi+ (Momentum: 12.0216 GeV)
+ - kaon+ (Momentum: 28.4081 GeV)
+Using tau+ helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0     -1.223      7.861    315.015    315.121      1.777
+     1        -15  (tau+)              -1     0     0     2     4     0     0     -1.223      7.861    315.015    315.121      1.777
+     2        -16  nu_taubar           91     1     0     0     0     0     0     -0.902      2.338    115.976    116.003      0.000
+     3        -11  e+                  91     1     0     0     0     0     0     -0.166      2.731    112.287    112.321      0.001
+     4         12  nu_e                91     1     0     0     0     0     0     -0.155      2.792     86.752     86.797      0.000
+                                   Charge sum:  1.000           Momentum sum:     -1.223      7.861    315.015    315.121      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.00388181, y: 0.0249474, z: 0.999681
+   Total Momentum = 315.116[GeV]
+   Momentum: -1.22322[GeV], y: 7.86131[GeV], z: 315.015[GeV]
+   Total Energy   = 315.121[GeV]
+   Kinetic Energy = 313.344[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000134374[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00777646, y: 0.0201565, z: 0.999767
+   Total Momentum = 116.003[GeV]
+   Momentum: -0.902092[GeV], y: 2.33821[GeV], z: 115.976[GeV]
+   Total Energy   = 116.003[GeV]
+   Kinetic Energy = 116.003[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e+
+   mass:        0.000510999[GeV]
+   charge:      1[e]
+   Direction x: -0.00147572, y: 0.0243187, z: 0.999703
+   Total Momentum = 112.321[GeV]
+   Momentum: -0.165753[GeV], y: 2.73149[GeV], z: 112.287[GeV]
+   Total Energy   = 112.321[GeV]
+   Kinetic Energy = 112.32[GeV]
+ MagneticMoment  [MeV/T]: 5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00179009, y: 0.0321623, z: 0.999481
+   Total Momentum = 86.7974[GeV]
+   Momentum: -0.155375[GeV], y: 2.79161[GeV], z: 86.7523[GeV]
+   Total Energy   = 86.7974[GeV]
+   Kinetic Energy = 86.7974[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (1116.96,246.45,6474.21) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 44.7031 GeV)
+ - pi0 (Momentum: 10.7789 GeV)
+ - kaon- (Momentum: 55.9974 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0     -3.003    -11.384    597.412    597.531      1.777
+     1         15  (tau-)              -1     0     0     2     3     0     0     -3.003    -11.384    597.412    597.531      1.777
+     2         16  nu_tau              91     1     0     0     0     0     0     -3.003    -10.802    545.556    545.671      0.000
+     3       -211  pi-                 91     1     0     0     0     0     0     -0.000     -0.582     51.857     51.860      0.140
+                                   Charge sum: -1.000           Momentum sum:     -3.003    -11.384    597.412    597.531      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.00502511, y: -0.0190518, z: 0.999806
+   Total Momentum = 597.528[GeV]
+   Momentum: -3.00264[GeV], y: -11.384[GeV], z: 597.412[GeV]
+   Total Energy   = 597.531[GeV]
+   Kinetic Energy = 595.754[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 5.82057e-05[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00550248, y: -0.0197951, z: 0.999789
+   Total Momentum = 545.671[GeV]
+   Momentum: -3.00254[GeV], y: -10.8016[GeV], z: 545.556[GeV]
+   Total Energy   = 545.671[GeV]
+   Kinetic Energy = 545.671[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -1.99798e-06, y: -0.01123, z: 0.999937
+   Total Momentum = 51.8602[GeV]
+   Momentum: -0.000103616[GeV], y: -0.582392[GeV], z: 51.8569[GeV]
+   Total Energy   = 51.8604[GeV]
+   Kinetic Energy = 51.7208[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0     -2.608     -6.630    182.577    182.724      1.777
+     1        -15  (tau+)              -1     0     0     2     4     0     0     -2.608     -6.630    182.577    182.724      1.777
+     2        -16  nu_taubar           91     1     0     0     0     0     0     -1.500     -1.757     64.131     64.172      0.000
+     3        -11  e+                  91     1     0     0     0     0     0     -0.154     -0.932     25.834     25.851      0.001
+     4         12  nu_e                91     1     0     0     0     0     0     -0.954     -3.942     92.612     92.701      0.000
+                                   Charge sum:  1.000           Momentum sum:     -2.608     -6.630    182.577    182.724      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.0142747, y: -0.0362884, z: 0.999239
+   Total Momentum = 182.716[GeV]
+   Momentum: -2.6082[GeV], y: -6.63047[GeV], z: 182.577[GeV]
+   Total Energy   = 182.724[GeV]
+   Kinetic Energy = 180.948[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000312007[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0233803, y: -0.0273788, z: 0.999352
+   Total Momentum = 64.1724[GeV]
+   Momentum: -1.50037[GeV], y: -1.75696[GeV], z: 64.1308[GeV]
+   Total Energy   = 64.1724[GeV]
+   Kinetic Energy = 64.1724[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e+
+   mass:        0.000510999[GeV]
+   charge:      1[e]
+   Direction x: -0.0059593, y: -0.036053, z: 0.999332
+   Total Momentum = 25.8508[GeV]
+   Momentum: -0.154053[GeV], y: -0.932001[GeV], z: 25.8336[GeV]
+   Total Energy   = 25.8508[GeV]
+   Kinetic Energy = 25.8503[GeV]
+ MagneticMoment  [MeV/T]: 5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0102888, y: -0.0425184, z: 0.999043
+   Total Momentum = 92.7012[GeV]
+   Momentum: -0.953782[GeV], y: -3.9415[GeV], z: 92.6124[GeV]
+   Total Energy   = 92.7012[GeV]
+   Kinetic Energy = 92.7012[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0     -0.250     -0.576     19.059     19.152      1.777
+     1         15  (tau-)              -1     0     0     2     5     0     0     -0.250     -0.576     19.059     19.152      1.777
+     2         16  nu_tau              91     1     0     0     0     0     0     -0.236      0.209      1.404      1.439      0.000
+     3       -211  pi-                 91     1     0     0     0     0     0     -0.313     -0.261      3.649      3.674      0.140
+     4       -211  pi-                 91     1     0     0     0     0     0     -0.128      0.042      4.925      4.929      0.140
+     5        211  pi+                 91     1     0     0     0     0     0      0.428     -0.565      9.080      9.109      0.140
+                                   Charge sum: -1.000           Momentum sum:     -0.250     -0.576     19.059     19.152      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.013085, y: -0.0302066, z: 0.999458
+   Total Momentum = 19.0689[GeV]
+   Momentum: -0.249517[GeV], y: -0.576006[GeV], z: 19.0586[GeV]
+   Total Energy   = 19.1515[GeV]
+   Kinetic Energy = 17.3747[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000432863[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.164239, y: 0.145107, z: 0.975689
+   Total Momentum = 1.43921[GeV]
+   Momentum: -0.236374[GeV], y: 0.20884[GeV], z: 1.40422[GeV]
+   Total Energy   = 1.43921[GeV]
+   Kinetic Energy = 1.43921[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0852977, y: -0.071192, z: 0.993809
+   Total Momentum = 3.6716[GeV]
+   Momentum: -0.313179[GeV], y: -0.261388[GeV], z: 3.64887[GeV]
+   Total Energy   = 3.67425[GeV]
+   Kinetic Energy = 3.53468[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.026069, y: 0.00851129, z: 0.999624
+   Total Momentum = 4.92719[GeV]
+   Momentum: -0.128447[GeV], y: 0.0419367[GeV], z: 4.92534[GeV]
+   Total Energy   = 4.92917[GeV]
+   Kinetic Energy = 4.7896[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: 0.0470455, y: -0.0620779, z: 0.996962
+   Total Momentum = 9.10782[GeV]
+   Momentum: 0.428482[GeV], y: -0.565394[GeV], z: 9.08015[GeV]
+   Total Energy   = 9.10889[GeV]
+   Kinetic Energy = 8.96932[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (588.335,272.301,6129.68) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 48.2007 GeV)
+ - pi0 (Momentum: 4.75097 GeV)
+ - kaon- (Momentum: 20.313 GeV)
+Start to simulate the event 100
+Using tau- helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0     -5.569     -2.338    162.081    162.203      1.777
+     1         15  (tau-)              -1     0     0     2     4     0     0     -5.569     -2.338    162.081    162.203      1.777
+     2         16  nu_tau              91     1     0     0     0     0     0     -2.582     -0.752     53.885     53.952      0.000
+     3        111  pi0                 91     1     0     0     0     0     0     -0.239     -0.182      6.588      6.596      0.135
+     4       -211  pi-                 91     1     0     0     0     0     0     -2.748     -1.404    101.608    101.655      0.140
+                                   Charge sum: -1.000           Momentum sum:     -5.569     -2.338    162.081    162.203      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.0343353, y: -0.014415, z: 0.999306
+   Total Momentum = 162.194[GeV]
+   Momentum: -5.56897[GeV], y: -2.33802[GeV], z: 162.081[GeV]
+   Total Energy   = 162.203[GeV]
+   Kinetic Energy = 160.427[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000715848[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.047848, y: -0.013931, z: 0.998757
+   Total Momentum = 53.9524[GeV]
+   Momentum: -2.58151[GeV], y: -0.75161[GeV], z: 53.8854[GeV]
+   Total Energy   = 53.9524[GeV]
+   Kinetic Energy = 53.9524[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.0362891, y: -0.027586, z: 0.998961
+   Total Momentum = 6.5944[GeV]
+   Momentum: -0.239305[GeV], y: -0.181913[GeV], z: 6.58755[GeV]
+   Total Energy   = 6.59579[GeV]
+   Kinetic Energy = 6.46081[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0270341, y: -0.0138163, z: 0.999539
+   Total Momentum = 101.655[GeV]
+   Momentum: -2.74815[GeV], y: -1.4045[GeV], z: 101.608[GeV]
+   Total Energy   = 101.655[GeV]
+   Kinetic Energy = 101.516[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (659.394,395.796,5821.4) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 11.7999 GeV)
+ - pi0 (Momentum: 53.6101 GeV)
+ - kaon- (Momentum: 24.8759 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      1.870      2.545    121.320    121.374      1.777
+     1         15  (tau-)              -1     0     0     2     3     0     0      1.870      2.545    121.320    121.374      1.777
+     2         16  nu_tau              91     1     0     0     0     0     0      0.413      1.922     55.233     55.268      0.000
+     3       -211  pi-                 91     1     0     0     0     0     0      1.457      0.624     66.087     66.107      0.140
+                                   Charge sum: -1.000           Momentum sum:      1.870      2.545    121.320    121.374      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0154101, y: 0.0209742, z: 0.999661
+   Total Momentum = 121.361[GeV]
+   Momentum: 1.87019[GeV], y: 2.54545[GeV], z: 121.32[GeV]
+   Total Energy   = 121.374[GeV]
+   Kinetic Energy = 119.597[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000613514[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00747459, y: 0.0347727, z: 0.999367
+   Total Momentum = 55.2676[GeV]
+   Momentum: 0.413103[GeV], y: 1.9218[GeV], z: 55.2326[GeV]
+   Total Energy   = 55.2676[GeV]
+   Kinetic Energy = 55.2676[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0220415, y: 0.00943393, z: 0.999713
+   Total Momentum = 66.1064[GeV]
+   Momentum: 1.45708[GeV], y: 0.623644[GeV], z: 66.0874[GeV]
+   Total Energy   = 66.1066[GeV]
+   Kinetic Energy = 65.967[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.801      2.857    357.502    357.519      1.777
+     1        -15  (tau+)              -1     0     0     2     4     0     0      0.801      2.857    357.502    357.519      1.777
+     2        -16  nu_taubar           91     1     0     0     0     0     0     -0.044      0.529     39.828     39.831      0.000
+     3        -11  e+                  91     1     0     0     0     0     0      0.680      2.534    280.999    281.011      0.001
+     4         12  nu_e                91     1     0     0     0     0     0      0.165     -0.206     36.676     36.677      0.000
+                                   Charge sum:  1.000           Momentum sum:      0.801      2.857    357.502    357.519      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: 0.00223917, y: 0.00799263, z: 0.999966
+   Total Momentum = 357.515[GeV]
+   Momentum: 0.800536[GeV], y: 2.85748[GeV], z: 357.502[GeV]
+   Total Energy   = 357.519[GeV]
+   Kinetic Energy = 355.742[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000131263[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00111601, y: 0.0132705, z: 0.999911
+   Total Momentum = 39.8313[GeV]
+   Momentum: -0.044452[GeV], y: 0.528583[GeV], z: 39.8278[GeV]
+   Total Energy   = 39.8313[GeV]
+   Kinetic Energy = 39.8313[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e+
+   mass:        0.000510999[GeV]
+   charge:      1[e]
+   Direction x: 0.00242107, y: 0.00901919, z: 0.999956
+   Total Momentum = 281.011[GeV]
+   Momentum: 0.680348[GeV], y: 2.53449[GeV], z: 280.999[GeV]
+   Total Energy   = 281.011[GeV]
+   Kinetic Energy = 281.011[GeV]
+ MagneticMoment  [MeV/T]: 5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00448897, y: -0.00560552, z: 0.999974
+   Total Momentum = 36.6765[GeV]
+   Momentum: 0.16464[GeV], y: -0.205591[GeV], z: 36.6756[GeV]
+   Total Energy   = 36.6765[GeV]
+   Kinetic Energy = 36.6765[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 200
+Using tau- helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      1.171      2.144     81.643     81.698      1.777
+     1         15  (tau-)              -1     0     0     2     5     0     0      1.171      2.144     81.643     81.698      1.777
+     2         16  nu_tau              91     1     0     0     0     0     0      0.717      0.933     39.295     39.313      0.000
+     3        111  pi0                 91     1     0     0     0     0     0     -0.207      0.075      4.877      4.883      0.135
+     4        111  pi0                 91     1     0     0     0     0     0      0.181      0.444     23.551     23.556      0.135
+     5       -211  pi-                 91     1     0     0     0     0     0      0.480      0.692     13.920     13.947      0.140
+                                   Charge sum: -1.000           Momentum sum:      1.171      2.144     81.643     81.698      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0143346, y: 0.0262473, z: 0.999553
+   Total Momentum = 81.6791[GeV]
+   Momentum: 1.17084[GeV], y: 2.14385[GeV], z: 81.6426[GeV]
+   Total Energy   = 81.6984[GeV]
+   Kinetic Energy = 79.9216[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000173185[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0182267, y: 0.0237229, z: 0.999552
+   Total Momentum = 39.3125[GeV]
+   Momentum: 0.716538[GeV], y: 0.932605[GeV], z: 39.2949[GeV]
+   Total Energy   = 39.3125[GeV]
+   Kinetic Energy = 39.3125[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.0424039, y: 0.0153494, z: 0.998983
+   Total Momentum = 4.88151[GeV]
+   Momentum: -0.206995[GeV], y: 0.0749283[GeV], z: 4.87655[GeV]
+   Total Energy   = 4.88338[GeV]
+   Kinetic Energy = 4.7484[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.00769574, y: 0.0188557, z: 0.999793
+   Total Momentum = 23.5555[GeV]
+   Momentum: 0.181277[GeV], y: 0.444154[GeV], z: 23.5506[GeV]
+   Total Energy   = 23.5559[GeV]
+   Kinetic Energy = 23.4209[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.03442, y: 0.049632, z: 0.998174
+   Total Momentum = 13.9459[GeV]
+   Momentum: 0.480019[GeV], y: 0.692165[GeV], z: 13.9205[GeV]
+   Total Energy   = 13.9466[GeV]
+   Kinetic Energy = 13.8071[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (624.29,8.89747,6024.86) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 6.49614 GeV)
+ - pi0 (Momentum: 3.80586 GeV)
+ - kaon- (Momentum: 52.3829 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0     -0.716     -2.432     39.123     39.245      1.777
+     1         15  (tau-)              -1     0     0     2     4     0     0     -0.716     -2.432     39.123     39.245      1.777
+     2         16  nu_tau              91     1     0     0     0     0     0     -0.545     -0.457      7.809      7.841      0.000
+     3         11  e-                  91     1     0     0     0     0     0     -0.648     -1.690     22.739     22.811      0.001
+     4        -12  nu_ebar             91     1     0     0     0     0     0      0.478     -0.285      8.574      8.592      0.000
+                                   Charge sum: -1.000           Momentum sum:     -0.716     -2.432     39.123     39.245      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.0182541, y: -0.0620215, z: 0.997908
+   Total Momentum = 39.2047[GeV]
+   Momentum: -0.715647[GeV], y: -2.43154[GeV], z: 39.1227[GeV]
+   Total Energy   = 39.245[GeV]
+   Kinetic Energy = 37.4681[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.00117852[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0695483, y: -0.0582928, z: 0.995874
+   Total Momentum = 7.84113[GeV]
+   Momentum: -0.545337[GeV], y: -0.457082[GeV], z: 7.80877[GeV]
+   Total Energy   = 7.84113[GeV]
+   Kinetic Energy = 7.84113[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e-
+   mass:        0.000510999[GeV]
+   charge:      -1[e]
+   Direction x: -0.0284023, y: -0.0740829, z: 0.996848
+   Total Momentum = 22.8114[GeV]
+   Momentum: -0.647896[GeV], y: -1.68993[GeV], z: 22.7395[GeV]
+   Total Energy   = 22.8114[GeV]
+   Kinetic Energy = 22.8109[GeV]
+ MagneticMoment  [MeV/T]: -5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0555819, y: -0.0331127, z: 0.997905
+   Total Momentum = 8.59247[GeV]
+   Momentum: 0.477586[GeV], y: -0.28452[GeV], z: 8.57447[GeV]
+   Total Energy   = 8.59247[GeV]
+   Kinetic Energy = 8.59247[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+
+ --------  PYTHIA Event Listing  (complete event)  ---------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      3.114      0.661    113.000    113.059      1.777
+     1         15  (tau-)              -1     0     0     2     4     0     0      3.114      0.661    113.000    113.059      1.777
+     2         16  nu_tau              91     1     0     0     0     0     0      1.295      0.399     66.391     66.405      0.000
+     3       -211  pi-                 91     1     0     0     0     0     0      0.987     -0.085     19.909     19.934      0.140
+     4       -311  (Kbar0)            -91     1     0     5     5     0     0      0.831      0.346     26.700     26.720      0.498
+     5        130  K_L0                91     4     4     0     0     0     0      0.831      0.346     26.700     26.720      0.498
+                                   Charge sum: -1.000           Momentum sum:      3.114      0.661    113.000    113.059      1.777
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0275485, y: 0.00584372, z: 0.999603
+   Total Momentum = 113.045[GeV]
+   Momentum: 3.11421[GeV], y: 0.660601[GeV], z: 113[GeV]
+   Total Energy   = 113.059[GeV]
+   Kinetic Energy = 111.282[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 6.66152e-06[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0195081, y: 0.00601108, z: 0.999792
+   Total Momentum = 66.4046[GeV]
+   Momentum: 1.29543[GeV], y: 0.399163[GeV], z: 66.3907[GeV]
+   Total Energy   = 66.4046[GeV]
+   Kinetic Energy = 66.4046[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0495335, y: -0.00426717, z: 0.998763
+   Total Momentum = 19.9337[GeV]
+   Momentum: 0.987386[GeV], y: -0.0850604[GeV], z: 19.909[GeV]
+   Total Energy   = 19.9342[GeV]
+   Kinetic Energy = 19.7946[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - kaon0L
+   mass:        0.497614[GeV]
+   charge:      0[e]
+   Direction x: 0.0311207, y: 0.01297, z: 0.999431
+   Total Momentum = 26.7153[GeV]
+   Momentum: 0.831397[GeV], y: 0.346498[GeV], z: 26.7001[GeV]
+   Total Energy   = 26.7199[GeV]
+   Kinetic Energy = 26.2223[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0105803, y: 0.0168781, z: 0.999802
+   Total Momentum = 590.31[GeV]
+   Momentum: 6.24568[GeV], y: 9.96333[GeV], z: 590.193[GeV]
+   Total Energy   = 590.313[GeV]
+   Kinetic Energy = 588.536[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 2.09894e-05[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0162374, y: 0.0175055, z: 0.999715
+   Total Momentum = 128.201[GeV]
+   Momentum: 2.08166[GeV], y: 2.24423[GeV], z: 128.165[GeV]
+   Total Energy   = 128.201[GeV]
+   Kinetic Energy = 128.201[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e-
+   mass:        0.000510999[GeV]
+   charge:      -1[e]
+   Direction x: 0.00889482, y: 0.0164976, z: 0.999824
+   Total Momentum = 285.018[GeV]
+   Momentum: 2.53519[GeV], y: 4.70211[GeV], z: 284.968[GeV]
+   Total Energy   = 285.018[GeV]
+   Kinetic Energy = 285.018[GeV]
+ MagneticMoment  [MeV/T]: -5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0091976, y: 0.0170361, z: 0.999813
+   Total Momentum = 177.093[GeV]
+   Momentum: 1.62883[GeV], y: 3.01699[GeV], z: 177.06[GeV]
+   Total Energy   = 177.093[GeV]
+   Kinetic Energy = 177.093[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.011435, y: 0.0186254, z: 0.999761
+   Total Momentum = 157.372[GeV]
+   Momentum: -1.79955[GeV], y: 2.93111[GeV], z: 157.335[GeV]
+   Total Energy   = 157.382[GeV]
+   Kinetic Energy = 155.605[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000381812[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0134393, y: 0.0162142, z: 0.999778
+   Total Momentum = 120.388[GeV]
+   Momentum: -1.61793[GeV], y: 1.952[GeV], z: 120.361[GeV]
+   Total Energy   = 120.388[GeV]
+   Kinetic Energy = 120.388[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.0176632, y: 0.045658, z: 0.998801
+   Total Momentum = 10.2932[GeV]
+   Momentum: 0.18181[GeV], y: 0.469966[GeV], z: 10.2808[GeV]
+   Total Energy   = 10.2941[GeV]
+   Kinetic Energy = 10.1591[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: -0.0136117, y: 0.0190695, z: 0.999726
+   Total Momentum = 26.6997[GeV]
+   Momentum: -0.363428[GeV], y: 0.50915[GeV], z: 26.6924[GeV]
+   Total Energy   = 26.7[GeV]
+   Kinetic Energy = 26.5605[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (1177.94,115.519,6757.66) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 14.5859 GeV)
+ - pi0 (Momentum: 17.3256 GeV)
+ - kaon- (Momentum: 12.1151 GeV)
+Start to simulate the event 300
+D meson interaction at position: (845.041,429.392,6463.69) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 20.9887 GeV)
+ - pi0 (Momentum: 16.3359 GeV)
+ - kaon- (Momentum: 19.946 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.00442356, y: 0.00854573, z: 0.999954
+   Total Momentum = 776.765[GeV]
+   Momentum: -3.43607[GeV], y: 6.63802[GeV], z: 776.729[GeV]
+   Total Energy   = 776.767[GeV]
+   Kinetic Energy = 774.99[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000321963[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0026768, y: 0.00738252, z: 0.999969
+   Total Momentum = 418.886[GeV]
+   Momentum: -1.12127[GeV], y: 3.09243[GeV], z: 418.873[GeV]
+   Total Energy   = 418.886[GeV]
+   Kinetic Energy = 418.886[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e-
+   mass:        0.000510999[GeV]
+   charge:      -1[e]
+   Direction x: -0.00715078, y: 0.00976174, z: 0.999927
+   Total Momentum = 91.7582[GeV]
+   Momentum: -0.656143[GeV], y: 0.89572[GeV], z: 91.7515[GeV]
+   Total Energy   = 91.7582[GeV]
+   Kinetic Energy = 91.7577[GeV]
+ MagneticMoment  [MeV/T]: -5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00623266, y: 0.00995731, z: 0.999931
+   Total Momentum = 266.123[GeV]
+   Momentum: -1.65865[GeV], y: 2.64987[GeV], z: 266.105[GeV]
+   Total Energy   = 266.123[GeV]
+   Kinetic Energy = 266.123[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (570.478,112.756,5945.95) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 0.928796 GeV)
+ - pi+ (Momentum: 5.74941 GeV)
+ - kaon- (Momentum: 5.56952 GeV)
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: 0.0288149, y: -0.00910485, z: 0.999543
+   Total Momentum = 63.1576[GeV]
+   Momentum: 1.81988[GeV], y: -0.57504[GeV], z: 63.1287[GeV]
+   Total Energy   = 63.1826[GeV]
+   Kinetic Energy = 61.4057[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.00015736[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0279488, y: -0.0144286, z: 0.999505
+   Total Momentum = 60.5541[GeV]
+   Momentum: 1.69241[GeV], y: -0.873708[GeV], z: 60.5241[GeV]
+   Total Energy   = 60.5541[GeV]
+   Kinetic Energy = 60.5541[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: 0.0485633, y: 0.113788, z: 0.992317
+   Total Momentum = 2.62478[GeV]
+   Momentum: 0.127468[GeV], y: 0.298668[GeV], z: 2.60461[GeV]
+   Total Energy   = 2.62848[GeV]
+   Kinetic Energy = 2.48891[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (872.215,309.933,6794.85) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 13.8588 GeV)
+ - pi+ (Momentum: 28.0502 GeV)
+ - kaon- (Momentum: 20.8131 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.0221424, y: -0.0186741, z: 0.99958
+   Total Momentum = 187.816[GeV]
+   Momentum: -4.15871[GeV], y: -3.5073[GeV], z: 187.737[GeV]
+   Total Energy   = 187.825[GeV]
+   Kinetic Energy = 186.048[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000411952[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0287659, y: -0.00645262, z: 0.999565
+   Total Momentum = 43.2731[GeV]
+   Momentum: -1.24479[GeV], y: -0.279225[GeV], z: 43.2543[GeV]
+   Total Energy   = 43.2731[GeV]
+   Kinetic Energy = 43.2731[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.0204618, y: -0.0205179, z: 0.99958
+   Total Momentum = 130.22[GeV]
+   Momentum: -2.66454[GeV], y: -2.67184[GeV], z: 130.165[GeV]
+   Total Energy   = 130.22[GeV]
+   Kinetic Energy = 130.085[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0174017, y: -0.0388141, z: 0.999095
+   Total Momentum = 14.3307[GeV]
+   Momentum: -0.249378[GeV], y: -0.556232[GeV], z: 14.3177[GeV]
+   Total Energy   = 14.3314[GeV]
+   Kinetic Energy = 14.1918[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 400
+D meson interaction at position: (523.666,341.231,6507.85) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 23.2807 GeV)
+ - pi0 (Momentum: 29.7776 GeV)
+ - kaon- (Momentum: 65.8347 GeV)
+D meson interaction at position: (536.802,108.668,6589.46) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 42.0051 GeV)
+ - pi0 (Momentum: 20.4024 GeV)
+ - kaon- (Momentum: 51.5921 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0496171, y: 0.017609, z: 0.998613
+   Total Momentum = 157.636[GeV]
+   Momentum: 7.82145[GeV], y: 2.77581[GeV], z: 157.418[GeV]
+   Total Energy   = 157.646[GeV]
+   Kinetic Energy = 155.869[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000592357[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0536487, y: 0.0322842, z: 0.998038
+   Total Momentum = 49.6718[GeV]
+   Momentum: 2.66482[GeV], y: 1.60361[GeV], z: 49.5743[GeV]
+   Total Energy   = 49.6718[GeV]
+   Kinetic Energy = 49.6718[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - mu-
+   mass:        0.105658[GeV]
+   charge:      -1[e]
+   Direction x: 0.0478007, y: 0.0146524, z: 0.998749
+   Total Momentum = 71.4977[GeV]
+   Momentum: 3.41764[GeV], y: 1.04761[GeV], z: 71.4083[GeV]
+   Total Energy   = 71.4978[GeV]
+   Kinetic Energy = 71.3921[GeV]
+ MagneticMoment  [MeV/T]: -2.80272e-13
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_mu
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0476739, y: 0.00341539, z: 0.998857
+   Total Momentum = 36.4767[GeV]
+   Momentum: 1.73899[GeV], y: 0.124582[GeV], z: 36.435[GeV]
+   Total Energy   = 36.4767[GeV]
+   Kinetic Energy = 36.4767[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (1159.25,421.501,6526) mm
+Outgoing particles from D meson reaction:
+ - pi0 (Momentum: 13.1529 GeV)
+ - pi0 (Momentum: 3.77455 GeV)
+ - pi+ (Momentum: 1.86702 GeV)
+ - pi- (Momentum: 6.02178 GeV)
+ - kaon0L (Momentum: 5.9159 GeV)
+ - eta (Momentum: 2.4286 GeV)
+ - sigma_c0 (Momentum: 2.60918 GeV)
+ - neutron (Momentum: 3.91466 GeV)
+ - pi0 (Momentum: 2.19877 GeV)
+ - pi+ (Momentum: 7.55152 GeV)
+ - pi- (Momentum: 18.1757 GeV)
+ - pi- (Momentum: 15.3341 GeV)
+ - pi+ (Momentum: 14.1959 GeV)
+ - pi- (Momentum: 1.96097 GeV)
+ - pi+ (Momentum: 1.93321 GeV)
+ - kaon0S (Momentum: 2.38353 GeV)
+ - pi0 (Momentum: 6.49613 GeV)
+ - pi+ (Momentum: 10.4461 GeV)
+ - pi0 (Momentum: 24.2626 GeV)
+ - pi- (Momentum: 6.76216 GeV)
+ - pi0 (Momentum: 0.20586 GeV)
+ - proton (Momentum: 0.663668 GeV)
+ - pi- (Momentum: 16.5105 GeV)
+ - pi+ (Momentum: 3.75515 GeV)
+ - neutron (Momentum: 0.216731 GeV)
+ - He3 (Momentum: 0.315515 GeV)
+ - proton (Momentum: 0.270079 GeV)
+ - neutron (Momentum: 0.241583 GeV)
+ - Si28 (Momentum: 0.777034 GeV)
+ - alpha (Momentum: 0.4444 GeV)
+ - alpha (Momentum: 0.367488 GeV)
+ - deuteron (Momentum: 0.225413 GeV)
+ - Li7 (Momentum: 0.231339 GeV)
+ - neutron (Momentum: 0.0605541 GeV)
+ - gamma (Momentum: 0.00242802 GeV)
+ - gamma (Momentum: 0.00182034 GeV)
+D meson interaction at position: (808.406,639.94,6023.45) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 17.437 GeV)
+ - pi+ (Momentum: 2.97611 GeV)
+ - kaon- (Momentum: 4.60275 GeV)
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.00429409, y: -0.00825866, z: 0.999957
+   Total Momentum = 177.524[GeV]
+   Momentum: -0.762304[GeV], y: -1.46611[GeV], z: 177.516[GeV]
+   Total Energy   = 177.533[GeV]
+   Kinetic Energy = 175.756[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 3.034e-05[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00958679, y: -0.00940977, z: 0.99991
+   Total Momentum = 109.451[GeV]
+   Momentum: -1.04929[GeV], y: -1.02991[GeV], z: 109.442[GeV]
+   Total Energy   = 109.451[GeV]
+   Kinetic Energy = 109.451[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - mu+
+   mass:        0.105658[GeV]
+   charge:      1[e]
+   Direction x: 0.0195676, y: -0.00254362, z: 0.999805
+   Total Momentum = 23.3938[GeV]
+   Momentum: 0.457761[GeV], y: -0.0595051[GeV], z: 23.3893[GeV]
+   Total Energy   = 23.3941[GeV]
+   Kinetic Energy = 23.2884[GeV]
+ MagneticMoment  [MeV/T]: 2.80272e-13
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_mu
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0038216, y: -0.00842949, z: 0.999957
+   Total Momentum = 44.6871[GeV]
+   Momentum: -0.170776[GeV], y: -0.37669[GeV], z: 44.6852[GeV]
+   Total Energy   = 44.6871[GeV]
+   Kinetic Energy = 44.6871[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 500
+D meson interaction at position: (646.949,348.873,6208.95) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 17.8564 GeV)
+ - pi+ (Momentum: 24.9301 GeV)
+ - kaon- (Momentum: 113.165 GeV)
+D meson interaction at position: (557.994,590.58,6080.76) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 3.93306 GeV)
+ - pi0 (Momentum: 0.357404 GeV)
+ - kaon- (Momentum: 13.7807 GeV)
+D meson interaction at position: (524.567,145.277,6283.8) mm
+Outgoing particles from D meson reaction:
+ - kaon- (Momentum: 123.545 GeV)
+ - pi+ (Momentum: 93.1411 GeV)
+ - kaon+ (Momentum: 110.509 GeV)
+Start to simulate the event 600
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.00558295, y: 0.00177766, z: 0.999983
+   Total Momentum = 892.917[GeV]
+   Momentum: -4.98511[GeV], y: 1.5873[GeV], z: 892.901[GeV]
+   Total Energy   = 892.918[GeV]
+   Kinetic Energy = 891.142[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000693192[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00737025, y: -0.000989359, z: 0.999972
+   Total Momentum = 177.167[GeV]
+   Momentum: -1.30577[GeV], y: -0.175282[GeV], z: 177.163[GeV]
+   Total Energy   = 177.167[GeV]
+   Kinetic Energy = 177.167[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0044143, y: 0.00294612, z: 0.999986
+   Total Momentum = 322.67[GeV]
+   Momentum: -1.42436[GeV], y: 0.950624[GeV], z: 322.666[GeV]
+   Total Energy   = 322.67[GeV]
+   Kinetic Energy = 322.531[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: -0.0059949, y: 0.00245624, z: 0.999979
+   Total Momentum = 311.442[GeV]
+   Momentum: -1.86706[GeV], y: 0.764976[GeV], z: 311.435[GeV]
+   Total Energy   = 311.442[GeV]
+   Kinetic Energy = 311.302[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.00475164, y: 0.000575514, z: 0.999989
+   Total Momentum = 81.6388[GeV]
+   Momentum: -0.387919[GeV], y: 0.0469843[GeV], z: 81.6379[GeV]
+   Total Energy   = 81.639[GeV]
+   Kinetic Energy = 81.4994[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0134995, y: 0.00795346, z: 0.999877
+   Total Momentum = 287.451[GeV]
+   Momentum: 3.88045[GeV], y: 2.28623[GeV], z: 287.416[GeV]
+   Total Energy   = 287.456[GeV]
+   Kinetic Energy = 285.68[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 6.17411e-05[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0110003, y: 0.0218018, z: 0.999702
+   Total Momentum = 43.3372[GeV]
+   Momentum: 0.476724[GeV], y: 0.94483[GeV], z: 43.3243[GeV]
+   Total Energy   = 43.3372[GeV]
+   Kinetic Energy = 43.3372[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e-
+   mass:        0.000510999[GeV]
+   charge:      -1[e]
+   Direction x: 0.0121287, y: 0.00382134, z: 0.999919
+   Total Momentum = 90.5278[GeV]
+   Momentum: 1.09798[GeV], y: 0.345937[GeV], z: 90.5205[GeV]
+   Total Energy   = 90.5278[GeV]
+   Kinetic Energy = 90.5273[GeV]
+ MagneticMoment  [MeV/T]: -5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0150122, y: 0.00648123, z: 0.999866
+   Total Momentum = 153.591[GeV]
+   Momentum: 2.30574[GeV], y: 0.995461[GeV], z: 153.571[GeV]
+   Total Energy   = 153.591[GeV]
+   Kinetic Energy = 153.591[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (1080.93,418.556,6058.59) mm
+Outgoing particles from D meson reaction:
+ - kaon- (Momentum: 8.25943 GeV)
+ - pi+ (Momentum: 7.10757 GeV)
+ - kaon+ (Momentum: 1.81463 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.00112014, y: -0.0151174, z: 0.999885
+   Total Momentum = 75.9921[GeV]
+   Momentum: 0.0851216[GeV], y: -1.1488[GeV], z: 75.9833[GeV]
+   Total Energy   = 76.0128[GeV]
+   Kinetic Energy = 74.236[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000485464[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0116483, y: -0.0145157, z: 0.999827
+   Total Momentum = 49.2496[GeV]
+   Momentum: 0.573676[GeV], y: -0.714892[GeV], z: 49.2411[GeV]
+   Total Energy   = 49.2496[GeV]
+   Kinetic Energy = 49.2496[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.0353802, y: -0.0255139, z: 0.999048
+   Total Momentum = 18.4698[GeV]
+   Momentum: -0.653466[GeV], y: -0.471238[GeV], z: 18.4522[GeV]
+   Total Energy   = 18.4703[GeV]
+   Kinetic Energy = 18.3353[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0198887, y: 0.00450173, z: 0.999792
+   Total Momentum = 8.29171[GeV]
+   Momentum: 0.164911[GeV], y: 0.037327[GeV], z: 8.28998[GeV]
+   Total Energy   = 8.29288[GeV]
+   Kinetic Energy = 8.15331[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: 0.0162493, y: 0.00464223, z: 0.999857
+   Total Momentum = 333.392[GeV]
+   Momentum: 5.41738[GeV], y: 1.54768[GeV], z: 333.344[GeV]
+   Total Energy   = 333.397[GeV]
+   Kinetic Energy = 331.62[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000334889[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.017981, y: 0.0038329, z: 0.999831
+   Total Momentum = 227.533[GeV]
+   Momentum: 4.09129[GeV], y: 0.872114[GeV], z: 227.495[GeV]
+   Total Energy   = 227.533[GeV]
+   Kinetic Energy = 227.533[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - mu+
+   mass:        0.105658[GeV]
+   charge:      1[e]
+   Direction x: 0.0141206, y: 0.010595, z: 0.999844
+   Total Momentum = 80.1921[GeV]
+   Momentum: 1.13236[GeV], y: 0.849638[GeV], z: 80.1796[GeV]
+   Total Energy   = 80.1922[GeV]
+   Kinetic Energy = 80.0865[GeV]
+ MagneticMoment  [MeV/T]: 2.80272e-13
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_mu
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00754677, y: -0.00678081, z: 0.999949
+   Total Momentum = 25.6712[GeV]
+   Momentum: 0.193734[GeV], y: -0.174071[GeV], z: 25.6698[GeV]
+   Total Energy   = 25.6712[GeV]
+   Kinetic Energy = 25.6712[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0603197, y: -0.0181692, z: 0.998014
+   Total Momentum = 65.5786[GeV]
+   Momentum: 3.95568[GeV], y: -1.19151[GeV], z: 65.4483[GeV]
+   Total Energy   = 65.6027[GeV]
+   Kinetic Energy = 63.8258[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000171175[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0715157, y: -0.0257521, z: 0.997107
+   Total Momentum = 30.1807[GeV]
+   Momentum: 2.15839[GeV], y: -0.777216[GeV], z: 30.0934[GeV]
+   Total Energy   = 30.1807[GeV]
+   Kinetic Energy = 30.1807[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0567031, y: 0.0119311, z: 0.99832
+   Total Momentum = 9.11447[GeV]
+   Momentum: 0.516819[GeV], y: 0.108745[GeV], z: 9.09915[GeV]
+   Total Energy   = 9.11553[GeV]
+   Kinetic Energy = 8.97596[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0420159, y: -0.0297892, z: 0.998673
+   Total Momentum = 22.5289[GeV]
+   Momentum: 0.946573[GeV], y: -0.671119[GeV], z: 22.499[GeV]
+   Total Energy   = 22.5293[GeV]
+   Kinetic Energy = 22.3898[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: 0.0884613, y: 0.0392321, z: 0.995307
+   Total Momentum = 3.77453[GeV]
+   Momentum: 0.3339[GeV], y: 0.148083[GeV], z: 3.75682[GeV]
+   Total Energy   = 3.77711[GeV]
+   Kinetic Energy = 3.63754[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 700
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.00532963, y: 0.00504162, z: 0.999973
+   Total Momentum = 695.453[GeV]
+   Momentum: 3.70651[GeV], y: 3.50621[GeV], z: 695.434[GeV]
+   Total Energy   = 695.455[GeV]
+   Kinetic Energy = 693.679[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000480109[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.005317, y: 0.00145772, z: 0.999985
+   Total Momentum = 134.04[GeV]
+   Momentum: 0.712689[GeV], y: 0.195392[GeV], z: 134.038[GeV]
+   Total Energy   = 134.04[GeV]
+   Kinetic Energy = 134.04[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.005394, y: 0.00658306, z: 0.999964
+   Total Momentum = 145.604[GeV]
+   Momentum: 0.785385[GeV], y: 0.958516[GeV], z: 145.598[GeV]
+   Total Energy   = 145.604[GeV]
+   Kinetic Energy = 145.469[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.00577031, y: 0.00609121, z: 0.999965
+   Total Momentum = 282.062[GeV]
+   Momentum: 1.62759[GeV], y: 1.7181[GeV], z: 282.052[GeV]
+   Total Energy   = 282.062[GeV]
+   Kinetic Energy = 281.923[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.00765758, y: 0.00785704, z: 0.99994
+   Total Momentum = 36.3752[GeV]
+   Momentum: 0.278546[GeV], y: 0.285802[GeV], z: 36.373[GeV]
+   Total Energy   = 36.3755[GeV]
+   Kinetic Energy = 36.2359[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------5 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: 0.00310453, y: 0.00357793, z: 0.999989
+   Total Momentum = 97.3743[GeV]
+   Momentum: 0.302302[GeV], y: 0.348398[GeV], z: 97.3732[GeV]
+   Total Energy   = 97.3744[GeV]
+   Kinetic Energy = 97.2348[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (536.118,645.248,5745.69) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 3.51419 GeV)
+ - pi0 (Momentum: 1.00865 GeV)
+ - kaon- (Momentum: 9.89315 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.0311665, y: -0.00201766, z: 0.999512
+   Total Momentum = 284.214[GeV]
+   Momentum: -8.85796[GeV], y: -0.573447[GeV], z: 284.076[GeV]
+   Total Energy   = 284.22[GeV]
+   Kinetic Energy = 282.443[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000325364[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0285105, y: -0.000641117, z: 0.999593
+   Total Momentum = 191.075[GeV]
+   Momentum: -5.44766[GeV], y: -0.122502[GeV], z: 190.998[GeV]
+   Total Energy   = 191.075[GeV]
+   Kinetic Energy = 191.075[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.0424253, y: -0.0085476, z: 0.999063
+   Total Momentum = 49.7141[GeV]
+   Momentum: -2.10914[GeV], y: -0.424936[GeV], z: 49.6676[GeV]
+   Total Energy   = 49.7143[GeV]
+   Kinetic Energy = 49.5794[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0299602, y: -0.000598864, z: 0.999551
+   Total Momentum = 43.43[GeV]
+   Momentum: -1.30117[GeV], y: -0.0260086[GeV], z: 43.4105[GeV]
+   Total Energy   = 43.4302[GeV]
+   Kinetic Energy = 43.2906[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0318307, y: 0.00359103, z: 0.999487
+   Total Momentum = 228.888[GeV]
+   Momentum: 7.28566[GeV], y: 0.821943[GeV], z: 228.771[GeV]
+   Total Energy   = 228.895[GeV]
+   Kinetic Energy = 227.118[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.00011943[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0276283, y: 0.0124674, z: 0.999541
+   Total Momentum = 58.9555[GeV]
+   Momentum: 1.62884[GeV], y: 0.735021[GeV], z: 58.9284[GeV]
+   Total Energy   = 58.9555[GeV]
+   Kinetic Energy = 58.9555[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0328749, y: -0.00256611, z: 0.999456
+   Total Momentum = 60.992[GeV]
+   Momentum: 2.0051[GeV], y: -0.156512[GeV], z: 60.9588[GeV]
+   Total Energy   = 60.9922[GeV]
+   Kinetic Energy = 60.8526[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0362856, y: -0.000928344, z: 0.999341
+   Total Momentum = 74.0072[GeV]
+   Momentum: 2.6854[GeV], y: -0.0687042[GeV], z: 73.9584[GeV]
+   Total Energy   = 74.0073[GeV]
+   Kinetic Energy = 73.8678[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: 0.0276568, y: 0.00893365, z: 0.999578
+   Total Momentum = 34.9397[GeV]
+   Momentum: 0.966319[GeV], y: 0.312139[GeV], z: 34.9249[GeV]
+   Total Energy   = 34.9399[GeV]
+   Kinetic Energy = 34.8004[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (534.743,287.999,6152.81) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 22.3649 GeV)
+ - pi+ (Momentum: 20.1959 GeV)
+ - kaon- (Momentum: 27.522 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.00157313, y: -0.00990262, z: 0.99995
+   Total Momentum = 1070.51[GeV]
+   Momentum: -1.68405[GeV], y: -10.6008[GeV], z: 1070.45[GeV]
+   Total Energy   = 1070.51[GeV]
+   Kinetic Energy = 1068.73[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 5.83453e-05[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00198915, y: -0.0106684, z: 0.999941
+   Total Momentum = 452.872[GeV]
+   Momentum: -0.900833[GeV], y: -4.83144[GeV], z: 452.846[GeV]
+   Total Energy   = 452.872[GeV]
+   Kinetic Energy = 452.872[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - mu-
+   mass:        0.105658[GeV]
+   charge:      -1[e]
+   Direction x: -0.00252141, y: -0.00824881, z: 0.999963
+   Total Momentum = 355.925[GeV]
+   Momentum: -0.897432[GeV], y: -2.93595[GeV], z: 355.911[GeV]
+   Total Energy   = 355.925[GeV]
+   Kinetic Energy = 355.819[GeV]
+ MagneticMoment  [MeV/T]: -2.80272e-13
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_mu
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.000436427, y: -0.0108265, z: 0.999941
+   Total Momentum = 261.713[GeV]
+   Momentum: 0.114218[GeV], y: -2.83344[GeV], z: 261.697[GeV]
+   Total Energy   = 261.713[GeV]
+   Kinetic Energy = 261.713[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 800
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.00406604, y: -0.00169533, z: 0.99999
+   Total Momentum = 293.641[GeV]
+   Momentum: -1.19396[GeV], y: -0.497819[GeV], z: 293.638[GeV]
+   Total Energy   = 293.646[GeV]
+   Kinetic Energy = 291.87[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000338445[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00480514, y: 0.00488507, z: 0.999977
+   Total Momentum = 107.898[GeV]
+   Momentum: -0.518465[GeV], y: 0.52709[GeV], z: 107.896[GeV]
+   Total Energy   = 107.898[GeV]
+   Kinetic Energy = 107.898[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.000716885, y: -0.00824136, z: 0.999966
+   Total Momentum = 91.366[GeV]
+   Momentum: -0.0654989[GeV], y: -0.75298[GeV], z: 91.3629[GeV]
+   Total Energy   = 91.3661[GeV]
+   Kinetic Energy = 91.2311[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: -0.00646302, y: -0.00288114, z: 0.999975
+   Total Momentum = 94.3821[GeV]
+   Momentum: -0.609993[GeV], y: -0.271928[GeV], z: 94.3797[GeV]
+   Total Energy   = 94.3822[GeV]
+   Kinetic Energy = 94.2426[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.00101804, y: 0.0501174, z: 0.998743
+   Total Momentum = 19.3205[GeV]
+   Momentum: -0.0196689[GeV], y: 0.968291[GeV], z: 19.2962[GeV]
+   Total Energy   = 19.402[GeV]
+   Kinetic Energy = 17.6251[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000588533[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0945409, y: 0.0927597, z: 0.99119
+   Total Momentum = 8.35111[GeV]
+   Momentum: 0.789522[GeV], y: 0.774646[GeV], z: 8.27754[GeV]
+   Total Energy   = 8.35111[GeV]
+   Kinetic Energy = 8.35111[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0732299, y: 0.0175244, z: 0.997161
+   Total Momentum = 11.05[GeV]
+   Momentum: -0.809191[GeV], y: 0.193645[GeV], z: 11.0186[GeV]
+   Total Energy   = 11.0509[GeV]
+   Kinetic Energy = 10.9113[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: 0.0220424, y: 0.0090186, z: 0.999716
+   Total Momentum = 167.199[GeV]
+   Momentum: 3.68548[GeV], y: 1.5079[GeV], z: 167.152[GeV]
+   Total Energy   = 167.209[GeV]
+   Kinetic Energy = 165.432[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000104487[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0340235, y: 0.0283014, z: 0.99902
+   Total Momentum = 14.5064[GeV]
+   Momentum: 0.493557[GeV], y: 0.41055[GeV], z: 14.4921[GeV]
+   Total Energy   = 14.5064[GeV]
+   Kinetic Energy = 14.5064[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e+
+   mass:        0.000510999[GeV]
+   charge:      1[e]
+   Direction x: 0.0269909, y: 0.00551065, z: 0.99962
+   Total Momentum = 97.2759[GeV]
+   Momentum: 2.62557[GeV], y: 0.536054[GeV], z: 97.239[GeV]
+   Total Energy   = 97.2759[GeV]
+   Kinetic Energy = 97.2754[GeV]
+ MagneticMoment  [MeV/T]: 5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0102182, y: 0.0101269, z: 0.999897
+   Total Momentum = 55.4266[GeV]
+   Momentum: 0.566358[GeV], y: 0.5613[GeV], z: 55.4209[GeV]
+   Total Energy   = 55.4266[GeV]
+   Kinetic Energy = 55.4266[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (957.189,123.099,5863.62) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 8.79066 GeV)
+ - pi+ (Momentum: 17.2448 GeV)
+ - kaon- (Momentum: 76.6162 GeV)
+D meson interaction at position: (897.666,-7.70885,5734.03) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 9.03701 GeV)
+ - pi+ (Momentum: 19.3703 GeV)
+ - kaon- (Momentum: 12.9767 GeV)
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.000602864, y: 0.000563145, z: 1
+   Total Momentum = 650.976[GeV]
+   Momentum: -0.39245[GeV], y: 0.366594[GeV], z: 650.976[GeV]
+   Total Energy   = 650.979[GeV]
+   Kinetic Energy = 649.202[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000175869[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00161811, y: 0.00243709, z: 0.999996
+   Total Momentum = 175.204[GeV]
+   Momentum: 0.283498[GeV], y: 0.426988[GeV], z: 175.203[GeV]
+   Total Energy   = 175.204[GeV]
+   Kinetic Energy = 175.204[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - mu+
+   mass:        0.105658[GeV]
+   charge:      1[e]
+   Direction x: -0.00273002, y: -0.000552953, z: 0.999996
+   Total Momentum = 359.689[GeV]
+   Momentum: -0.981958[GeV], y: -0.198891[GeV], z: 359.687[GeV]
+   Total Energy   = 359.689[GeV]
+   Kinetic Energy = 359.583[GeV]
+ MagneticMoment  [MeV/T]: 2.80272e-13
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_mu
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00263606, y: 0.00119306, z: 0.999996
+   Total Momentum = 116.086[GeV]
+   Momentum: 0.306009[GeV], y: 0.138497[GeV], z: 116.085[GeV]
+   Total Energy   = 116.086[GeV]
+   Kinetic Energy = 116.086[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 900
+D meson interaction at position: (481.45,-406.877,4625.78) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 117.423 GeV)
+ - pi0 (Momentum: 39.7851 GeV)
+ - kaon- (Momentum: 92.6175 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.00534827, y: 0.0181044, z: 0.999822
+   Total Momentum = 373.988[GeV]
+   Momentum: 2.00019[GeV], y: 6.77084[GeV], z: 373.922[GeV]
+   Total Energy   = 373.993[GeV]
+   Kinetic Energy = 372.216[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.00034134[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00885525, y: 0.0160711, z: 0.999832
+   Total Momentum = 191.384[GeV]
+   Momentum: 1.69475[GeV], y: 3.07575[GeV], z: 191.352[GeV]
+   Total Energy   = 191.384[GeV]
+   Kinetic Energy = 191.384[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e-
+   mass:        0.000510999[GeV]
+   charge:      -1[e]
+   Direction x: 0.00294484, y: 0.0222529, z: 0.999748
+   Total Momentum = 120.176[GeV]
+   Momentum: 0.353899[GeV], y: 2.67426[GeV], z: 120.146[GeV]
+   Total Energy   = 120.176[GeV]
+   Kinetic Energy = 120.176[GeV]
+ MagneticMoment  [MeV/T]: -5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.000776168, y: 0.0163508, z: 0.999866
+   Total Momentum = 62.4328[GeV]
+   Momentum: -0.0484583[GeV], y: 1.02083[GeV], z: 62.4244[GeV]
+   Total Energy   = 62.4328[GeV]
+   Kinetic Energy = 62.4328[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (1010.3,548.72,5752.59) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 30.5409 GeV)
+ - pi+ (Momentum: 4.07255 GeV)
+ - kaon- (Momentum: 113.212 GeV)
+D meson interaction at position: (816.853,28.942,5700.47) mm
+Outgoing particles from D meson reaction:
+ - kaon- (Momentum: 23.6416 GeV)
+ - pi+ (Momentum: 20.7755 GeV)
+ - kaon+ (Momentum: 15.1589 GeV)
+D meson interaction at position: (553.741,393.206,6600.77) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 4.00452 GeV)
+ - pi+ (Momentum: 91.8373 GeV)
+ - kaon- (Momentum: 55.6137 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.026558, y: 0.0201871, z: 0.999443
+   Total Momentum = 82.3939[GeV]
+   Momentum: 2.18822[GeV], y: 1.66329[GeV], z: 82.3481[GeV]
+   Total Energy   = 82.4131[GeV]
+   Kinetic Energy = 80.6362[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000678417[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0678148, y: 0.025278, z: 0.997378
+   Total Momentum = 8.21202[GeV]
+   Momentum: 0.556897[GeV], y: 0.207584[GeV], z: 8.19049[GeV]
+   Total Energy   = 8.21202[GeV]
+   Kinetic Energy = 8.21202[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.0159004, y: 0.00498336, z: 0.999861
+   Total Momentum = 22.4868[GeV]
+   Momentum: 0.35755[GeV], y: 0.11206[GeV], z: 22.4837[GeV]
+   Total Energy   = 22.4872[GeV]
+   Kinetic Energy = 22.3522[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.0338317, y: 0.0113375, z: 0.999363
+   Total Momentum = 22.7147[GeV]
+   Momentum: 0.768477[GeV], y: 0.257528[GeV], z: 22.7003[GeV]
+   Total Energy   = 22.7151[GeV]
+   Kinetic Energy = 22.5802[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0174249, y: 0.0374545, z: 0.999146
+   Total Momentum = 28.9984[GeV]
+   Momentum: 0.505294[GeV], y: 1.08612[GeV], z: 28.9736[GeV]
+   Total Energy   = 28.9987[GeV]
+   Kinetic Energy = 28.8591[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: 0.0121845, y: -0.0609109, z: 0.998069
+   Total Momentum = 86.1993[GeV]
+   Momentum: 1.05029[GeV], y: -5.25048[GeV], z: 86.0328[GeV]
+   Total Energy   = 86.2176[GeV]
+   Kinetic Energy = 84.4407[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000169921[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0193593, y: -0.0619638, z: 0.997891
+   Total Momentum = 23.5964[GeV]
+   Momentum: 0.456809[GeV], y: -1.46212[GeV], z: 23.5466[GeV]
+   Total Energy   = 23.5964[GeV]
+   Kinetic Energy = 23.5964[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.00355019, y: -0.0454636, z: 0.99896
+   Total Momentum = 24.8188[GeV]
+   Momentum: -0.0881117[GeV], y: -1.12835[GeV], z: 24.793[GeV]
+   Total Energy   = 24.8192[GeV]
+   Kinetic Energy = 24.6842[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.00597842, y: -0.0602665, z: 0.998164
+   Total Momentum = 23.6601[GeV]
+   Momentum: 0.14145[GeV], y: -1.42592[GeV], z: 23.6167[GeV]
+   Total Energy   = 23.6605[GeV]
+   Kinetic Energy = 23.5256[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: 0.0381979, y: -0.0872716, z: 0.995452
+   Total Momentum = 14.1408[GeV]
+   Momentum: 0.540147[GeV], y: -1.23409[GeV], z: 14.0765[GeV]
+   Total Energy   = 14.1415[GeV]
+   Kinetic Energy = 14.0019[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (725.55,289.604,6500.15) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 68.5823 GeV)
+ - pi0 (Momentum: 13.7251 GeV)
+ - kaon- (Momentum: 26.0484 GeV)
+Start to simulate the event 1000
+D meson interaction at position: (946.518,346.295,6296.6) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 32.8479 GeV)
+ - pi+ (Momentum: 18.2619 GeV)
+ - kaon- (Momentum: 15.2985 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0164137, y: -0.0121655, z: 0.999791
+   Total Momentum = 371.532[GeV]
+   Momentum: 6.0982[GeV], y: -4.51987[GeV], z: 371.455[GeV]
+   Total Energy   = 371.536[GeV]
+   Kinetic Energy = 369.76[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000280953[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0228646, y: -0.0125218, z: 0.99966
+   Total Momentum = 124.82[GeV]
+   Momentum: 2.85396[GeV], y: -1.56297[GeV], z: 124.777[GeV]
+   Total Energy   = 124.82[GeV]
+   Kinetic Energy = 124.82[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - mu-
+   mass:        0.105658[GeV]
+   charge:      -1[e]
+   Direction x: 0.0147465, y: -0.011204, z: 0.999828
+   Total Momentum = 100.685[GeV]
+   Momentum: 1.48475[GeV], y: -1.12808[GeV], z: 100.668[GeV]
+   Total Energy   = 100.685[GeV]
+   Kinetic Energy = 100.579[GeV]
+ MagneticMoment  [MeV/T]: -2.80272e-13
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_mu
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0120487, y: -0.0125235, z: 0.999849
+   Total Momentum = 146.032[GeV]
+   Momentum: 1.75949[GeV], y: -1.82883[GeV], z: 146.01[GeV]
+   Total Energy   = 146.032[GeV]
+   Kinetic Energy = 146.032[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (618.08,427.056,6369.01) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 33.5793 GeV)
+ - pi+ (Momentum: 19.5939 GeV)
+ - kaon- (Momentum: 216.008 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.00740552, y: 0.0228677, z: 0.999711
+   Total Momentum = 94.4678[GeV]
+   Momentum: -0.699584[GeV], y: 2.16026[GeV], z: 94.4405[GeV]
+   Total Energy   = 94.4845[GeV]
+   Kinetic Energy = 92.7077[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000330743[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.00771664, y: 0.0394003, z: 0.999194
+   Total Momentum = 41.5215[GeV]
+   Momentum: -0.320407[GeV], y: 1.63596[GeV], z: 41.4881[GeV]
+   Total Energy   = 41.5215[GeV]
+   Kinetic Energy = 41.5215[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.00773931, y: 0.00386735, z: 0.999963
+   Total Momentum = 24.428[GeV]
+   Momentum: 0.189056[GeV], y: 0.0944714[GeV], z: 24.4271[GeV]
+   Total Energy   = 24.4284[GeV]
+   Kinetic Energy = 24.2934[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.019914, y: 0.0150636, z: 0.999688
+   Total Momentum = 28.5343[GeV]
+   Momentum: -0.568233[GeV], y: 0.429831[GeV], z: 28.5254[GeV]
+   Total Energy   = 28.5347[GeV]
+   Kinetic Energy = 28.3951[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 1100
+D meson interaction at position: (720.832,322.659,6818.22) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 45.3237 GeV)
+ - pi0 (Momentum: 37.2248 GeV)
+ - kaon- (Momentum: 67.4693 GeV)
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.00923192, y: -0.00316458, z: 0.999952
+   Total Momentum = 606.146[GeV]
+   Momentum: -5.59589[GeV], y: -1.9182[GeV], z: 606.118[GeV]
+   Total Energy   = 606.149[GeV]
+   Kinetic Energy = 604.372[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 8.47777e-05[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0116449, y: 0.0011987, z: 0.999931
+   Total Momentum = 106.303[GeV]
+   Momentum: -1.23788[GeV], y: 0.127426[GeV], z: 106.296[GeV]
+   Total Energy   = 106.303[GeV]
+   Kinetic Energy = 106.303[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: -0.00894584, y: -0.00808344, z: 0.999927
+   Total Momentum = 21.2624[GeV]
+   Momentum: -0.19021[GeV], y: -0.171873[GeV], z: 21.2609[GeV]
+   Total Energy   = 21.2629[GeV]
+   Kinetic Energy = 21.1233[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: -0.00729956, y: -0.00366379, z: 0.999967
+   Total Momentum = 173.3[GeV]
+   Momentum: -1.26501[GeV], y: -0.634934[GeV], z: 173.294[GeV]
+   Total Energy   = 173.3[GeV]
+   Kinetic Energy = 173.16[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.00950851, y: -0.00405792, z: 0.999947
+   Total Momentum = 305.283[GeV]
+   Momentum: -2.90279[GeV], y: -1.23881[GeV], z: 305.267[GeV]
+   Total Energy   = 305.283[GeV]
+   Kinetic Energy = 305.144[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.00298953, y: -0.0185333, z: 0.999824
+   Total Momentum = 421.648[GeV]
+   Momentum: 1.26053[GeV], y: -7.81453[GeV], z: 421.573[GeV]
+   Total Energy   = 421.651[GeV]
+   Kinetic Energy = 419.874[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000482043[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0019255, y: -0.0171277, z: 0.999851
+   Total Momentum = 137.021[GeV]
+   Momentum: -0.263834[GeV], y: -2.34686[GeV], z: 137.001[GeV]
+   Total Energy   = 137.021[GeV]
+   Kinetic Energy = 137.021[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - mu-
+   mass:        0.105658[GeV]
+   charge:      -1[e]
+   Direction x: 0.00672835, y: -0.0199333, z: 0.999779
+   Total Momentum = 215.36[GeV]
+   Momentum: 1.44902[GeV], y: -4.29284[GeV], z: 215.312[GeV]
+   Total Energy   = 215.36[GeV]
+   Kinetic Energy = 215.254[GeV]
+ MagneticMoment  [MeV/T]: -2.80272e-13
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_mu
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00108771, y: -0.0169601, z: 0.999856
+   Total Momentum = 69.2703[GeV]
+   Momentum: 0.0753462[GeV], y: -1.17483[GeV], z: 69.2603[GeV]
+   Total Energy   = 69.2703[GeV]
+   Kinetic Energy = 69.2703[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (498.298,404.974,6044.48) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 16.9688 GeV)
+ - pi0 (Momentum: 126.565 GeV)
+ - kaon- (Momentum: 71.797 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0179603, y: -0.0770077, z: 0.996869
+   Total Momentum = 29.7452[GeV]
+   Momentum: 0.534233[GeV], y: -2.29061[GeV], z: 29.652[GeV]
+   Total Energy   = 29.7982[GeV]
+   Kinetic Energy = 28.0213[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000239137[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00374116, y: -0.0376179, z: 0.999285
+   Total Momentum = 17.7581[GeV]
+   Momentum: 0.0664357[GeV], y: -0.668021[GeV], z: 17.7454[GeV]
+   Total Energy   = 17.7581[GeV]
+   Kinetic Energy = 17.7581[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.0219749, y: -0.225761, z: 0.973935
+   Total Momentum = 1.21694[GeV]
+   Momentum: 0.0267422[GeV], y: -0.274738[GeV], z: 1.18522[GeV]
+   Total Energy   = 1.2244[GeV]
+   Kinetic Energy = 1.08943[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: 0.0407825, y: -0.12463, z: 0.991365
+   Total Momentum = 10.8148[GeV]
+   Momentum: 0.441055[GeV], y: -1.34785[GeV], z: 10.7214[GeV]
+   Total Energy   = 10.8157[GeV]
+   Kinetic Energy = 10.6761[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 1200
+D meson interaction at position: (504.748,148.462,6144.83) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 14.3595 GeV)
+ - pi0 (Momentum: 65.1182 GeV)
+ - kaon- (Momentum: 54.697 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: 0.0425367, y: -0.0811495, z: 0.995794
+   Total Momentum = 29.913[GeV]
+   Momentum: 1.2724[GeV], y: -2.42743[GeV], z: 29.7872[GeV]
+   Total Energy   = 29.9658[GeV]
+   Kinetic Energy = 28.1889[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000346791[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0211651, y: -0.0625275, z: 0.997819
+   Total Momentum = 16.9136[GeV]
+   Momentum: 0.357978[GeV], y: -1.05756[GeV], z: 16.8767[GeV]
+   Total Energy   = 16.9136[GeV]
+   Kinetic Energy = 16.9136[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e-
+   mass:        0.000510999[GeV]
+   charge:      -1[e]
+   Direction x: 0.099674, y: -0.22051, z: 0.970279
+   Total Momentum = 3.65095[GeV]
+   Momentum: 0.363904[GeV], y: -0.805069[GeV], z: 3.54244[GeV]
+   Total Energy   = 3.65095[GeV]
+   Kinetic Energy = 3.65044[GeV]
+ MagneticMoment  [MeV/T]: -5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.0585581, y: -0.0600768, z: 0.996475
+   Total Momentum = 9.40126[GeV]
+   Momentum: 0.55052[GeV], y: -0.564797[GeV], z: 9.36811[GeV]
+   Total Energy   = 9.40126[GeV]
+   Kinetic Energy = 9.40126[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (1114.73,285.947,6591.18) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 27.7379 GeV)
+ - pi+ (Momentum: 120.827 GeV)
+ - kaon- (Momentum: 22.3195 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.0320257, y: 0.0233767, z: 0.999214
+   Total Momentum = 177.343[GeV]
+   Momentum: -5.67955[GeV], y: 4.14571[GeV], z: 177.204[GeV]
+   Total Energy   = 177.352[GeV]
+   Kinetic Energy = 175.575[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000581852[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0317474, y: 0.02195, z: 0.999255
+   Total Momentum = 135.631[GeV]
+   Momentum: -4.30594[GeV], y: 2.97711[GeV], z: 135.53[GeV]
+   Total Energy   = 135.631[GeV]
+   Kinetic Energy = 135.631[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e-
+   mass:        0.000510999[GeV]
+   charge:      -1[e]
+   Direction x: -0.0134639, y: 0.0032043, z: 0.999904
+   Total Momentum = 11.9075[GeV]
+   Momentum: -0.160322[GeV], y: 0.0381551[GeV], z: 11.9064[GeV]
+   Total Energy   = 11.9075[GeV]
+   Kinetic Energy = 11.907[GeV]
+ MagneticMoment  [MeV/T]: -5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - anti_nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0406958, y: 0.0379174, z: 0.998452
+   Total Momentum = 29.8134[GeV]
+   Momentum: -1.21328[GeV], y: 1.13045[GeV], z: 29.7673[GeV]
+   Total Energy   = 29.8134[GeV]
+   Kinetic Energy = 29.8134[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.00967511, y: -0.00460051, z: 0.999943
+   Total Momentum = 429.967[GeV]
+   Momentum: -4.15998[GeV], y: -1.97807[GeV], z: 429.942[GeV]
+   Total Energy   = 429.971[GeV]
+   Kinetic Energy = 428.194[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000565068[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0337534, y: 0.00953784, z: 0.999385
+   Total Momentum = 7.50109[GeV]
+   Momentum: -0.253187[GeV], y: 0.0715442[GeV], z: 7.49647[GeV]
+   Total Energy   = 7.50109[GeV]
+   Kinetic Energy = 7.50109[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.0103521, y: -0.00572389, z: 0.99993
+   Total Momentum = 249.124[GeV]
+   Momentum: -2.57895[GeV], y: -1.42596[GeV], z: 249.107[GeV]
+   Total Energy   = 249.124[GeV]
+   Kinetic Energy = 248.99[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: -0.0076601, y: -0.00359774, z: 0.999964
+   Total Momentum = 173.345[GeV]
+   Momentum: -1.32784[GeV], y: -0.623651[GeV], z: 173.339[GeV]
+   Total Energy   = 173.345[GeV]
+   Kinetic Energy = 173.206[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 1300
+D meson interaction at position: (1171.72,335.576,5893.55) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 15.1738 GeV)
+ - pi+ (Momentum: 9.17959 GeV)
+ - kaon- (Momentum: 8.9094 GeV)
+D meson interaction at position: (559.927,319.09,6505.58) mm
+Outgoing particles from D meson reaction:
+ - kaon- (Momentum: 96.7978 GeV)
+ - pi+ (Momentum: 59.1406 GeV)
+ - kaon+ (Momentum: 104.845 GeV)
+D meson interaction at position: (1086.29,99.2462,6489.04) mm
+Outgoing particles from D meson reaction:
+ - kaon- (Momentum: 33.9721 GeV)
+ - pi+ (Momentum: 15.9375 GeV)
+ - kaon+ (Momentum: 28.4968 GeV)
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.138031, y: 0.0278865, z: 0.990035
+   Total Momentum = 18.4194[GeV]
+   Momentum: -2.54245[GeV], y: 0.513652[GeV], z: 18.2358[GeV]
+   Total Energy   = 18.5049[GeV]
+   Kinetic Energy = 16.728[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 7.71808e-05[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0987219, y: 0.197894, z: 0.975239
+   Total Momentum = 1.63467[GeV]
+   Momentum: -0.161378[GeV], y: 0.323491[GeV], z: 1.5942[GeV]
+   Total Energy   = 1.63467[GeV]
+   Kinetic Energy = 1.63467[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.190096, y: 0.054033, z: 0.980278
+   Total Momentum = 4.02269[GeV]
+   Momentum: -0.764696[GeV], y: 0.217358[GeV], z: 3.94335[GeV]
+   Total Energy   = 4.02496[GeV]
+   Kinetic Energy = 3.88998[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0100292, y: 0.0664224, z: 0.997741
+   Total Momentum = 0.575565[GeV]
+   Momentum: -0.00577244[GeV], y: 0.0382304[GeV], z: 0.574265[GeV]
+   Total Energy   = 0.592246[GeV]
+   Kinetic Energy = 0.452676[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0761686, y: -0.0744293, z: 0.994313
+   Total Momentum = 3.37754[GeV]
+   Momentum: -0.257262[GeV], y: -0.251388[GeV], z: 3.35833[GeV]
+   Total Energy   = 3.38042[GeV]
+   Kinetic Energy = 3.24085[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------5 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: -0.152549, y: 0.0209614, z: 0.988074
+   Total Momentum = 8.87151[GeV]
+   Momentum: -1.35334[GeV], y: 0.185959[GeV], z: 8.7657[GeV]
+   Total Energy   = 8.8726[GeV]
+   Kinetic Energy = 8.73303[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Start to simulate the event 1400
+Using tau- helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau-
+   mass:        1.77686[GeV]
+   charge:      -1[e]
+   Direction x: -0.044576, y: 0.0419483, z: 0.998125
+   Total Momentum = 58.9305[GeV]
+   Momentum: -2.62689[GeV], y: 2.47204[GeV], z: 58.82[GeV]
+   Total Energy   = 58.9573[GeV]
+   Kinetic Energy = 57.1804[GeV]
+ MagneticMoment  [MeV/T]: -1.66662e-14
+   ProperTime     = 0.000257309[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00940734, y: 0.00518394, z: 0.999942
+   Total Momentum = 8.91967[GeV]
+   Momentum: 0.0839103[GeV], y: 0.046239[GeV], z: 8.91916[GeV]
+   Total Energy   = 8.91967[GeV]
+   Kinetic Energy = 8.91967[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: -0.0530395, y: 0.0489892, z: 0.99739
+   Total Momentum = 47.2505[GeV]
+   Momentum: -2.50614[GeV], y: 2.31476[GeV], z: 47.1272[GeV]
+   Total Energy   = 47.2507[GeV]
+   Kinetic Energy = 47.1157[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi-
+   mass:        0.13957[GeV]
+   charge:      -1[e]
+   Direction x: -0.0735262, y: 0.0398911, z: 0.996495
+   Total Momentum = 2.78345[GeV]
+   Momentum: -0.204656[GeV], y: 0.111035[GeV], z: 2.77369[GeV]
+   Total Energy   = 2.78694[GeV]
+   Kinetic Energy = 2.64737[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: -0.0123634, y: 0.0131876, z: 0.999837
+   Total Momentum = 242.516[GeV]
+   Momentum: -2.99833[GeV], y: 3.19822[GeV], z: 242.477[GeV]
+   Total Energy   = 242.523[GeV]
+   Kinetic Energy = 240.746[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.00051279[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0157661, y: 0.00374994, z: 0.999869
+   Total Momentum = 25.413[GeV]
+   Momentum: -0.400664[GeV], y: 0.0952972[GeV], z: 25.4096[GeV]
+   Total Energy   = 25.413[GeV]
+   Kinetic Energy = 25.413[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - e+
+   mass:        0.000510999[GeV]
+   charge:      1[e]
+   Direction x: -0.0139886, y: 0.0219745, z: 0.999661
+   Total Momentum = 92.4242[GeV]
+   Momentum: -1.29289[GeV], y: 2.03098[GeV], z: 92.3928[GeV]
+   Total Energy   = 92.4242[GeV]
+   Kinetic Energy = 92.4237[GeV]
+ MagneticMoment  [MeV/T]: 5.79509e-11
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - nu_e
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: -0.0104646, y: 0.00859717, z: 0.999908
+   Total Momentum = 124.686[GeV]
+   Momentum: -1.30478[GeV], y: 1.07194[GeV], z: 124.674[GeV]
+   Total Energy   = 124.686[GeV]
+   Kinetic Energy = 124.686[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+
+D meson interaction at position: (1094.91,278.947,6590.26) mm
+Outgoing particles from D meson reaction:
+ - pi+ (Momentum: 10.4871 GeV)
+ - pi0 (Momentum: 45.2024 GeV)
+ - kaon- (Momentum: 54.187 GeV)
+Using tau+ helicity 0 for Pythia8 decay.
+ ----- List of DecayProducts  -----
+ ------ Parent Particle ----------
+ Particle type - tau+
+   mass:        1.77686[GeV]
+   charge:      1[e]
+   Direction x: 0.0025927, y: 0.00232254, z: 0.999994
+   Total Momentum = 529.637[GeV]
+   Momentum: 1.37319[GeV], y: 1.2301[GeV], z: 529.634[GeV]
+   Total Energy   = 529.64[GeV]
+   Kinetic Energy = 527.864[GeV]
+ MagneticMoment  [MeV/T]: 1.66662e-14
+   ProperTime     = 0.000676131[ns]
+ ------ Daughter Particles  ------
+ ----------1 -------------
+ Particle type - anti_nu_tau
+   mass:        0[GeV]
+   charge:      0[e]
+   Direction x: 0.00174517, y: 0.00559436, z: 0.999983
+   Total Momentum = 146.406[GeV]
+   Momentum: 0.255503[GeV], y: 0.819049[GeV], z: 146.404[GeV]
+   Total Energy   = 146.406[GeV]
+   Kinetic Energy = 146.406[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------2 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 0.00522378, y: -0.00121202, z: 0.999986
+   Total Momentum = 80.5207[GeV]
+   Momentum: 0.420622[GeV], y: -0.097593[GeV], z: 80.5195[GeV]
+   Total Energy   = 80.5208[GeV]
+   Kinetic Energy = 80.3858[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------3 -------------
+ Particle type - pi0
+   mass:        0.134977[GeV]
+   charge:      0[e]
+   Direction x: 5.6014e-05, y: 0.000320406, z: 1
+   Total Momentum = 151.782[GeV]
+   Momentum: 0.00850192[GeV], y: 0.0486319[GeV], z: 151.782[GeV]
+   Total Energy   = 151.782[GeV]
+   Kinetic Energy = 151.647[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----------4 -------------
+ Particle type - pi+
+   mass:        0.13957[GeV]
+   charge:      1[e]
+   Direction x: 0.00456211, y: 0.00304785, z: 0.999985
+   Total Momentum = 150.931[GeV]
+   Momentum: 0.688565[GeV], y: 0.460015[GeV], z: 150.929[GeV]
+   Total Energy   = 150.931[GeV]
+   Kinetic Energy = 150.792[GeV]
+ MagneticMoment  [MeV/T]: 0
+   ProperTime     = 0[ns]
+ ----- End List of DecayProducts  -----
+

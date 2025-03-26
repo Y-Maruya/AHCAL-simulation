@@ -1,16 +1,16 @@
-#ifndef Py8DecayerPhysics_H
-#define Py8DecayerPhysics_H
+#ifndef PYTHIA8DecayerPhysics_H
+#define PYTHIA8DecayerPhysics_H
 
 #include "G4VPhysicsConstructor.hh"
 #include "globals.hh"
 
 class G4Decay;
 
-class Py8DecayerPhysics : public G4VPhysicsConstructor
+class Pythia8DecayerPhysics : public G4VPhysicsConstructor
 {
   public:
-    Py8DecayerPhysics(G4int verb = 1);
-    virtual ~Py8DecayerPhysics();
+    Pythia8DecayerPhysics(G4int verb = 1);
+    virtual ~Pythia8DecayerPhysics();
 
   protected:
     // methods

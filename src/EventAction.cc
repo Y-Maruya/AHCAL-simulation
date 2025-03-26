@@ -129,6 +129,7 @@ namespace SimCalModule
         CaloVisibleEdepSum = EcalVisibleEdepSum + HcalVisibleEdepSum;
         //TruthParticle
         G4TrajectoryContainer* trajectoryContainer = anEvent->GetTrajectoryContainer();
+        // G4cout << "================="<<G4endl;
         if (trajectoryContainer) {
             for (size_t i = 0; i < trajectoryContainer->size(); ++i) {
                 G4Trajectory* trajectory = static_cast<G4Trajectory*>((*trajectoryContainer)[i]);
@@ -138,11 +139,14 @@ namespace SimCalModule
                 G4double v_y = trajectory->GetPoint(trajectory->GetPointEntries() - 1)->GetPosition().y() / mm;
                 G4double v_z = trajectory->GetPoint(trajectory->GetPointEntries() - 1)->GetPosition().z() / mm;
                 AddParticle(trajectory->GetPDGEncoding(), trajectory->GetInitialMomentum().x() / GeV, trajectory->GetInitialMomentum().y() / GeV, trajectory->GetInitialMomentum().z() / GeV,  energy /GeV, trajectory->GetParentID(), trajectory->GetTrackID(), v_x, v_y, v_z);
+                // if (abs(trajectory->GetPDGEncoding())==13 && ftagNulabel == 1){
+                //     G4cout<<"traject "<<trajectory->GetTrackID()<<G4endl;
+                // }
             }
         }else{
             // G4cout << "No trajectory container found." << G4endl;
         }
-
+        // G4cout << "================="<<G4endl;
         fRunAction->TransferData(EvtID, EvtID_Data);
         fRunAction->TransferData(ParticleEnergy, ParticleEnergy_Data);
         fRunAction->TransferData(ftagNulabel, ftagNulabel_Data);

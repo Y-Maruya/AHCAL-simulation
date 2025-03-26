@@ -685,7 +685,7 @@ namespace SimCalModule
             
             DownstreamSolid = new G4Box("DownstreamSolid", HcalXYsize / 2., HcalXYsize / 2., DownstreamSizeZ / 2.);
             DownstreamLogical = new G4LogicalVolume(DownstreamSolid, GetCaloMaterial(DownstreamMatIndex), "DownstreamLogical");
-            Zpos += HcalUnitSizeZ / 2.;
+            Zpos += 50 *mm + DownstreamSizeZ /2 ;
             new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
             Zpos += DownstreamSizeZ / 2.;
             std::cout<<"Zpos: "<< Zpos<<std::endl;            

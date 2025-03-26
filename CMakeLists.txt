@@ -22,7 +22,8 @@ find_package(ROOT REQUIRED)
 message(STATUS "Found ROOT: ${ROOT_DIR}.")
 add_definitions(-DWITHROOT)
 include_directories(${ROOT_INCLUDE_DIRS})
-
+find_package(Pythia8 REQUIRED)
+include_directories(${PYTHIA8_INCLUDE_DIR})
 #----------------------------------------------------------------------------
 # Setup Geant4 include directories and compile definitions
 # Setup include directory for this project
@@ -41,7 +42,7 @@ file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
 # Add the executable, and link it to the Geant4 libraries
 #
 add_executable(SimCalModule_0mmW_muon SimCalModule.cc ${sources} ${headers})
-target_link_libraries(SimCalModule_0mmW_muon ${Geant4_LIBRARIES} ${ROOT_LIBRARIES})
+target_link_libraries(SimCalModule_0mmW_muon ${Geant4_LIBRARIES} ${ROOT_LIBRARIES} ${PYTHIA8_LIBRARY})
 
 #----------------------------------------------------------------------------
 # Copy all scripts to the build directory. This is so that we can

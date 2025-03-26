@@ -58,6 +58,9 @@ namespace SimCalModule
     void PrimaryGenerator::GeneratePrimaries(G4Event* anEvent)
     //------------------------------------------------------------------------------
     {
+    fNumuCClabel = -1;
+    fD_id = -1;
+    fPrimary_trackid = -1;
     // fpParticleGun->GeneratePrimaryVertex(anEvent);
 
     // std::cout<<"Generate Primaries from :" <<fInputFileName << std::endl;
@@ -191,16 +194,17 @@ namespace SimCalModule
     }
     for (size_t j = 0; j < vertex->GetNumberOfParticle(); j++){
         G4PrimaryParticle* particle = vertex->GetPrimary(j);
-        if (abs(particle->GetPDGcode()) == 13 && particle->GetPx() == secondarymomentum_px*GeV && particle->GetPy() == secondarymomentum_py*GeV && particle->GetPz() == secondarymomentum_pz*GeV){
-            fPrimary_trackid = j;
+        if (abs(particle->GetPDGcode()) == 13 && abs(particle->GetPx()-secondarymomentum_px*GeV) < 0.001*GeV && abs(particle->GetPy()-secondarymomentum_py*GeV) < 0.001*GeV && abs(particle->GetPz()-secondarymomentum_pz*GeV) < 1*GeV){
+            fPrimary_trackid = j+1;
+            // if (ccnumu) G4cout<<"prima "<< fPrimary_trackid<<G4endl;
             break;
         }
     }
     if (ccnumu){
         for (size_t j = 0; j < vertex->GetNumberOfParticle(); j++){
             G4PrimaryParticle* particle = vertex->GetPrimary(j);
-            if (particle->GetPDGcode()/100 % 10 == 4 || particle->GetPDGcode() < 1e6){
-                fD_id = j;
+            if ((particle->GetPDGcode()/100 % 10 == 4 || particle->GetPDGcode()/1000 % 10 == 4)&& particle->GetPDGcode() < 1e6){
+                fD_id = j+1;
                 fNumuCClabel = 1;
                 break;
             }

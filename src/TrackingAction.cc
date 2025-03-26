@@ -32,6 +32,13 @@ namespace SimCalModule
         }else{
             fpTrackingManager->SetStoreTrajectory(false);
         }
+        // auto particle = track->GetParticleDefinition();
+        // if ((particle->GetPDGEncoding()/100 % 10 == 4 || particle->GetPDGEncoding()/1000 % 10 == 4)&& particle->GetPDGEncoding() < 1e6){
+        //     const G4VProcess* process = track->GetCreatorProcess();
+        //     if (process) {
+        //         G4cout << "D decayed due to " << process->GetProcessName() << G4endl;
+        //     }
+        // }
         // G4ThreeVector vposition = track->GetVertexPosition();
         // // Bool_t is_x = abs(vposition.x() -850*mm )< 500*mm;
         // // Bool_t is_y = abs(vposition.y() -330*mm )< 500*mm;

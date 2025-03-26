@@ -6,16 +6,35 @@
 #include "G4UIExecutive.hh"
 #include "G4VisExecutive.hh"
 #include "G4SystemOfUnits.hh"
-
+#include "Py8DecayerPhysics.hh"
 #include "FTFP_BERT.hh"
-
+#include "G4DecayPhysics.hh"
 #include "Randomize.hh"
 
 #include "G4GDMLParser.hh"
 #include "G4TransportationManager.hh"
 
 using namespace SimCalModule;
+#include "G4ParticleTable.hh"
+#include "G4DecayTable.hh"
+#include "G4ParticleDefinition.hh"
 
+void PrintDmesonDecayModes() {
+    G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+    G4ParticleDefinition* Dplus = particleTable->FindParticle("D0");
+
+    if (Dplus) {
+        G4DecayTable* decayTable = Dplus->GetDecayTable();
+        if (decayTable) {
+            G4cout << "Decay modes for D0 meson:" << G4endl;
+            decayTable->DumpInfo();
+        } else {
+            G4cout << "No decay table found for D0!" << G4endl;
+        }
+    } else {
+        G4cout << "D+ meson not found in particle table!" << G4endl;
+    }
+}
 int main(int argc, char **argv)
 {
     G4UIExecutive *ui = nullptr;
@@ -36,8 +55,10 @@ int main(int argc, char **argv)
 
     auto Detector = new DetectorConstruction();
     runManager->SetUserInitialization(Detector);
-
+    G4PhysListRegistry* plReg = G4PhysListRegistry::Instance();
+    plReg->AddPhysicsExtension("PY8DK", "Py8DecayerPhysics");
     auto physicsList = new FTFP_BERT;
+    // physicsList->RegisterPhysics(new G4DecayPhysics());
     // physicsList->SetDefaultCutValue(0.05 * mm);
     runManager->SetUserInitialization(physicsList);
 
@@ -49,7 +70,6 @@ int main(int argc, char **argv)
 
     // get the pointer to the User Interface manager
     G4UImanager *UImanager = G4UImanager::GetUIpointer();
-
     if (ui)
     {
         // interactive mode
@@ -79,7 +99,7 @@ int main(int argc, char **argv)
         parser.SetOutputFileOverwrite(true);
         parser.Write(argv[3], G4TransportationManager::GetTransportationManager()->GetNavigatorForTracking()->GetWorldVolume()->GetLogicalVolume());
     }
-
+    PrintDmesonDecayModes();
     // job termination
     delete visManager;
     delete runManager;

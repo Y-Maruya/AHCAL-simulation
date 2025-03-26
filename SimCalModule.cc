@@ -6,34 +6,53 @@
 #include "G4UIExecutive.hh"
 #include "G4VisExecutive.hh"
 #include "G4SystemOfUnits.hh"
-#include "Py8DecayerPhysics.hh"
+#include "G4PhysListFactoryAlt.hh"
+// #include "Py8DecayerPhysics.hh"
+#include "G4PhysListRegistry.hh"
+
 #include "FTFP_BERT.hh"
 #include "G4DecayPhysics.hh"
 #include "Randomize.hh"
-
+#include "Pythia8DecayerPhysics.hh"
 #include "G4GDMLParser.hh"
 #include "G4TransportationManager.hh"
-
+#include "G4PhysicsConstructorFactory.hh"
 using namespace SimCalModule;
 #include "G4ParticleTable.hh"
 #include "G4DecayTable.hh"
 #include "G4ParticleDefinition.hh"
 
-void PrintDmesonDecayModes() {
-    G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
-    G4ParticleDefinition* Dplus = particleTable->FindParticle("D0");
+// void PrintDmesonDecayModes() {
+//     G4ParticleTable* particleTable = G4ParticleTable::GetParticleTable();
+//     G4ParticleDefinition* Dplus = particleTable->FindParticle("D0");
 
-    if (Dplus) {
-        G4DecayTable* decayTable = Dplus->GetDecayTable();
-        if (decayTable) {
-            G4cout << "Decay modes for D0 meson:" << G4endl;
-            decayTable->DumpInfo();
-        } else {
-            G4cout << "No decay table found for D0!" << G4endl;
-        }
-    } else {
-        G4cout << "D+ meson not found in particle table!" << G4endl;
-    }
+//     if (Dplus) {
+//         G4DecayTable* decayTable = Dplus->GetDecayTable();
+//         if (decayTable) {
+//             G4cout << "Decay modes for D0 meson:" << G4endl;
+//             decayTable->DumpInfo();
+//         } else {
+//             G4cout << "No decay table found for D0!" << G4endl;
+//         }
+//     } else {
+//         G4cout << "D+ meson not found in particle table!" << G4endl;
+//     }
+// }
+void PrintAvailable(G4int verbosity)
+{
+  G4cout << G4endl;
+  G4cout << "extensibleFactory: here are the available physics lists:" << G4endl;
+  g4alt::G4PhysListFactory factory;
+  factory.PrintAvailablePhysLists();
+
+  // if user asked for extra verbosity then print physics ctors as well
+  if (verbosity > 1) {
+    G4cout << G4endl;
+    G4cout << "extensibleFactory: "
+           << "here are the available physics ctors that can be added:" << G4endl;
+    G4PhysicsConstructorRegistry* g4pctorFactory = G4PhysicsConstructorRegistry::Instance();
+    g4pctorFactory->PrintAvailablePhysicsConstructors();
+  }
 }
 int main(int argc, char **argv)
 {
@@ -55,8 +74,30 @@ int main(int argc, char **argv)
 
     auto Detector = new DetectorConstruction();
     runManager->SetUserInitialization(Detector);
+
+    std::string physListName = "FTFP_BERT+PY8DK";
+    g4alt::G4PhysListFactory plFactory;
+    G4VModularPhysicsList* physicsList = nullptr;
+    plFactory.SetDefaultReferencePhysList("NO_DEFAULT_PHYSLIST");
+    
+    // set a short name for the plugin
     G4PhysListRegistry* plReg = G4PhysListRegistry::Instance();
     plReg->AddPhysicsExtension("PY8DK", "Py8DecayerPhysics");
+    
+    physicsList = plFactory.GetReferencePhysList(physListName);
+    
+    if (!physicsList) {
+      PrintAvailable(1);
+    
+      // if we can't get what the user asked for...
+      //    don't go on to use something else, that's confusing
+      G4ExceptionDescription ed;
+      ed << "The factory for the physicslist [" << physListName << "] does not exist!" << G4endl;
+      G4Exception("extensibleFactory", "extensibleFactory001", FatalException, ed);
+      exit(42);
+    }
+    
+    runManager->SetUserInitialization(physicsList);
     auto physicsList = new FTFP_BERT;
     // physicsList->RegisterPhysics(new G4DecayPhysics());
     // physicsList->SetDefaultCutValue(0.05 * mm);
@@ -99,7 +140,7 @@ int main(int argc, char **argv)
         parser.SetOutputFileOverwrite(true);
         parser.Write(argv[3], G4TransportationManager::GetTransportationManager()->GetNavigatorForTracking()->GetWorldVolume()->GetLogicalVolume());
     }
-    PrintDmesonDecayModes();
+    // PrintDmesonDecayModes();
     // job termination
     delete visManager;
     delete runManager;

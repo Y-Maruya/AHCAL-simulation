@@ -48,8 +48,7 @@ namespace SimCalModule
       G4int GetNumuCClabel() const;
       G4int GetD_id() const;
       G4int GetPrimary_trackid() const;
-      void ClearData();
-      
+
     private:
       GeneratorMessenger* fMessenger;
       RunAction* fRunAction;
@@ -71,20 +70,6 @@ namespace SimCalModule
       G4int fNumuCClabel;
       G4int fD_id;
       G4int fPrimary_trackid;
-
-      TFile *gFaserFile;
-      TTree* gFaserTree;
-      std::vector<int>* pdgc;
-      std::vector<double>* px;
-      std::vector<double>* py;
-      std::vector<double>* pz;
-      std::vector<double>* E;
-      std::vector<int>* status;
-      std::vector<int>* firstMother;
-      double vx;
-      double vy;
-      double vz;
-
   };
 }
 

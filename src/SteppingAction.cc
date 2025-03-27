@@ -13,7 +13,7 @@ SteppingAction::SteppingAction() : G4UserSteppingAction() {
 SteppingAction::~SteppingAction() {}
 
 void SteppingAction::UserSteppingAction(const G4Step* step) {
-    G4double zplane = 7282.2 * mm;
+    G4double zplane = 7882.2 * mm;
     fEventAction = const_cast<SimCalModule::EventAction*>(static_cast<const SimCalModule::EventAction*>(G4RunManager::GetRunManager()->GetUserEventAction()));
     if (!fEventAction){
         G4cout<<"eventactioneeror"<<G4endl;
@@ -30,7 +30,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     G4int trackID = track->GetTrackID();
     if (numuCC > 0) {
         if (trackID == D_id) {
-            if (track->GetTrackStatus() == fStopAndKill) {  // D メソンが消滅した場合
+            if (track->GetTrackStatus() == fStopAndKill) { 
                 G4cout << "D meson interaction at position: " 
                        << track->GetPosition() / mm << " mm" << G4endl;
                 const G4VProcess* process = track->GetCreatorProcess();
@@ -50,7 +50,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
             }
         }
     }
-    if (prePos.z() < zplane && postPos.z() > zplane) {
+    if (prePos.z() < zplane && postPos.z() > zplane && track->GetParticleDefinition()->GetPDGCharge() !=0 ) {
         int pdgID = track->GetParticleDefinition()->GetPDGEncoding();
         G4int parentID = track->GetParentID();
         G4double energy = track->GetTotalEnergy() / GeV;
@@ -65,7 +65,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
             primary_Dmeson = 1;
         }
         if (numuCC > 0) {
-            if (trackID == D_id) {
+            if (parentID == D_id) {
                 primary_Dmeson = 2;
                 G4cout<<"D meson decay to muon"<<G4endl;
             }

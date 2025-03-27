@@ -23,14 +23,14 @@ message(STATUS "Found ROOT: ${ROOT_DIR}.")
 add_definitions(-DWITHROOT)
 include_directories(${ROOT_INCLUDE_DIRS})
 #----------------------------------------------------------------------------
-# Setting pythia8 on LCG
+# Setting pythia8 on LCG on CVMFS
 find_package(PkgConfig REQUIRED)
 
-# pythia8-config を使って include と lib を取得
+# pythia8-config 
 execute_process(COMMAND $ENV{PYTHIA8}/bin/pythia8-config --cxxflags OUTPUT_VARIABLE PYTHIA8_CXX_FLAGS OUTPUT_STRIP_TRAILING_WHITESPACE)
 execute_process(COMMAND $ENV{PYTHIA8}/bin/pythia8-config --libs OUTPUT_VARIABLE PYTHIA8_LIBS OUTPUT_STRIP_TRAILING_WHITESPACE)
 
-# 変数の設定
+# setting the variables
 set(PYTHIA8_INCLUDE_DIR "$ENV{PYTHIA8}/include")
 set(PYTHIA8_LIBRARY "$ENV{PYTHIA8}/lib/libpythia8.so")
 

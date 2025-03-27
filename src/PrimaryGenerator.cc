@@ -10,7 +10,7 @@
 #include "G4PrimaryVertex.hh"
 #include "G4PrimaryParticle.hh"
 #include <TFile.h>
-#include <TTree.h>
+#include <TgFaserTree.h>
 #include <vector>
 #include <iostream>
 #include <fstream>
@@ -43,72 +43,58 @@ namespace SimCalModule
         fPrimary_trackid(-1)
     //------------------------------------------------------------------------------
     {
-    fpParticleGun = new G4ParticleGun();
-    // G4cout << "PrimaryGenerator::PrimaryGenerator()" << G4endl;
+        ClearData();
+        fpParticleGun = new G4ParticleGun();
+        // G4cout << "PrimaryGenerator::PrimaryGenerator()" << G4endl;
+        gFaserFile = new TFile(fInputFileName.c_str(),"READ");
+        if(!gFaserFile){
+            std::cerr<<"File not found"<<std::endl;
+            exit(1);
+        }
+        gFasergFaserTree = (TgFaserTree*)gFaserFile->Get("gFaser");
+        if(!gFasergFaserTree){
+            std::cerr<<"gFaserTree not found"<<std::endl;
+            exit(1);
+        }
+        gFaserTree->SetBranchStatus("*",0);
+        gFaserTree->SetBranchStatus("pdgc",1);
+        gFaserTree->SetBranchStatus("px",1);
+        gFaserTree->SetBranchStatus("py",1);
+        gFaserTree->SetBranchStatus("pz",1);
+        gFaserTree->SetBranchStatus("E",1);
+        gFaserTree->SetBranchStatus("status",1);
+        gFaserTree->SetBranchStatus("firstMother",1);
+        gFaserTree->SetBranchStatus("vx",1);
+        gFaserTree->SetBranchStatus("vy",1);
+        gFaserTree->SetBranchStatus("vz",1);
+        gFaserTree->SetBranchAddress("vx",&vx);
+        gFaserTree->SetBranchAddress("vy",&vy);
+        gFaserTree->SetBranchAddress("vz",&vz);
+        gFaserTree->SetBranchAddress("px",&px);
+        gFaserTree->SetBranchAddress("py",&py);
+        gFaserTree->SetBranchAddress("pz",&pz);
+        gFaserTree->SetBranchAddress("E",&E);
+        gFaserTree->SetBranchAddress("status",&status);
+        gFaserTree->SetBranchAddress("pdgc",&pdgc);
+        gFaserTree->SetBranchAddress("firstMother",&firstMother);
     }
 
     //------------------------------------------------------------------------------
     PrimaryGenerator::~PrimaryGenerator()
     //------------------------------------------------------------------------------
     {
-    delete fpParticleGun;
+        delete fpParticleGun;
+        // delete fMessenger;
+        gFaserFile->Close();
+
     }
 
     //------------------------------------------------------------------------------
     void PrimaryGenerator::GeneratePrimaries(G4Event* anEvent)
     //------------------------------------------------------------------------------
     {
-    fNumuCClabel = -1;
-    fD_id = -1;
-    fPrimary_trackid = -1;
-    // fpParticleGun->GeneratePrimaryVertex(anEvent);
-
-    // std::cout<<"Generate Primaries from :" <<fInputFileName << std::endl;
-    TFile* file=new TFile(fInputFileName.c_str(),"READ");
-    if(!file){
-        std::cerr<<"File not found"<<std::endl;
-        exit(1);
-    }
-    TTree* tree=(TTree*)file->Get("gFaser");
-    if(!tree){
-        std::cerr<<"Tree not found"<<std::endl;
-        exit(1);
-    }
-    std::vector<int>* pdgc = nullptr;
-    std::vector<double>* px = nullptr;
-    std::vector<double>* py = nullptr;
-    std::vector<double>* pz = nullptr;
-    std::vector<double>* E = nullptr;
-    std::vector<int>* status = nullptr;
-    std::vector<int>* firstMother = nullptr;
-    double vx;
-    double vy;
-    double vz;
-    tree->SetBranchStatus("*",0);
-    tree->SetBranchStatus("pdgc",1);
-    tree->SetBranchStatus("px",1);
-    tree->SetBranchStatus("py",1);
-    tree->SetBranchStatus("pz",1);
-    tree->SetBranchStatus("E",1);
-    tree->SetBranchStatus("status",1);
-    tree->SetBranchStatus("firstMother",1);
-    if(fFixedPrimaryVertexPosition==false){
-        tree->SetBranchStatus("vx",1);
-        tree->SetBranchStatus("vy",1);
-        tree->SetBranchStatus("vz",1);
-        tree->SetBranchAddress("vx",&vx);
-        tree->SetBranchAddress("vy",&vy);
-        tree->SetBranchAddress("vz",&vz);
-        // std::cout<<"Fix Vertex position : "<<fPrimaryVertexPosition.x()<<" "<<fPrimaryVertexPosition.y()<<" "<<fPrimaryVertexPosition.z()<<std::endl; 
-    }
-    tree->SetBranchAddress("px",&px);
-    tree->SetBranchAddress("py",&py);
-    tree->SetBranchAddress("pz",&pz);
-    tree->SetBranchAddress("E",&E);
-    tree->SetBranchAddress("status",&status);
-    tree->SetBranchAddress("pdgc",&pdgc);
-    tree->SetBranchAddress("firstMother",&firstMother);
-    tree->GetEntry(anEvent->GetEventID());
+    ClearData();
+    gFaserTree->GetEntry(anEvent->GetEventID());
     G4PrimaryVertex* vertex;
     if(fFixedPrimaryVertexPosition==true) {vertex = new G4PrimaryVertex(fPrimaryVertexPosition,0*ns);}
     else {
@@ -307,4 +293,27 @@ namespace SimCalModule
         return fPrimary_trackid;
     }
 
+    void PrimaryGenerator::ClearData()
+    {
+        ftagNulabel = -1;
+        primaryenergy = 0;
+        secondarypdgid = 0;
+        secondaryenergy = -1;
+        secondarymomentum_px = -1;
+        secondarymomentum_py = -1;
+        secondarymomentum_pz = -1;
+        fNumuCClabel = -1;
+        fD_id = -1;
+        fPrimary_trackid = -1;
+        pdgc->clear();
+        px->clear();
+        py->clear();
+        pz->clear();
+        E->clear();
+        status->clear();
+        firstMother->clear();
+        vx = 0;
+        vy = 0;
+        vz = 0;
+    }
 }

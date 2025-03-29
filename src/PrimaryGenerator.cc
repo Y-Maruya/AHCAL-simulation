@@ -203,7 +203,7 @@ namespace SimCalModule
     if (ccnumu){
         for (size_t j = 0; j < vertex->GetNumberOfParticle(); j++){
             G4PrimaryParticle* particle = vertex->GetPrimary(j);
-            if ((particle->GetPDGcode()/100 % 10 == 4 || particle->GetPDGcode()/1000 % 10 == 4)&& particle->GetPDGcode() < 1e6){
+            if ((abs(particle->GetPDGcode())/100 % 10 == 4 || abs(particle->GetPDGcode())/1000 % 10 == 4)&& abs(particle->GetPDGcode()) < 1e6){
                 fD_id = j+1;
                 fNumuCClabel = 1;
                 break;

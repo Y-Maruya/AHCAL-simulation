@@ -13,7 +13,7 @@ SteppingAction::SteppingAction() : G4UserSteppingAction() {
 SteppingAction::~SteppingAction() {}
 
 void SteppingAction::UserSteppingAction(const G4Step* step) {
-    G4double zplane = 7882.2 * mm;
+    G4double zplane = 7382.2 * mm;
     fEventAction = const_cast<SimCalModule::EventAction*>(static_cast<const SimCalModule::EventAction*>(G4RunManager::GetRunManager()->GetUserEventAction()));
     if (!fEventAction){
         G4cout<<"eventactioneeror"<<G4endl;

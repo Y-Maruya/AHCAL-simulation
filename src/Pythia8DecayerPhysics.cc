@@ -89,7 +89,7 @@ void Pythia8DecayerPhysics::ConstructProcess()
             // a)tau's 
             // b) B+/- 
             // and replace with external decayer
-            if (  IsTargetParticle(particle->GetPDGEncoding()))
+            if (  IsTargetParticle(abs(particle->GetPDGEncoding())))
             {
                if ( particle->GetDecayTable() )
                {

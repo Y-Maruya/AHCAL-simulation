@@ -28,7 +28,7 @@ namespace SimCalModule
         }
         if (G4RunManager::GetRunManager()->GetRunManagerType() != G4RunManager::masterRM)
         {
-            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_1000";
+            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_500";
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";
@@ -104,7 +104,7 @@ namespace SimCalModule
             G4cout << "The run with RunID  " << aRun->GetRunID() << " is finished. " << G4endl;
         if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::masterRM)
         {
-            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_1000";
+            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_500";
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";

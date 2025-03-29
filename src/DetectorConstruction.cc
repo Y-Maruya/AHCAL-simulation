@@ -127,7 +127,7 @@ namespace SimCalModule
         HcalModuleType = 1; // 0:Off; 1:AHCAL; 2:GSHCAL
         EcalStepTimeLimit = 150.0 * ns;
         HcalStepTimeLimit = 150.0 * ns;
-        DownstreamSizeZ = 1000 * mm;
+        DownstreamSizeZ = 500 * mm;
     }
 
     void DetectorConstruction::DefineMaterials()

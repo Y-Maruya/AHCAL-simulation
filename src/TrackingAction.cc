@@ -27,8 +27,8 @@ namespace SimCalModule
             //     fpTrackingManager->EventAborted();
             // }
             fpTrackingManager->SetStoreTrajectory(true);
-        }else if (track->GetParentID() < 20){
-            fpTrackingManager->SetStoreTrajectory(true);
+        // }else if (track->GetParentID() < 20){
+        //     fpTrackingManager->SetStoreTrajectory(true);
         }else{
             fpTrackingManager->SetStoreTrajectory(false);
         }

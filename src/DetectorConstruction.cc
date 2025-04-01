@@ -127,7 +127,7 @@ namespace SimCalModule
         HcalModuleType = 1; // 0:Off; 1:AHCAL; 2:GSHCAL
         EcalStepTimeLimit = 150.0 * ns;
         HcalStepTimeLimit = 150.0 * ns;
-        DownstreamSizeZ = 500 * mm;
+        DownstreamSizeZ = 0 * mm;
     }
 
     void DetectorConstruction::DefineMaterials()
@@ -682,13 +682,14 @@ namespace SimCalModule
             // Downstream
             G4Box *DownstreamSolid = nullptr;
             G4LogicalVolume *DownstreamLogical = nullptr;
-            
+            if (DownstreamSizeZ >0){
             DownstreamSolid = new G4Box("DownstreamSolid", HcalXYsize / 2., HcalXYsize / 2., DownstreamSizeZ / 2.);
             DownstreamLogical = new G4LogicalVolume(DownstreamSolid, GetCaloMaterial(DownstreamMatIndex), "DownstreamLogical");
             Zpos += 50 *mm + DownstreamSizeZ /2 ;
             new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
             Zpos += DownstreamSizeZ / 2.;
             std::cout<<"Zpos: "<< Zpos+Initial_pos.z()<<std::endl;            
+            }
         }
         else if (HcalModuleType == 2)
         {

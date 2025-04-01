@@ -194,6 +194,8 @@ namespace SimCalModule
         fRunAction->TransferData(vecTruth_trackID, vecTruth_trackID_Data);
         fRunAction->TransferData(nstoredPlaneParticles, nstoredPlaneParticles_Data);
         fRunAction->TransferData(vecPlane_pdgID, vecPlane_pdgID_Data);
+        fRunAction->TransferData(vecPlane_charge, vecPlane_charge_Data);
+        fRunAction->TransferData(vecPlane_globalTime, vecPlane_globalTime_Data);
         fRunAction->TransferData(vecPlane_px, vecPlane_px_Data);
         fRunAction->TransferData(vecPlane_py, vecPlane_py_Data);
         fRunAction->TransferData(vecPlane_pz, vecPlane_pz_Data);
@@ -259,6 +261,8 @@ namespace SimCalModule
         vecTruth_trackID.clear();
         nstoredPlaneParticles = 0;
         vecPlane_pdgID.clear();
+        vecPlane_charge.clear();
+        vecPlane_globalTime.clear();
         vecPlane_px.clear();
         vecPlane_py.clear();
         vecPlane_pz.clear();
@@ -285,9 +289,11 @@ namespace SimCalModule
         vecTruth_trackID.push_back(trackID);
         nstoredTruthParticles++;
     }
-    void EventAction::AddPlaneParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double v_x, G4double v_y, G4double v_z, int primary_Dmeson)
+    void EventAction::AddPlaneParticle(int pdgID, double charge, double gtime, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double v_x, G4double v_y, G4double v_z, int primary_Dmeson)
     {
         vecPlane_pdgID.push_back(pdgID);
+        vecPlane_charge.push_back(charge);
+        vecPlane_globalTime.push_back(gtime);
         vecPlane_px.push_back(px);
         vecPlane_py.push_back(py);
         vecPlane_pz.push_back(pz);

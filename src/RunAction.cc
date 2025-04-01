@@ -28,7 +28,7 @@ namespace SimCalModule
         }
         if (G4RunManager::GetRunManager()->GetRunManagerType() != G4RunManager::masterRM)
         {
-            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_s0001";
+            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo__2000_v2";
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";
@@ -85,6 +85,8 @@ namespace SimCalModule
             treeEvt->Branch("vecTruth_trackID", &vecTruth_trackID);
             treeEvt->Branch("nstoredPlaneParticles", &nstoredPlaneParticles, "nstoredPlaneParticles/I");
             treeEvt->Branch("vecPlane_pdgID", &vecPlane_pdgID);
+            treeEvt->Branch("vecPlane_charge", &vecPlane_charge);
+            treeEvt->Branch("vecPlane_globalTime", &vecPlane_globalTime);
             treeEvt->Branch("vecPlane_px", &vecPlane_px);
             treeEvt->Branch("vecPlane_py", &vecPlane_py);
             treeEvt->Branch("vecPlane_pz", &vecPlane_pz);
@@ -104,7 +106,7 @@ namespace SimCalModule
             G4cout << "The run with RunID  " << aRun->GetRunID() << " is finished. " << G4endl;
         if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::masterRM)
         {
-            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_s0001";
+            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo__2000_v2";
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";
@@ -338,6 +340,12 @@ namespace SimCalModule
             break;
         case vecTruth_energy_Data:
             vecTruth_energy = data;
+            break;
+        case vecPlane_charge_Data:
+            vecPlane_charge = data;
+            break;
+        case vecPlane_globalTime_Data:
+            vecPlane_globalTime = data;
             break;
         case vecPlane_px_Data:
             vecPlane_px = data;

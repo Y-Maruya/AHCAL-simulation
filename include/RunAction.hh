@@ -59,6 +59,8 @@ namespace SimCalModule
         vecTruth_trackID_Data,
         nstoredPlaneParticles_Data,
         vecPlane_pdgID_Data,
+        vecPlane_charge_Data,
+        vecPlane_globalTime_Data,
         vecPlane_px_Data,
         vecPlane_py_Data,
         vecPlane_pz_Data,
@@ -139,6 +141,8 @@ namespace SimCalModule
         std::vector<G4int> vecTruth_trackID;
         G4int nstoredPlaneParticles;
         std::vector<G4int> vecPlane_pdgID;
+        std::vector<G4double> vecPlane_charge;
+        std::vector<G4double> vecPlane_globalTime;
         std::vector<G4double> vecPlane_px;
         std::vector<G4double> vecPlane_py;
         std::vector<G4double> vecPlane_pz;

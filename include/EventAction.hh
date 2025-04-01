@@ -19,7 +19,7 @@ namespace SimCalModule
         void EndOfEventAction(const G4Event *) override;
         void ResetEventData();
         void AddParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz);
-        void AddPlaneParticle(int pdgID, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz, int primaryy_D);
+        void AddPlaneParticle(int pdgID, double charge, double gtime, double px, double py, double pz, double energy, int vertexIndex, int trackID, G4double vx, G4double vy, G4double vz, int primaryy_D);
         G4int GetfNumuCClabel();
         G4int GetfD_id();
         G4int GetPrimary_trackid();
@@ -74,6 +74,8 @@ namespace SimCalModule
         std::vector<G4int> vecTruth_trackID;
         G4int nstoredPlaneParticles;
         std::vector<G4int> vecPlane_pdgID;
+        std::vector<G4double> vecPlane_charge;
+        std::vector<G4double> vecPlane_globalTime;
         std::vector<G4double> vecPlane_px;
         std::vector<G4double> vecPlane_py;
         std::vector<G4double> vecPlane_pz;

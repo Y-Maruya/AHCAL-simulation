@@ -54,7 +54,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
         int pdgID = track->GetParticleDefinition()->GetPDGEncoding();
         G4int parentID = track->GetParentID();
         G4double charge = track->GetParticleDefinition()->GetPDGCharge();
-        G4double gTime = track->GetGlobalTime();
+        G4double prepoint_time = preStep->GetGlobalTime();
+        G4double postpoint_time = postStep->GetGlobalTime();
+        G4double gTime = (prepoint_time *(postPos.z() - zplane) +
+                      postpoint_time *(zplane - prePos.z())) / (postPos.z() - prePos.z());
         G4double energy = track->GetTotalEnergy() / GeV;
         G4double px = track->GetMomentum().x() / GeV;
         G4double py = track->GetMomentum().y() / GeV;

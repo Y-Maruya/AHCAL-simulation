@@ -91,10 +91,12 @@ namespace SimCalModule
         HcalUnitParameter.PassiveMatIndex = ESR;
         HcalUnitParameter.AttachMatIndex = Quartz;
         Initial_pos = G4ThreeVector(850.0*mm,330.0*mm,5570*mm);
+        // Initial_pos = G4ThreeVector(0*mm,0*mm,3500*mm); // detailed.gdml
         EcalAbsorberThick = 3.2 * mm; // 3.2 mm for ScW ECAL
         HcalAbsorberThick = 20.0 * mm;
         EcalPCBThick = 2.0 * mm;
         HcaltriggerThick = 20.0 * mm;
+        // HcaltriggerThick = 100.0 * mm;
         HcaltriggerIndex = PlasticSciHCAL;
         HcalgraphiteThick = 0.0 * mm;
         HCALgraphiteIndex = W;
@@ -128,6 +130,7 @@ namespace SimCalModule
         EcalStepTimeLimit = 150.0 * ns;
         HcalStepTimeLimit = 150.0 * ns;
         DownstreamSizeZ = 2000 * mm;
+        // DownstreamSizeZ = 0 * mm; //detail.gdml
     }
 
     void DetectorConstruction::DefineMaterials()
@@ -604,8 +607,8 @@ namespace SimCalModule
             G4RotationMatrix *HcalUnitInv = new G4RotationMatrix();
             HcalUnitInv->rotateY(180. * deg);
             G4double Zpos = HcalUnitSizeZ / 2.;
-            if (EcalModuleType > 0)
-                Zpos += 19.9 * EcalLayerNumber / 2. + 230. * mm; // Additional 230 mm (assume including ECAL cover)
+            if (EcalModuleType > 0) //detailed.gdml
+                Zpos += 19.9 * EcalLayerNumber / 2. + 280. * mm; // Additional 230 mm (assume including ECAL cover)
             if (IntermediateSizeX * IntermediateSizeY * IntermediateSizeZ > 0)
                 Zpos += IntermediateSizeZ;
             auto HcalCellMax = std::to_string(std::max(HcalCellNumberX, HcalCellNumberY));
@@ -637,7 +640,8 @@ namespace SimCalModule
                     }
                 }
             }
-            Zpos += 50. * mm;
+            Zpos += 50. * mm; 
+            // Zpos += 280. *mm;//detailed
 
             G4double HCALCoverThick = 2. * mm;
             Zpos += HCALCoverThick / 2.;

@@ -139,6 +139,7 @@ namespace SimCalModule
         G4int HcalLayerNumber;
         G4int Hcaltriggernplane;
         G4double DownstreamSizeZ;
+        G4int DownstreamNum;
         MaterialIndex DownstreamMatIndex;
         G4LogicalVolume *EcalUnitLogical;
         G4LogicalVolume *HcalUnitLogical;

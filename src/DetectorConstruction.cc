@@ -98,7 +98,7 @@ namespace SimCalModule
         HcaltriggerThick = 20.0 * mm;
         // HcaltriggerThick = 100.0 * mm;
         HcaltriggerIndex = PlasticSciHCAL;
-        HcalgraphiteThick = 0.0 * mm;
+        HcalgraphiteThick = 0 * mm;
         HCALgraphiteIndex = W;
         Hcaltriggernplane = 1;
         HcalPCBThick = 2.5 * mm;  //2.5mm *4/5 for PCB, 1mm for component
@@ -129,7 +129,8 @@ namespace SimCalModule
         HcalModuleType = 1; // 0:Off; 1:AHCAL; 2:GSHCAL
         EcalStepTimeLimit = 150.0 * ns;
         HcalStepTimeLimit = 150.0 * ns;
-        DownstreamSizeZ = 3000 * mm;
+        DownstreamSizeZ = 500 * mm;
+        DownstreamNum = 6;
         // DownstreamSizeZ = 0 * mm; //detail.gdml
     }
 
@@ -687,12 +688,47 @@ namespace SimCalModule
             G4Box *DownstreamSolid = nullptr;
             G4LogicalVolume *DownstreamLogical = nullptr;
             if (DownstreamSizeZ >0){
-            DownstreamSolid = new G4Box("DownstreamSolid", HcalXYsize / 2., HcalXYsize / 2., DownstreamSizeZ / 2.);
-            DownstreamLogical = new G4LogicalVolume(DownstreamSolid, GetCaloMaterial(DownstreamMatIndex), "DownstreamLogical");
-            Zpos += 50 *mm + DownstreamSizeZ /2 ;
-            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
-            Zpos += DownstreamSizeZ / 2.;
-            std::cout<<"Zpos: "<< Zpos+Initial_pos.z()<<std::endl;            
+                DownstreamSolid = new G4Box("DownstreamSolid", HcalXYsize / 2., HcalXYsize / 2., DownstreamSizeZ / 2.);
+                DownstreamLogical = new G4LogicalVolume(DownstreamSolid, GetCaloMaterial(DownstreamMatIndex), "DownstreamLogical");
+                Zpos += 50 *mm + DownstreamSizeZ /2 ;
+                // new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
+                // Zpos += DownstreamSizeZ / 2.;
+                // std::cout<<"Zpos: "<< Zpos+Initial_pos.z()<<std::endl; 
+                //
+                if (DownstreamNum != 0){
+                    // Zpos += 2. * mm;
+                    // Zpos += (DownstreamSizeZ + HcalUnitSizeZ) / 2.;
+                    int z = HcalLayerNumber;
+                    for (int num = 0; num<DownstreamNum;num++){
+
+                        if (DownstreamSizeZ > 0)
+                            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+                        Zpos += (HcalUnitSizeZ + DownstreamSizeZ) / 2. ;
+                        for (G4int y = 0; y < HcalCellNumberY; y++)
+                        {
+                            HcalCopyNum = (z + 1) * HcalCellMaxCount * HcalCellMaxCount + (y + 1) * HcalCellMaxCount;
+                            for (G4int x = 0; x < HcalCellNumberX; x++)
+                            {
+                                HcalCopyNum++;
+                                new CaloUnitVolume("HcalUnit", HcalUnitInv, G4ThreeVector(HcalUnitSizeX * (HcalCellNumberX / 2. - 0.5 - x), HcalUnitSizeY * (HcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
+                                                ifcheckOverlaps, World_Logical, HcalUnitLogical, HcalSensitiveLogical, &HcalUnitParameter, false, HcalCopyNum, this);
+                            }
+                        }
+                        Zpos += (HcalUnitSizeZ + HcalPCBThick) / 2.;
+                        if (HcalPCBThick > 0)
+                            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+
+
+                        Zpos += (HcalPCBThick + HcalPCB_Cu_Thick) / 2.;
+                        if(HcalPCB_Cu_Thick>0)
+                            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCB_Cu_Logical, "HcalPCB_Cu_Physical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+
+
+                        Zpos += (HcalPCB_Cu_Thick + DownstreamSizeZ) / 2. + HcalPCB_Abs_gap * mm;  // HcalPCBGap 4 mm
+                        // Zpos += (DownstreamSizeZ + HcalUnitSizeZ) / 2.;
+                        z++;
+                    }
+                }      
             }
         }
         else if (HcalModuleType == 2)

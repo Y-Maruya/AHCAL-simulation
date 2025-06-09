@@ -38,7 +38,7 @@ namespace SimCalModule
         interaction_x = primary->GetInteractionPlace().x() / mm;
         interaction_y = primary->GetInteractionPlace().y() / mm;
         interaction_z = primary->GetInteractionPlace().z() / mm;
-        SecondaryEnergy = primary->GetSecondaryEnergy() / GeV;
+        SecondaryEnergy = primary->GetSecondaryEnergy();
         Secondarypdgid = primary->GetSecondarypdgid();
         SecondaryMomentum_px = primary->GetSecondaryMomentum().x() /GeV/CLHEP::c_light;
         SecondaryMomentum_py = primary->GetSecondaryMomentum().y() /GeV/CLHEP::c_light;

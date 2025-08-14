@@ -90,7 +90,7 @@ namespace SimCalModule
         HcalUnitParameter.Sensitive_dig_out_MatIndex = Air;
         HcalUnitParameter.PassiveMatIndex = ESR;
         HcalUnitParameter.AttachMatIndex = Quartz;
-        Initial_pos = G4ThreeVector(850.0*mm,330.0*mm,5570*mm);
+        Initial_pos = G4ThreeVector((650+77)*mm,(334.4-77)*mm,6200*mm);
         // Initial_pos = G4ThreeVector(0*mm,0*mm,3500*mm); // detailed.gdml
         EcalAbsorberThick = 3.2 * mm; // 3.2 mm for ScW ECAL
         HcalAbsorberThick = 20.0 * mm;

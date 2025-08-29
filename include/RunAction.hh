@@ -48,12 +48,16 @@ namespace SimCalModule
         vecHcalToaCell_Data,
         nstoredTruthParticles_Data,
         vecTruth_pdgID_Data,
+        vecTruth_charge_Data,
         vecTruth_px_Data,
         vecTruth_py_Data,
         vecTruth_pz_Data,
-        vecTruth_x_Data,
-        vecTruth_y_Data,
-        vecTruth_z_Data,
+        vecTruth_pre_x_Data,
+        vecTruth_pre_y_Data,
+        vecTruth_pre_z_Data,
+        vecTruth_post_x_Data,
+        vecTruth_post_y_Data,
+        vecTruth_post_z_Data,
         vecTruth_energy_Data,
         vecTruth_vertexIndex_Data,
         vecTruth_trackID_Data,
@@ -70,7 +74,8 @@ namespace SimCalModule
         vecPlane_energy_Data,
         vecPlane_vertexIndex_Data,
         vecPlane_trackID_Data,
-        vecPlane_primary_Dmeson_Data
+        vecPlane_primary_Dmeson_Data,
+        vecPlane_zplane_Data
     };
 
     class EventAction;
@@ -130,12 +135,16 @@ namespace SimCalModule
         std::vector<G4double> vecHcalToaCell;
         G4int nstoredTruthParticles;
         std::vector<G4int> vecTruth_pdgID;
+        std::vector<G4double> vecTruth_charge;
         std::vector<G4double> vecTruth_px;
         std::vector<G4double> vecTruth_py;
         std::vector<G4double> vecTruth_pz;
-        std::vector<G4double> vecTruth_x;
-        std::vector<G4double> vecTruth_y;
-        std::vector<G4double> vecTruth_z;
+        std::vector<G4double> vecTruth_pre_x;
+        std::vector<G4double> vecTruth_pre_y;
+        std::vector<G4double> vecTruth_pre_z;
+        std::vector<G4double> vecTruth_post_x;
+        std::vector<G4double> vecTruth_post_y;
+        std::vector<G4double> vecTruth_post_z;
         std::vector<G4double> vecTruth_energy;
         std::vector<G4int> vecTruth_vertexIndex;
         std::vector<G4int> vecTruth_trackID;
@@ -153,6 +162,7 @@ namespace SimCalModule
         std::vector<G4int> vecPlane_vertexIndex;
         std::vector<G4int> vecPlane_trackID;
         std::vector<G4int> vecPlane_primary_Dmeson;
+        std::vector<G4double> vecPlane_zplane;
     };
 }
 

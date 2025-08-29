@@ -2,6 +2,8 @@
 #include "G4TrackingManager.hh"
 #include "G4Track.hh"
 #include "G4SystemOfUnits.hh"
+#include "G4RunManager.hh"
+#include "EventAction.hh"
 namespace SimCalModule
 {
     TrackingAction::TrackingAction() : G4UserTrackingAction() {}
@@ -20,7 +22,7 @@ namespace SimCalModule
         // }    
         // else
         //     fpTrackingManager->SetStoreTrajectory(true);
-        if (track->GetParentID() == 0 && track->GetTrackID() == 1)
+        if (track->GetParentID() == 0 )
         {
             // if(track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
             // {
@@ -32,13 +34,20 @@ namespace SimCalModule
         }else{
             fpTrackingManager->SetStoreTrajectory(false);
         }
-        // auto particle = track->GetParticleDefinition();
-        // if ((particle->GetPDGEncoding()/100 % 10 == 4 || particle->GetPDGEncoding()/1000 % 10 == 4)&& particle->GetPDGEncoding() < 1e6){
-        //     const G4VProcess* process = track->GetCreatorProcess();
-        //     if (process) {
-        //         G4cout << "D decayed due to " << process->GetProcessName() << G4endl;
-        //     }
-        // }
+        auto particle = track->GetParticleDefinition();
+        auto fEventAction = const_cast<SimCalModule::EventAction*>(static_cast<const SimCalModule::EventAction*>(G4RunManager::GetRunManager()->GetUserEventAction()));
+        if(!fEventAction){
+            G4cout << "EventAction not found!" << G4endl;
+            return;
+        }
+        int D_id = fEventAction->GetfD_id();
+        int primary_trackid = fEventAction->GetPrimary_trackid();
+        if (track->GetTrackID() == primary_trackid || track->GetParentID() == primary_trackid) {
+            fpTrackingManager->SetStoreTrajectory(true);
+        }
+        if (track->GetTrackID() == D_id || track->GetParentID() == D_id) {
+            fpTrackingManager->SetStoreTrajectory(true);
+        }
         // G4ThreeVector vposition = track->GetVertexPosition();
         // // Bool_t is_x = abs(vposition.x() -850*mm )< 500*mm;
         // // Bool_t is_y = abs(vposition.y() -330*mm )< 500*mm;

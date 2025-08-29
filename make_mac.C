@@ -7,16 +7,19 @@
 #include <fstream>
 #include <vector>
 int make_mac(){
-    for( int i =0 ; i<1000 ;i++){
-        std::ofstream ofs(Form("./mac/run_%d.mac",i));
+    for( int i =0 ; i<20 ;i++){
+        std::ofstream ofs(Form("./mac/run_on_SciW_run4_tau%d.mac",i));
         ofs<<"/control/verbose 2"<<std::endl;
         ofs<<"/run/verbose 1"<<std::endl;
         ofs<<"/event/verbose 0"<<std::endl;
         ofs<<"/tracking/verbose 0"<<std::endl;
-        ofs<<"/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/FASERlink/genie_data/faser_on.n10000."<<i<<".gfaser.root"<<std::endl;
+        ofs<<"/generator/inputFileName /afs/cern.ch/user/y/ymaruya/private/FASERlink/genie_data/faser_onSciW_charm_tau.100iab."<<i<<".gfaser.root"<<std::endl;
         ofs<<"/generator/FixedPrimaryVertexPosition false"<<std::endl;
         ofs<<"/run/initialize"<<std::endl;
-        ofs<<"/run/beamOn 10000"<<std::endl;
+        TFile * file = new TFile(Form("/afs/cern.ch/user/y/ymaruya/private/FASERlink/genie_data/faser_onSciW_charm_tau.100iab.%d.gfaser.root",i),"READ");
+        TTree * tree = (TTree*)file->Get("gFaser");
+        int N = tree->GetEntriesFast();
+        ofs<<"/run/beamOn "<<N<<std::endl;
     }
     return 0;
 }

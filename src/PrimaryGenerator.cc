@@ -124,9 +124,11 @@ namespace SimCalModule
         exit(1);
     }
     primaryenergy = E->at(0)*GeV;
+    int secondaryindex = -1;
     for(size_t j=2;j<pdgc->size();j++){
         if(abs(pdgc->at(0))==12 && status->at(j)==1 && pdgc->at(j)==copysign(11,pdgc->at(0)) && firstMother->at(j)==0){
         ccnue = true;
+        secondaryindex = j;
         secondarypdgid = pdgc->at(j);
         secondarymomentum_px = px->at(j);
         secondarymomentum_py = py->at(j);
@@ -135,6 +137,7 @@ namespace SimCalModule
         break;
         }else if(abs(pdgc->at(0))==14 && status->at(j)==1 && pdgc->at(j)==copysign(13,pdgc->at(0)) && firstMother->at(j)==0){
         ccnumu = true;
+        secondaryindex = j;
         secondarypdgid = pdgc->at(j);
         secondarymomentum_px = px->at(j);
         secondarymomentum_py = py->at(j);
@@ -143,6 +146,7 @@ namespace SimCalModule
         break;
         }else if(abs(pdgc->at(0))==16 && status->at(j)==1 && pdgc->at(j)==copysign(15,pdgc->at(0)) && firstMother->at(j)==0){
         ccnutau = true;
+        secondaryindex = j;
         secondarypdgid = pdgc->at(j);
         secondarymomentum_px = px->at(j);
         secondarymomentum_py = py->at(j);
@@ -187,29 +191,30 @@ namespace SimCalModule
     if((!fCCNue && ccnue) || (!fCCNumu && ccnumu) || (!fCCNutau && ccnutau) || (!fNC && nc)){
         std::cerr<<"Event not selected : "<<anEvent->GetEventID()<<std::endl;
     }
+    int num_added = 0;
     for(size_t j=0;j<pdgc->size();j++){
         if(status->at(j)!=1) continue;
         G4PrimaryParticle* particle = new G4PrimaryParticle(pdgc->at(j),px->at(j)*GeV,py->at(j)*GeV,pz->at(j)*GeV);
         vertex->SetPrimary(particle);
-    }
-    for (size_t j = 0; j < vertex->GetNumberOfParticle(); j++){
-        G4PrimaryParticle* particle = vertex->GetPrimary(j);
-        if (abs(particle->GetPDGcode()) == 13 && abs(particle->GetPx()-secondarymomentum_px*GeV) < 0.001*GeV && abs(particle->GetPy()-secondarymomentum_py*GeV) < 0.001*GeV && abs(particle->GetPz()-secondarymomentum_pz*GeV) < 1*GeV){
-            fPrimary_trackid = j+1;
-            // if (ccnumu) G4cout<<"prima "<< fPrimary_trackid<<G4endl;
-            break;
+        num_added++;
+        if (j ==secondaryindex){
+            fPrimary_trackid = num_added; // Set the primary track ID
         }
     }
-    if (ccnumu){
+    if (ftagNulabel<3 && fPrimary_trackid == -1) {
+        std::cerr << "Primary track ID not found for event: " << anEvent->GetEventID() << std::endl;
+        fPrimary_trackid = 1;
+    }
+    // if (ccnumu){
         for (size_t j = 0; j < vertex->GetNumberOfParticle(); j++){
             G4PrimaryParticle* particle = vertex->GetPrimary(j);
             if ((abs(particle->GetPDGcode())/100 % 10 == 4 || abs(particle->GetPDGcode())/1000 % 10 == 4)&& abs(particle->GetPDGcode()) < 1e6){
                 fD_id = j+1;
-                fNumuCClabel = 1;
+                // fNumuCClabel = 1;
                 break;
             }
         }
-    }
+    // }
     anEvent->AddPrimaryVertex(vertex);
     // if(fRunAction){
     //     fRunAction->AddPrimaryGeneratorData(ftagNulabel,E->at(0),vx*1000,vy*1000,vz*1000);

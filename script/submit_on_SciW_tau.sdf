@@ -1,0 +1,14 @@
+Avalie = $(Process)
+Jobid = $INT(Avalie)
+Universe     = Vanilla
+Getenv       = True
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule_run4_on
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_on_SciW_run4_tau$(Jobid).mac $(Jobid) 
++JobFlavour = "testmatch"
+
+# comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
+Output = out/on_SciW_run4_tau_$(Jobid).stdout
+Error  = err/on_SciW_run4_tau_$(Jobid).stderr
+Log    = log/on_SciW_run4_tau_$(Jobid).log
+
+Queue 20

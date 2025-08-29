@@ -74,12 +74,16 @@ namespace SimCalModule
             treeEvt->Branch("vecHcalToaCell", &vecHcalToaCell);
             treeEvt->Branch("nstoredTruthParticles", &nstoredTruthParticles, "nstoredTruthParticles/I");
             treeEvt->Branch("vecTruth_pdgID", &vecTruth_pdgID);
+            treeEvt->Branch("vecTruth_charge", &vecTruth_charge);
             treeEvt->Branch("vecTruth_px", &vecTruth_px);
             treeEvt->Branch("vecTruth_py", &vecTruth_py);
             treeEvt->Branch("vecTruth_pz", &vecTruth_pz);
-            treeEvt->Branch("vecTruth_x", &vecTruth_x);
-            treeEvt->Branch("vecTruth_y", &vecTruth_y);
-            treeEvt->Branch("vecTruth_z", &vecTruth_z);
+            treeEvt->Branch("vecTruth_pre_x", &vecTruth_pre_x);
+            treeEvt->Branch("vecTruth_pre_y", &vecTruth_pre_y);
+            treeEvt->Branch("vecTruth_pre_z", &vecTruth_pre_z);
+            treeEvt->Branch("vecTruth_post_x", &vecTruth_post_x);
+            treeEvt->Branch("vecTruth_post_y", &vecTruth_post_y);
+            treeEvt->Branch("vecTruth_post_z", &vecTruth_post_z);
             treeEvt->Branch("vecTruth_energy", &vecTruth_energy);
             treeEvt->Branch("vecTruth_vertexIndex", &vecTruth_vertexIndex);
             treeEvt->Branch("vecTruth_trackID", &vecTruth_trackID);
@@ -97,6 +101,7 @@ namespace SimCalModule
             treeEvt->Branch("vecPlane_vertexIndex", &vecPlane_vertexIndex);
             treeEvt->Branch("vecPlane_trackID", &vecPlane_trackID);
             treeEvt->Branch("vecPlane_primary_Dmeson", &vecPlane_primary_Dmeson);
+            treeEvt->Branch("vecPlane_zplane", &vecPlane_zplane);
         }
     }
 
@@ -320,6 +325,9 @@ namespace SimCalModule
         case vecHcalToaCell_Data:
             vecHcalToaCell = data;
             break;
+        case vecTruth_charge_Data:
+            vecTruth_charge = data;
+            break;
         case vecTruth_px_Data:
             vecTruth_px = data;
             break;
@@ -329,14 +337,23 @@ namespace SimCalModule
         case vecTruth_pz_Data:
             vecTruth_pz = data;
             break;
-        case vecTruth_x_Data:
-            vecTruth_x = data;
+        case vecTruth_pre_x_Data:
+            vecTruth_pre_x = data;
             break;
-        case vecTruth_y_Data:
-            vecTruth_y = data;
+        case vecTruth_pre_y_Data:
+            vecTruth_pre_y = data;
             break;
-        case vecTruth_z_Data:
-            vecTruth_z = data;
+        case vecTruth_pre_z_Data:
+            vecTruth_pre_z = data;
+            break;
+        case vecTruth_post_x_Data:
+            vecTruth_post_x = data;
+            break;
+        case vecTruth_post_y_Data:
+            vecTruth_post_y = data;
+            break;
+        case vecTruth_post_z_Data:
+            vecTruth_post_z = data;
             break;
         case vecTruth_energy_Data:
             vecTruth_energy = data;
@@ -367,6 +384,9 @@ namespace SimCalModule
             break;
         case vecPlane_energy_Data:
             vecPlane_energy = data;
+            break;
+        case vecPlane_zplane_Data:
+            vecPlane_zplane = data;
             break;
         
         default:

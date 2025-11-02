@@ -118,7 +118,7 @@ namespace SimCalModule
         HcalPCB_Cu_MatIndex = Cu;
         UpstreamMatIndex = Al;
         IntermediateMatIndex = Air;
-        DownstreamMatIndex = Fe;
+        DownstreamMatIndex = Steel;
         EcalCellNumberX = 5;
         EcalCellNumberY = 42;
         EcalLayerNumber = 32;
@@ -714,7 +714,7 @@ namespace SimCalModule
                                                 ifcheckOverlaps, World_Logical, HcalUnitLogical, HcalSensitiveLogical, &HcalUnitParameter, false, HcalCopyNum, this);
                             }
                         }
-                        Zpos += (HcalUnitSizeZ + HcalPCBThick) / 2.;
+                        Zpos += (HcalUnitSizeZ + HcalPCBThick) / 2. + 0.1*mm;
                         if (HcalPCBThick > 0)
                             new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
 

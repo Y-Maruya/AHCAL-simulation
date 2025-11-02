@@ -20,7 +20,7 @@ namespace SimCalModule
         // }    
         // else
         //     fpTrackingManager->SetStoreTrajectory(true);
-        if (track->GetParentID() == 0 && track->GetTrackID() == 1)
+        if (track->GetParentID() == 0)
         {
             // if(track->GetVolume()->GetLogicalVolume()->GetName() == "World_Logical")
             // {

@@ -50,10 +50,10 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     //         }
     //     }
     // }
-    G4double start_zplane = 6864.165 * mm;
+    G4double start_zplane = 6933.765 * mm;
     G4double tau_plane = 5610.0 * mm;
     // 519.6
-    for (G4double zplane = start_zplane; zplane <= 9931.915 *mm; zplane +=519.6*mm){
+    for (G4double zplane = start_zplane; zplane <= 8000 *mm; zplane +=509.63*mm){
     if (prePos.z() < zplane && postPos.z() > zplane && track->GetParticleDefinition()->GetPDGCharge() !=0 ) {
         int pdgID = track->GetParticleDefinition()->GetPDGEncoding();
         G4int parentID = track->GetParentID();

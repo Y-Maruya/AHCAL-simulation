@@ -1,4 +1,5 @@
 #!bin/bash
+# for j in max min QGSJET SIBYLL
 for j in central max min EPOSLHC QGSJET SIBYLL
 do
     # for i in {0..9}
@@ -19,6 +20,6 @@ do
     # # ./analysis /eos/user/y/ymaruya/FASER/genie_data/faser_off_AHCALwg_light.1000ifb.${i}.gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/faser_off_AHCALwg_light.1000ifb.withdigi_wg.${i}.root
     # # ./convert_random /eos/user/y/ymaruya/FASER/genie_data/faser_on.1000ifb.${i}.gfaser_calo.root /eos/user/y/ymaruya/FASER/gfaser_calo/output.random_${i}.h5 
     # done
-    condor_submit submit_off_model_${j}.sdf
+    condor_submit submit_off_model_${j}_muon.sdf
     
 done

@@ -46,7 +46,7 @@ namespace SimCalModule
         G4StepPoint *thePrePoint = aStep->GetPreStepPoint();
         G4StepPoint *thePostPoint = aStep->GetPostStepPoint();
         G4int copyNo =0;
-        if (thePrePoint->GetPhysicalVolume()->GetName()=="HCALtriggerPhysicalFront"){
+        if (thePrePoint->GetPhysicalVolume()->GetName()=="HCALtriggerPhysicalFront" || thePrePoint->GetPhysicalVolume()->GetName()=="HCALDownstreamPhysical"){
             copyNo = thePrePoint->GetPhysicalVolume()->GetCopyNo();
         }else{
             copyNo = thePrePoint->GetTouchableHandle()->GetCopyNumber(2);

@@ -28,7 +28,7 @@ namespace SimCalModule
         }
         if (G4RunManager::GetRunManager()->GetRunManagerType() != G4RunManager::masterRM)
         {
-            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_mab_500mmSteel_6";
+            G4String rootFileName = fPrimaryGen->GetInputFileName().substr(0,fPrimaryGen->GetInputFileName().find(".root"))+"_calo_mab_500mmSteel_6plates";
             if (G4RunManager::GetRunManager()->GetRunManagerType() == G4RunManager::workerRM)
                 rootFileName += "_t" + std::to_string(G4Threading::G4GetThreadId());
             rootFileName += ".root";

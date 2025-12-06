@@ -146,6 +146,7 @@ namespace SimCalModule
         G4LogicalVolume *EcalSensitiveLogical;
         G4LogicalVolume *HcalSensitiveLogical;
         G4LogicalVolume *HcaltriggerLogical;
+        G4LogicalVolume *HcalDownstreamLogical;
         CaloUnitVolume *EcalUnitVolume;
         CaloUnitVolume *HcalUnitVolume;
         std::vector<G4Material *> MaterialStore;

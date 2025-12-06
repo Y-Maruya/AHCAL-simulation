@@ -40,6 +40,7 @@ namespace SimCalModule
         EcalSensitiveLogical = nullptr;
         HcalSensitiveLogical = nullptr;
         HcaltriggerLogical = nullptr;
+        HcalDownstreamLogical = nullptr;
         fEcalUnitSD.Put(0);
         fHcalUnitSD.Put(0);
         fFieldMessenger.Put(0);
@@ -292,7 +293,7 @@ namespace SimCalModule
 
         // World
         G4double HalfCubicWorld = 5 * m;
-        G4Box *World_Solid = new G4Box("World_Solid", HalfCubicWorld, HalfCubicWorld, HalfCubicWorld+5 * m);
+        G4Box *World_Solid = new G4Box("World_Solid", HalfCubicWorld, HalfCubicWorld, HalfCubicWorld+8 * m);
         G4LogicalVolume *World_Logical = new G4LogicalVolume(World_Solid, GetCaloMaterial(WorldMatIndex), "World_Logical");
         G4VPhysicalVolume *World_Physical = new G4PVPlacement(0, G4ThreeVector(), World_Logical, "World_Physical", 0, false, 0, ifcheckOverlaps);
 
@@ -688,7 +689,7 @@ namespace SimCalModule
             G4Box *DownstreamSolid = nullptr;
             G4LogicalVolume *DownstreamLogical = nullptr;
             if (DownstreamSizeZ >0){
-                DownstreamSolid = new G4Box("DownstreamSolid", HcalXYsize / 2., HcalXYsize / 2., DownstreamSizeZ / 2.);
+                DownstreamSolid = new G4Box("DownstreamSolid", 1000*mm / 2., 1000*mm / 2., DownstreamSizeZ / 2.);
                 DownstreamLogical = new G4LogicalVolume(DownstreamSolid, GetCaloMaterial(DownstreamMatIndex), "DownstreamLogical");
                 Zpos += 50 *mm + DownstreamSizeZ /2 ;
                 // new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 0, ifcheckOverlaps);
@@ -696,38 +697,53 @@ namespace SimCalModule
                 // std::cout<<"Zpos: "<< Zpos+Initial_pos.z()<<std::endl; 
                 //
                 if (DownstreamNum != 0){
+                    // Zpos += (DownstreamSizeZ) / 2.;
+                    auto HCALDownstreamSolid = new G4Box("HCALDownstreamSolid", 1000*mm / 2., 1000*mm / 2., HcaltriggerThick / 2.);
+                    HcalDownstreamLogical = new G4LogicalVolume(HCALDownstreamSolid, GetCaloMaterial(HcaltriggerIndex), "HCALDownstreamLogical");
+                    for(int triggerplane = 0; triggerplane<DownstreamNum;triggerplane++){
+                        if (DownstreamSizeZ > 0)
+                            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, 1001000+triggerplane, ifcheckOverlaps);
+                        Zpos += (DownstreamSizeZ) / 2. ;
+                        Zpos += HcaltriggerThick / 2. + 0.1*mm;
+                        new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalDownstreamLogical, "HCALDownstreamPhysical", World_Logical, false, 1002000+triggerplane, ifcheckOverlaps);
+                        Zpos += (HcaltriggerThick)/ 2. + 0.1*mm;
+                        Zpos += DownstreamSizeZ / 2.;
+                        // new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HCALgraphiteLogical, "HCALgraphitePhysicalFront", World_Logical, false, 2000+triggerplane, ifcheckOverlaps);
+                        // Zpos += HcalgraphiteThick /2.;
+                    }
                     // Zpos += 2. * mm;
                     // Zpos += (DownstreamSizeZ + HcalUnitSizeZ) / 2.;
-                    int z = HcalLayerNumber;
-                    for (int num = 0; num<DownstreamNum;num++){
+                    // int z = HcalLayerNumber;
+                    // for (int num = 0; num<DownstreamNum;num++){
 
-                        if (DownstreamSizeZ > 0)
-                            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
-                        Zpos += (HcalUnitSizeZ + DownstreamSizeZ) / 2. ;
-                        for (G4int y = 0; y < HcalCellNumberY; y++)
-                        {
-                            HcalCopyNum = (z + 1) * HcalCellMaxCount * HcalCellMaxCount + (y + 1) * HcalCellMaxCount;
-                            for (G4int x = 0; x < HcalCellNumberX; x++)
-                            {
-                                HcalCopyNum++;
-                                new CaloUnitVolume("HcalUnit", HcalUnitInv, G4ThreeVector(HcalUnitSizeX * (HcalCellNumberX / 2. - 0.5 - x), HcalUnitSizeY * (HcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
-                                                ifcheckOverlaps, World_Logical, HcalUnitLogical, HcalSensitiveLogical, &HcalUnitParameter, false, HcalCopyNum, this);
-                            }
-                        }
-                        Zpos += (HcalUnitSizeZ + HcalPCBThick) / 2. + 0.1*mm;
-                        if (HcalPCBThick > 0)
-                            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
-
-
-                        Zpos += (HcalPCBThick + HcalPCB_Cu_Thick) / 2.;
-                        if(HcalPCB_Cu_Thick>0)
-                            new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCB_Cu_Logical, "HcalPCB_Cu_Physical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+                    //     if (DownstreamSizeZ > 0)
+                    //         new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, DownstreamLogical, "DownstreamPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+                    //     Zpos += (HcalUnitSizeZ + DownstreamSizeZ) / 2. ;
+                    //     for (G4int y = 0; y < HcalCellNumberY; y++)
+                    //     {
+                    //         HcalCopyNum = (z + 1) * HcalCellMaxCount * HcalCellMaxCount + (y + 1) * HcalCellMaxCount;
+                    //         for (G4int x = 0; x < HcalCellNumberX; x++)
+                    //         {
+                    //             HcalCopyNum++;
+                    //             new CaloUnitVolume("HcalUnit", HcalUnitInv, G4ThreeVector(HcalUnitSizeX * (HcalCellNumberX / 2. - 0.5 - x), HcalUnitSizeY * (HcalCellNumberY / 2. - 0.5 - y), Zpos)+Initial_pos,
+                    //                             ifcheckOverlaps, World_Logical, HcalUnitLogical, HcalSensitiveLogical, &HcalUnitParameter, false, HcalCopyNum, this);
+                    //         }
+                    //     }
+                    //     Zpos += (HcalUnitSizeZ + HcalPCBThick) / 2. + 0.1*mm;
+                    //     if (HcalPCBThick > 0)
+                    //         new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCBLogical, "HcalPCBPhysical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
 
 
-                        Zpos += (HcalPCB_Cu_Thick + DownstreamSizeZ) / 2. + HcalPCB_Abs_gap * mm;  // HcalPCBGap 4 mm
-                        // Zpos += (DownstreamSizeZ + HcalUnitSizeZ) / 2.;
-                        z++;
-                    }
+                    //     Zpos += (HcalPCBThick + HcalPCB_Cu_Thick) / 2.;
+                    //     if(HcalPCB_Cu_Thick>0)
+                    //         new G4PVPlacement(0, G4ThreeVector(0, 0, Zpos)+Initial_pos, HcalPCB_Cu_Logical, "HcalPCB_Cu_Physical", World_Logical, false, HcalCopyNum / HcalCellMaxCount / HcalCellMaxCount * HcalCellMaxCount * HcalCellMaxCount, ifcheckOverlaps);
+
+
+                    //     Zpos += (HcalPCB_Cu_Thick + DownstreamSizeZ) / 2. + HcalPCB_Abs_gap * mm;  // HcalPCBGap 4 mm
+                    //     // Zpos += (DownstreamSizeZ + HcalUnitSizeZ) / 2.;
+                    //     z++;
+                    // }
+
                 }      
             }
         }
@@ -822,6 +838,16 @@ namespace SimCalModule
             G4SDManager::GetSDMpointer()->AddNewDetector(fHcalUnitSD.Get());
             SetSensitiveDetector(HcaltriggerLogical, fHcalUnitSD.Get());
         } 
+        if(DownstreamSizeZ >0 && DownstreamNum !=0){
+            if (!fHcalUnitSD.Get())
+            {
+                G4cout << "Construction /CaloDet/HcalSD" << G4endl;
+                HcalUnitSD *hcalunitSD = new HcalUnitSD("/CaloDet/HcalSD");
+                fHcalUnitSD.Put(hcalunitSD);
+            }
+            G4SDManager::GetSDMpointer()->AddNewDetector(fHcalUnitSD.Get());
+            SetSensitiveDetector(HcalDownstreamLogical, fHcalUnitSD.Get());
+        }
         // Field
         if (!fFieldMessenger.Get())
         {

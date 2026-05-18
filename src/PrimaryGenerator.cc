@@ -23,7 +23,7 @@ namespace SimCalModule
 {
     PrimaryGenerator::PrimaryGenerator()
     : fpParticleGun(0),
-        fMessenger(new GeneratorMessenger(this)),
+        fMessenger(nullptr),
         fInputFileName("faser3.10fbInv.1.gfaser.root"),
         fFixedPrimaryVertexPosition(false),
         fPrimaryVertexPosition(G4ThreeVector(0.0,0.0,0.25*cm)),
@@ -44,6 +44,8 @@ namespace SimCalModule
     //------------------------------------------------------------------------------
     {
     fpParticleGun = new G4ParticleGun();
+    // Create the messenger after all members are initialized
+    fMessenger = new GeneratorMessenger(this);
     // G4cout << "PrimaryGenerator::PrimaryGenerator()" << G4endl;
     }
 

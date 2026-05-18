@@ -8,17 +8,13 @@ class G4Decay;
 
 class Pythia8DecayerPhysics : public G4VPhysicsConstructor
 {
-  public:
+public:
     Pythia8DecayerPhysics(G4int verb = 1);
     virtual ~Pythia8DecayerPhysics();
 
-  protected:
-    // methods
-    // construct particle and physics
+protected:
     virtual void ConstructParticle();
     virtual void ConstructProcess();
 };
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 #endif

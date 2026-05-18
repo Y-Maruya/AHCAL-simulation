@@ -1,12 +1,13 @@
-#ifndef STEPPINGACTION_HH
-#define STEPPINGACTION_HH
+#ifndef SteppingAction_h
+#define SteppingAction_h 1
 
-#include <G4UserSteppingAction.hh>
-#include <G4Step.hh>
-#include <G4Event.hh>
-#include <EventAction.hh>
+#include "G4UserSteppingAction.hh"
+#include "G4Step.hh"
+#include "G4Event.hh"
+#include "EventAction.hh"
 
-class SteppingAction : public G4UserSteppingAction {
+class SteppingAction : public G4UserSteppingAction
+{
 public:
     SteppingAction();
     virtual ~SteppingAction();
@@ -14,8 +15,7 @@ public:
     virtual void UserSteppingAction(const G4Step* step);
 
 private:
-    // Add any private members or methods here
     SimCalModule::EventAction* fEventAction;
 };
 
-#endif // STEPPINGACTION_HH
+#endif

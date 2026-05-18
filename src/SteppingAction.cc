@@ -37,7 +37,6 @@ void SteppingAction::UserSteppingAction(const G4Step* step) {
     //             if (process) {
     //                 G4cout << "D meson disappeared due to: " << process->GetProcessName() << G4endl;
     //             }
-    //             // 生成された二次粒子（崩壊 or 非弾性散乱の結果）を取得
     //             const std::vector<const G4Track*>* secondaries = step->GetSecondaryInCurrentStep();
     //             if (!secondaries->empty()) {
     //                 G4cout << "Outgoing particles from D meson reaction:" << G4endl;

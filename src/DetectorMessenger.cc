@@ -20,24 +20,6 @@ namespace SimCalModule
         fTimeDir = new G4UIdirectory("/cal/time/");
         fTimeDir->SetGuidance("UI commands for time");
 
-        fEcalCellNumXCmd = new G4UIcmdWithAnInteger("/cal/geo/ecalCellNumX", this);
-        fEcalCellNumXCmd->SetGuidance("Set number of cells of ECAL along X");
-        fEcalCellNumXCmd->SetParameterName("ecalCellNumX", false);
-        fEcalCellNumXCmd->SetToBeBroadcasted(false);
-        fEcalCellNumXCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-
-        fEcalCellNumYCmd = new G4UIcmdWithAnInteger("/cal/geo/ecalCellNumY", this);
-        fEcalCellNumYCmd->SetGuidance("Set number of cells of ECAL along Y");
-        fEcalCellNumYCmd->SetParameterName("ecalCellNumY", false);
-        fEcalCellNumYCmd->SetToBeBroadcasted(false);
-        fEcalCellNumYCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-
-        fEcalLayerNumCmd = new G4UIcmdWithAnInteger("/cal/geo/ecalLayerNum", this);
-        fEcalLayerNumCmd->SetGuidance("Set number of layers of ECAL");
-        fEcalLayerNumCmd->SetParameterName("ecalLayerNum", false);
-        fEcalLayerNumCmd->SetToBeBroadcasted(false);
-        fEcalLayerNumCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-
         fHcalCellNumXCmd = new G4UIcmdWithAnInteger("/cal/geo/hcalCellNumX", this);
         fHcalCellNumXCmd->SetGuidance("Set number of cells of HCAL along X");
         fHcalCellNumXCmd->SetParameterName("hcalCellNumX", false);
@@ -84,13 +66,6 @@ namespace SimCalModule
         fHcalPassiveThickCmd->SetToBeBroadcasted(false);
         fHcalPassiveThickCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
 
-        fEcalAbsThickCmd = new G4UIcmdWithADoubleAndUnit("/cal/geo/ecalAbsThick", this);
-        fEcalAbsThickCmd->SetGuidance("Set the thickness of an ECAL absorber plate");
-        fEcalAbsThickCmd->SetParameterName("ecalAbsThick", false);
-        fEcalAbsThickCmd->SetDefaultUnit("mm");
-        fEcalAbsThickCmd->SetToBeBroadcasted(false);
-        fEcalAbsThickCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-
         fHcalAbsThickCmd = new G4UIcmdWithADoubleAndUnit("/cal/geo/hcalAbsThick", this);
         fHcalAbsThickCmd->SetGuidance("Set the thickness of an HCAL absorber plate");
         fHcalAbsThickCmd->SetParameterName("hcalAbsThick", false);
@@ -106,18 +81,11 @@ namespace SimCalModule
         fUpstreamObjThickCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
 
         fIntermediateObjThickCmd = new G4UIcmdWithADoubleAndUnit("/cal/geo/intermediateThick", this);
-        fIntermediateObjThickCmd->SetGuidance("Set the thickness of the magnet between ECAL and HCAL");
+        fIntermediateObjThickCmd->SetGuidance("Set the thickness of the intermediate layer");
         fIntermediateObjThickCmd->SetParameterName("intermediateThick", false);
         fIntermediateObjThickCmd->SetDefaultUnit("mm");
         fIntermediateObjThickCmd->SetToBeBroadcasted(false);
         fIntermediateObjThickCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
-
-        fEcalStepTimeLimitCmd = new G4UIcmdWithADoubleAndUnit("/cal/time/ecalStepTimeLimit", this);
-        fEcalStepTimeLimitCmd->SetGuidance("Set the time limit for the ECAL energy deposition");
-        fEcalStepTimeLimitCmd->SetParameterName("ecalStepTimeLimit", false);
-        fEcalStepTimeLimitCmd->SetDefaultUnit("ns");
-        fEcalStepTimeLimitCmd->SetToBeBroadcasted(false);
-        fEcalStepTimeLimitCmd->AvailableForStates(G4State_PreInit, G4State_Idle);
 
         fHcalStepTimeLimitCmd = new G4UIcmdWithADoubleAndUnit("/cal/time/hcalStepTimeLimit", this);
         fHcalStepTimeLimitCmd->SetGuidance("Set the time limit for the HCAL energy deposition");

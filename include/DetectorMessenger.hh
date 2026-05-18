@@ -27,21 +27,14 @@ namespace SimCalModule
         DetectorConstruction *calDetector;
         G4UIdirectory *fGeoDir;
         G4UIdirectory *fTimeDir;
-        G4UIcmdWithAnInteger *fEcalCellNumXCmd;
-        G4UIcmdWithAnInteger *fEcalCellNumYCmd;
-        G4UIcmdWithAnInteger *fEcalLayerNumCmd;
         G4UIcmdWithAnInteger *fHcalCellNumXCmd;
         G4UIcmdWithAnInteger *fHcalCellNumYCmd;
         G4UIcmdWithAnInteger *fHcalLayerNumCmd;
-        G4UIcmdWithADoubleAndUnit *fEcalSensitiveThickCmd;
         G4UIcmdWithADoubleAndUnit *fHcalSensitiveThickCmd;
-        G4UIcmdWithADoubleAndUnit *fEcalPassiveThickCmd;
         G4UIcmdWithADoubleAndUnit *fHcalPassiveThickCmd;
-        G4UIcmdWithADoubleAndUnit *fEcalAbsThickCmd;
         G4UIcmdWithADoubleAndUnit *fHcalAbsThickCmd;
         G4UIcmdWithADoubleAndUnit *fUpstreamObjThickCmd;
         G4UIcmdWithADoubleAndUnit *fIntermediateObjThickCmd;
-        G4UIcmdWithADoubleAndUnit *fEcalStepTimeLimitCmd;
         G4UIcmdWithADoubleAndUnit *fHcalStepTimeLimitCmd;
     };
 }

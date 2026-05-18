@@ -1,0 +1,12 @@
+Universe     = Vanilla
+Getenv       = True
+Executable   = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/bin/SimCalModule_20mmW
+Arguments    = /afs/cern.ch/user/y/ymaruya/private/AHCAL-simulation/mac/run_off_AHCAL20mmW_8.mac 8 
++JobFlavour = "testmatch"
+
+# comment out the followings if you don't need to save STDOUT/STDERR/CondorLog
+Output = out/off_AHCAL20mmW_8.stdout
+Error  = err/off_AHCAL20mmW_8.stderr
+Log    = log/off_AHCAL20mmW_8.log
+
+Queue 1

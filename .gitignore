@@ -1,10 +1,8 @@
 /build
-/run
 /err
 /log
 /out
 /script/img
-/script/*/*
 /script/*.png
 /script/*.root
 /mac

@@ -19,7 +19,7 @@ void SteppingAction::UserSteppingAction(const G4Step* step)
         static_cast<const SimCalModule::EventAction*>(
             G4RunManager::GetRunManager()->GetUserEventAction()));
     if (!fEventAction) {
-        G4cout << "eventactioneeror" << G4endl;
+        G4cout << "eventactionerror" << G4endl;
     }
 
     G4StepPoint* preStep = step->GetPreStepPoint();

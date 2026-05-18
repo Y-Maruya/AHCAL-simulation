@@ -183,12 +183,6 @@ namespace SimCalModule
         G4Material *CuMat = nistManager->FindOrBuildMaterial("G4_Cu");
         MaterialStore.push_back(CuMat); // 6
 
-        // G4Material *WMat = new G4Material("W", density = 17.8 * g / cm3, nComponents = 3);
-        // WMat->AddElement(EleW, 92.99 * perCent);
-        // WMat->AddElement(EleNi, 5.25 * perCent);
-        // WMat->AddElement(EleCu, 1.76 * perCent);
-        // MaterialStore.push_back(WMat); // 7
-
         G4Material *CuWMat = new G4Material("CuW", density = 16.45 * g / cm3, nComponents = 2);
         CuWMat->AddMaterial(WMat, fracMass = 85. * perCent);
         CuWMat->AddMaterial(CuMat, fracMass = 15. * perCent);
@@ -212,23 +206,11 @@ namespace SimCalModule
         EpoxyMat->AddElement(EleO, nAtoms = 3);
         MaterialStore.push_back(EpoxyMat); // 10
 
-		G4Material *FR4Mat = new G4Material("FR4", density = 1.86 * g / cm3, nComponents = 2);
-		FR4Mat->AddMaterial(QuartzMat, fracMass = 52.8 * perCent);
-		FR4Mat->AddMaterial(EpoxyMat, fracMass = 47.2 * perCent);
-        
-        //PCB:Cu=4:1, frac of V, thick=2.5mm
-        // components_thick=3mm/3=1mm, mat=FR4
-        //total FR4:Cu=3mm:0.5mm, density=(3*1.86+0.5*8.9)/(3+0.5)=2.86
-
-        // G4Material *FR4Mat = new G4Material("FR4", density = 1.86 * g / cm3, nComponents = 2);
-        // FR4Mat->AddMaterial(QuartzMat, fracMass = 50 * perCent);
-        // FR4Mat->AddMaterial(EpoxyMat, fracMass = 50 * perCent);
-        // FR4Mat->AddMaterial(CuMat, fracMass = 44.4 * perCent);
+        G4Material *FR4Mat = new G4Material("FR4", density = 1.86 * g / cm3, nComponents = 2);
+        FR4Mat->AddMaterial(QuartzMat, fracMass = 52.8 * perCent);
+        FR4Mat->AddMaterial(EpoxyMat, fracMass = 47.2 * perCent);
         MaterialStore.push_back(FR4Mat); // 11
 
-        // G4Material *ESRMat = new G4Material("ESR", density = 0.90 * g / cm3, nElements = 2);
-        // ESRMat->AddElement(EleC, nAtoms = 2);
-        // ESRMat->AddElement(EleH, nAtoms = 4);
         G4Material *ESRMat = new G4Material("ESR", density = 1.38 * g / cm3, nElements = 3);
         ESRMat->AddElement(EleC, nAtoms = 10);
         ESRMat->AddElement(EleH, nAtoms = 8);
@@ -296,99 +278,6 @@ namespace SimCalModule
         G4Box *World_Solid = new G4Box("World_Solid", HalfCubicWorld, HalfCubicWorld, HalfCubicWorld+8 * m);
         G4LogicalVolume *World_Logical = new G4LogicalVolume(World_Solid, GetCaloMaterial(WorldMatIndex), "World_Logical");
         G4VPhysicalVolume *World_Physical = new G4PVPlacement(0, G4ThreeVector(), World_Logical, "World_Physical", 0, false, 0, ifcheckOverlaps);
-
-        // // Concrete
-        // //         G4GenericTrap
-        // std::vector<G4TwoVector> vertices = {
-        //     G4TwoVector(-3500*mm, 718.64926*mm),
-        //     G4TwoVector(3500*mm, 718.64926*mm),
-        //     G4TwoVector(3500*mm, -2000*mm),
-        //     G4TwoVector(-3500*mm, -2000*mm),
-        //     G4TwoVector(-3500*mm, 0*mm),
-        //     G4TwoVector(3500*mm, 0*mm),
-        //     G4TwoVector(3500*mm, -2000*mm),
-        //     G4TwoVector(-3500*mm, -2000*mm)
-        // };
-        // G4GenericTrap* trap = new G4GenericTrap("G4GenericTrap", 4211*mm, vertices);
-
-        // // G4Box
-        // G4Box* box = new G4Box("G4Box", 3500*mm, 1359.32463*mm, 2500*mm);
-
-        // // Union
-        // G4ThreeVector unionPos(0, -640.67537*mm, -6711*mm);
-        // G4UnionSolid* unionSolid = new G4UnionSolid("Union", trap, box, nullptr, unionPos);
-
-        // // G4ExtrudedSolid
-        // std::vector<G4TwoVector> xtruVertices = {
-        //     G4TwoVector(-249.688535823926*mm, -2092.67262661278*mm),
-        //     G4TwoVector(-659.688533689763*mm, -2092.64659428002*mm),
-        //     G4TwoVector(-659.491619954808*mm, 1008.99935688666*mm),
-        //     G4TwoVector(-624.297268814504*mm, 1219.15023222633*mm),
-        //     G4TwoVector(-251.251278073094*mm, 3447.75579600066*mm),
-        //     G4TwoVector(598.577583878622*mm, 3447.70183734512*mm),
-        //     G4TwoVector(750.663203602453*mm, 3447.69217883377*mm),
-        //     G4TwoVector(750.405939461698*mm, -604.546168540679*mm),
-        //     G4TwoVector(750.362673186257*mm, -1286.04595907448*mm),
-        //     G4TwoVector(436.065806982358*mm, -3162.76081141812*mm),
-        //     G4TwoVector(-249.75647241976*mm, -3162.76184973231*mm)
-        // };
-        // std::vector<G4ExtrudedSolid::ZSection> zSections = {
-        //     G4ExtrudedSolid::ZSection(-375*mm, G4TwoVector(0, 0), 1),
-        //     G4ExtrudedSolid::ZSection(375*mm, G4TwoVector(0, 0), 1)
-        // };
-        // G4ExtrudedSolid* xtru = new G4ExtrudedSolid("G4ExtrudedSolid", xtruVertices, zSections);
-
-        // G4ThreeVector firstPos(576.9*mm, -177.6*mm, -598.8*mm);
-        // G4RotationMatrix firstRot;
-        // firstRot.rotateX(0.721829429078283*deg);
-        // firstRot.rotateY(-9.50550937438183*deg);
-        // firstRot.rotateZ(-0.119210810400234*deg);
-        // G4Transform3D transformFirst(firstRot, firstPos);
-
-        // G4VSolid* displacedUnion =
-        //     new G4DisplacedSolid("DisplacedUnion", unionSolid, transformFirst);
-        // // Subtraction
-        // G4RotationMatrix rotSubtraction;
-        // rotSubtraction.rotateX(90*deg);
-        // G4ThreeVector posSubtraction(0, 75*mm, 0);
-        // G4Transform3D transformSubtraction(rotSubtraction, posSubtraction);
-
-        // G4VSolid* displacedXtru =
-        //       new G4DisplacedSolid("DisplacedXtru", xtru, transformSubtraction);
-
-        // G4SubtractionSolid* subtractionSolid = new G4SubtractionSolid("TrenchAndWall", displacedUnion, displacedXtru);
-        // // G4Box* backBox = new G4Box("BackBox", 3500 * mm, 718.64926 * mm, 2000 * mm); // z-length = 2000mm (half-length = 1000mm)
-        // // G4ThreeVector backBoxPosition(576.9*mm, -177.6*mm -640.67537*mm, 4211 * mm + 2000 * mm-598.8*mm); // Positioned just behind the trap
-
-        // // // ** MultiUnion to combine everything **
-        // // G4MultiUnion* multiUnion = new G4MultiUnion("MultiUnion");
-
-        // // // Add original subtraction solid
-        // // G4Transform3D transformOriginal{G4RotationMatrix(), G4ThreeVector()}; // Identity transform
-        // // multiUnion->AddNode(*subtractionSolid, transformOriginal);
-
-        // // // Add back box
-        // // G4RotationMatrix rotbackBox;
-        // // rotbackBox.rotateX(0.721829429078283 * deg);
-        // // rotbackBox.rotateY(-9.50550937438183 * deg);
-        // // rotbackBox.rotateZ(-0.119210810400234 * deg);
-        // // G4Transform3D transformBackBox(rotbackBox, backBoxPosition);
-        // // multiUnion->AddNode(*backBox, transformBackBox);
-
-        // // // Finalize the MultiUnion
-        // // multiUnion->Voxelize();
-
-        // // // ** Logical Volume and Placement **
-        // // G4LogicalVolume* multiUnionLog = new G4LogicalVolume(multiUnion, GetCaloMaterial(Concrete), "TrenchAndWallLog");
-        // // new G4PVPlacement(nullptr, G4ThreeVector(), multiUnionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
-
-
-
-        // G4LogicalVolume* subtractionLog = new G4LogicalVolume(subtractionSolid, GetCaloMaterial(Concrete), "TrenchAndWallLog");
-        // new G4PVPlacement(nullptr, G4ThreeVector(), subtractionLog, "TrenchAndWallPhys", World_Logical, false, 0, ifcheckOverlaps);
-
-        
-
 
 
         // Upstream

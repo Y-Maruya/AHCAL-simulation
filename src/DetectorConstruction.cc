@@ -91,7 +91,11 @@ namespace SimCalModule
         HcalUnitParameter.Sensitive_dig_out_MatIndex = Air;
         HcalUnitParameter.PassiveMatIndex = ESR;
         HcalUnitParameter.AttachMatIndex = Quartz;
-        Initial_pos = G4ThreeVector(850.0*mm,330.0*mm,5570*mm);
+        Initial_pos = G4ThreeVector(700.0*mm,305.0*mm,5770*mm);// G0000
+        // Initial_pos = G4ThreeVector(745.0*mm,305.0*mm,5720*mm);// G0000
+        // Initial_pos = G4ThreeVector(785.0*mm,305.0*mm,6220*mm);// G0001
+        // Initial_pos = G4ThreeVector(825.0*mm,305.0*mm,6720*mm);// G0002
+        // Initial_pos = G4ThreeVector(705*mm,370*mm,6720*mm);// G0002_Run4
         // Initial_pos = G4ThreeVector(0*mm,0*mm,3500*mm); // detailed.gdml
         EcalAbsorberThick = 3.2 * mm; // 3.2 mm for ScW ECAL
         HcalAbsorberThick = 20.0 * mm;
@@ -100,7 +104,7 @@ namespace SimCalModule
         // HcaltriggerThick = 100.0 * mm;
         HcaltriggerIndex = PlasticSciHCAL;
         HcalgraphiteThick = 0 * mm;
-        HCALgraphiteIndex = W;
+        HCALgraphiteIndex = Steel;
         Hcaltriggernplane = 1;
         HcalPCBThick = 2.5 * mm;  //2.5mm *4/5 for PCB, 1mm for component
         HcalPCB_Cu_Thick = 0.0 * mm; //2.5mm *1/5
@@ -131,7 +135,7 @@ namespace SimCalModule
         EcalStepTimeLimit = 150.0 * ns;
         HcalStepTimeLimit = 150.0 * ns;
         DownstreamSizeZ = 500 * mm;
-        DownstreamNum = 6;
+        DownstreamNum = 0;
         // DownstreamSizeZ = 0 * mm; //detail.gdml
     }
 

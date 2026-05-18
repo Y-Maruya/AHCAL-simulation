@@ -55,15 +55,6 @@ namespace SimCalModule
         fNC->SetGuidance("Set NC");
         fNC->SetParameterName("NC", true,true);
         fNC->AvailableForStates(G4State_PreInit, G4State_Idle);
-
-        // Default values
-        fPrimaryGenerator->SetInputFileName("faser3.10fbInv.1.gfaser.root");
-        fPrimaryGenerator->SetFixedPrimaryVertexPosition(true);
-        fPrimaryGenerator->SetPrimaryVertexPosition(G4ThreeVector(0.0,0.0,0.25*cm));
-        fPrimaryGenerator->SetCCNue(true);
-        fPrimaryGenerator->SetCCNumu(true);
-        fPrimaryGenerator->SetCCNutau(true);
-        fPrimaryGenerator->SetNC(true);
     }
 
     GeneratorMessenger::~GeneratorMessenger()
